@@ -1858,15 +1858,21 @@ footer {
   transition: transform 2s ease-out;
 }
 .author:hover {
+
+  width: 6.875em;
+  height: 6.875em;
+  margin: 0 auto;
+  background: no-repeat url("/img/author_move.jpg")left top;
+  -webkit-background-size: 6.875em 6.875em;
+  -moz-background-size: 6.875em 6.875em;
+  background-size: 6.875em 6.875em;
+  -webkit-border-radius: 3.4375em;
+  border-radius: 3.4375em;
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
   -o-transform: rotateZ(360deg);
   -ms-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
-  width: 6.875em;
-  height: 6.875em;
-  margin: 0 auto;
-  background: no-repeat url("/img/author_move.jpg")left top;
 }
 @media only screen and (min-width: 768px) {
   .author {
