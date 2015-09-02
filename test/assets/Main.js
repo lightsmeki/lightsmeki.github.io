@@ -203,11 +203,14 @@ function createInstructions() {
 	canvas.appendChild(element);
 	elements.push( element );
 
-	var img1=new Image();//新建图像实例
-	img1.src="./img/gaga.png";//设置图像源
-	var img2=new Image();
-	img2.src="./img/naipaopao.png";
-
+	//var img1=new Image();//新建图像实例
+	//img1.src="./img/gaga100.png";//设置图像源
+	//var img2=new Image();
+	//img2.src="./img/naipaopao100.png";
+	//var img3=new Image();
+	//img3.src="./img/bocai100.png";
+	//var img4=new Image();
+	//img4.src="./img/sha100.png";
 	//插入图片素材
 	//var circle1 = document.createElement( 'canvas' );
 	//circle1.width=img1.width;
@@ -282,24 +285,61 @@ function createBall( x, y ) {
 
 	var x = x || Math.random() * stage[2];
 	var y = y || Math.random() * -200;
+
+
 	var img1=new Image();//新建图像实例
-	img1.src="./img/gaga.png";//设置图像源
+	img1.src="./img/gaga100.png";//设置图像源
 	var img2=new Image();
-	img2.src="./img/naipaopao.png";
+	img2.src="./img/naipaopao100.png";
+	var img3=new Image();
+	img3.src="./img/bocai100.png";
+	var img4=new Image();
+	img4.src="./img/sha100.png";
+	var img5=new Image();
+	img5.src="./img/shayu100.png";
+	var img6=new Image();
+	img6.src="./img/boat100.png";
 
-	var size = (Math.random() * 100 >> 0) + 20;
+	//imgs=new Array("./img/gaga100.png","./img/naipaopao100.png","./img/bocai100.png","./img/sha100.png","./img/shayu100.png","./img/boat100.png");
+	//load=new Array();
+	//imgwidth=new Array();
+	//imgheight=new Array();
+	//function forfunction(){
+	//	for(var k=0; k < imgs.length; k++){
+	//		load[k]=new Image();
+	//		load[k].src=imgs[k];
+			//(load[k].onload = function(e) {
+				//alert('width = ' + this.width + ' , height =' + this.height);
+				//imgwidth[e].push(this.width);
+				//imgheight[e].push(this.height);
+				//alert('imgwidth['+e+']:'+imgwidth[e]);
+				//alert('imgheight['+e+']:'+imgheight[e]);
+			//})(k);
 
-	var element = document.createElement("canvas");
-	element.width = img1.width;
-	element.height = img1.height;
-	element.style.position = 'absolute';
-	element.style.left = -200 + 'px';
-	element.style.top = -200 + 'px';
-	element.style.WebkitTransform = 'translateZ(0)';
-	element.style.MozTransform = 'translateZ(0)';
-	element.style.OTransform = 'translateZ(0)';
-	element.style.msTransform = 'translateZ(0)';
-	element.style.transform = 'translateZ(0)';
+			//load[k].onload = function(){
+			//	alert('width = ' + this.width + ' , height =' + this.height);
+				//imgwidth[k].push(this.width);
+				//imgheight[k].push(this.height);
+				//alert('imgwidth['+k+']:'+imgwidth[k]);
+				//alert('imgheight['+k+']:'+imgheight[k]);
+			//};
+			//load[k].style.width= this.width;
+			//load[k].style.height=this.height;
+			//alert('width = ' + load[k].width + ' , height =' + load[k].height);
+
+		//}
+	//}
+	var element1 = document.createElement("canvas");
+	element1.width = img1.width;
+	element1.height = img1.height;
+	element1.style.position = 'absolute';
+	element1.style.left = -200 + 'px';
+	element1.style.top = -200 + 'px';
+	element1.style.WebkitTransform = 'translateZ(0)';
+	element1.style.MozTransform = 'translateZ(0)';
+	element1.style.OTransform = 'translateZ(0)';
+	element1.style.msTransform = 'translateZ(0)';
+	element1.style.transform = 'translateZ(0)';
 
 	var element2 = document.createElement("canvas");
 	element2.width = img2.width;
@@ -313,23 +353,128 @@ function createBall( x, y ) {
 	element2.style.msTransform = 'translateZ(0)';
 	element2.style.transform = 'translateZ(0)';
 
-	var graphics = element.getContext("2d");
+	var element3 = document.createElement("canvas");
+	element3.width = img3.width;
+	element3.height = img3.height;
+	element3.style.position = 'absolute';
+	element3.style.left = -200 + 'px';
+	element3.style.top = -200 + 'px';
+	element3.style.WebkitTransform = 'translateZ(0)';
+	element3.style.MozTransform = 'translateZ(0)';
+	element3.style.OTransform = 'translateZ(0)';
+	element3.style.msTransform = 'translateZ(0)';
+	element3.style.transform = 'translateZ(0)';
+
+	var element4 = document.createElement("canvas");
+	element4.width = img4.width;
+	element4.height = img4.height;
+	element4.style.position = 'absolute';
+	element4.style.left = -200 + 'px';
+	element4.style.top = -200 + 'px';
+	element4.style.WebkitTransform = 'translateZ(0)';
+	element4.style.MozTransform = 'translateZ(0)';
+	element4.style.OTransform = 'translateZ(0)';
+	element4.style.msTransform = 'translateZ(0)';
+	element4.style.transform = 'translateZ(0)';
+
+	var element5 = document.createElement("canvas");
+	element5.width = img5.width;
+	element5.height = img5.height;
+	element5.style.position = 'absolute';
+	element5.style.left = -200 + 'px';
+	element5.style.top = -200 + 'px';
+	element5.style.WebkitTransform = 'translateZ(0)';
+	element5.style.MozTransform = 'translateZ(0)';
+	element5.style.OTransform = 'translateZ(0)';
+	element5.style.msTransform = 'translateZ(0)';
+	element5.style.transform = 'translateZ(0)';
+
+	var element6 = document.createElement("canvas");
+	element6.width = img6.width;
+	element6.height = img6.height;
+	element6.style.position = 'absolute';
+	element6.style.left = -200 + 'px';
+	element6.style.top = -200 + 'px';
+	element6.style.WebkitTransform = 'translateZ(0)';
+	element6.style.MozTransform = 'translateZ(0)';
+	element6.style.OTransform = 'translateZ(0)';
+	element6.style.msTransform = 'translateZ(0)';
+	element6.style.transform = 'translateZ(0)';
+
+	var graphics = element1.getContext("2d");
 	var graphics2 = element2.getContext("2d");
+	var graphics3 = element3.getContext("2d");
+	var graphics4 = element4.getContext("2d");
+	var graphics5 = element5.getContext("2d");
+	var graphics6 = element6.getContext("2d");
 
 	var num_circles = Math.random() * 10 >> 0;
+	var size = (Math.random() * 100 >> 0) + 20;
 
 	for (var i = size; i > 0; i-= (size/num_circles)) {
 		graphics.drawImage(img1,0,0);
 	}
 
-	canvas.appendChild(element);
-	elements.push(element);
+	canvas.appendChild(element1);
+	elements.push(element1);
 
 	for (var i = size; i > 0; i-= (size/num_circles)) {
 		graphics2.drawImage(img2,0,0);
 	}
 	canvas.appendChild(element2);
 	elements.push(element2);
+
+	for (var i = size; i > 0; i-= (size/num_circles)) {
+		graphics3.drawImage(img3,0,0);
+	}
+	canvas.appendChild(element3);
+	elements.push(element3);
+
+	for (var i = size; i > 0; i-= (size/num_circles)) {
+		graphics4.drawImage(img4,0,0);
+	}
+	canvas.appendChild(element4);
+	elements.push(element4);
+
+	for (var i = size; i > 0; i-= (size/num_circles)) {
+		graphics5.drawImage(img5,0,0);
+	}
+	canvas.appendChild(element5);
+	elements.push(element5);
+
+	for (var i = size; i > 0; i-= (size/num_circles)) {
+		graphics6.drawImage(img6,0,0);
+	}
+	canvas.appendChild(element6);
+	elements.push(element6);
+
+	//var size = (Math.random() * 100 >> 0) + 20;
+	//var loopnum = 5;
+	//var element = document.createElement("canvas");
+	//for(var i=0; i<loopnum;i++){
+	//	element.width = imgwidth[i];
+	//	element.height = imgheight[i];
+	//	element.style.position = 'absolute';
+	//	element.style.left = -200 + 'px';
+	//	element.style.top = -200 + 'px';
+	//	element.style.WebkitTransform = 'translateZ(0)';
+	//	element.style.MozTransform = 'translateZ(0)';
+	//	element.style.OTransform = 'translateZ(0)';
+	//	element.style.msTransform = 'translateZ(0)';
+	//	element.style.transform = 'translateZ(0)';
+    //
+	//	var graphics = element.getContext("2d");
+	//	var num_circles = Math.random() * 10 >> 0;
+	//	for (var j = size; j > 0; j-= (size/num_circles)) {
+	//		graphics.drawImage(load[i],0,0);
+	//	}
+	//	canvas.appendChild(element);
+	//	elements.push(element);
+	//	element=null;
+	//	//load=null;
+    //
+	//}
+
 
 	var b2body = new b2BodyDef();
 
@@ -341,7 +486,12 @@ function createBall( x, y ) {
 
 
 	b2body.AddShape(circle);
-	b2body.userData = {element: element};
+	b2body.userData = {element: element1};
+	//b2body.userData = {element: element2};
+	//b2body.userData = {element: element3};
+	//b2body.userData = {element: element4};
+	//b2body.userData = {element: element5};
+	//b2body.userData = {element: element6};
 
 	b2body.position.Set( x, y );
 	b2body.linearVelocity.Set( Math.random() * 400 - 200, Math.random() * 400 - 200 );
