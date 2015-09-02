@@ -284,6 +284,9 @@ function createBall( x, y ) {
 	var y = y || Math.random() * -200;
 	var img1=new Image();//新建图像实例
 	img1.src="./img/gaga.png";//设置图像源
+	var img2=new Image();
+	img2.src="./img/naipaopao.png";
+
 	var size = (Math.random() * 100 >> 0) + 20;
 
 	var element = document.createElement("canvas");
@@ -298,25 +301,35 @@ function createBall( x, y ) {
 	element.style.msTransform = 'translateZ(0)';
 	element.style.transform = 'translateZ(0)';
 
+	var element2 = document.createElement("canvas");
+	element2.width = img2.width;
+	element2.height = img2.height;
+	element2.style.position = 'absolute';
+	element2.style.left = -200 + 'px';
+	element2.style.top = -200 + 'px';
+	element2.style.WebkitTransform = 'translateZ(0)';
+	element2.style.MozTransform = 'translateZ(0)';
+	element2.style.OTransform = 'translateZ(0)';
+	element2.style.msTransform = 'translateZ(0)';
+	element2.style.transform = 'translateZ(0)';
+
 	var graphics = element.getContext("2d");
+	var graphics2 = element2.getContext("2d");
 
 	var num_circles = Math.random() * 10 >> 0;
 
 	for (var i = size; i > 0; i-= (size/num_circles)) {
-
-		//graphics.fillStyle = theme[ (Math.random() * 4 >> 0) + 1];
-		//graphics.beginPath();
-		//graphics.arc(size * .5, size * .5, i * .5, 0, PI2, true);
-		//graphics.closePath();
-		//graphics.fill();
-
 		graphics.drawImage(img1,0,0);
-
 	}
 
 	canvas.appendChild(element);
+	elements.push(element);
 
-	elements.push( element );
+	for (var i = size; i > 0; i-= (size/num_circles)) {
+		graphics2.drawImage(img2,0,0);
+	}
+	canvas.appendChild(element2);
+	elements.push(element2);
 
 	var b2body = new b2BodyDef();
 
