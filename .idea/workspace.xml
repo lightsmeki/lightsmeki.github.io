@@ -4,7 +4,6 @@
     <list default="true" id="05b07489-0158-4994-900a-f408742a4b1c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/img/gaga.png" afterPath="$PROJECT_DIR$/test/img/gaga.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/img/naipaopao.png" afterPath="$PROJECT_DIR$/test/img/naipaopao.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ball_pool.html" afterPath="$PROJECT_DIR$/test/ball_pool.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="seniorzhai.github.io-master.iws" />
@@ -60,8 +59,8 @@
       <file leaf-file-name="ball_pool.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/ball_pool.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43881857" vertical-offset="201" max-vertical-offset="912">
-              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.46554148" vertical-offset="201" max-vertical-offset="912">
+              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -540,7 +539,7 @@
       <workItem from="1440757066316" duration="77000" />
       <workItem from="1440757307164" duration="176000" />
       <workItem from="1440985073111" duration="4231000" />
-      <workItem from="1441166776604" duration="1834000" />
+      <workItem from="1441166776604" duration="2113000" />
     </task>
     <task id="LOCAL-00001" summary="201507314">
       <created>1438312007520</created>
@@ -584,11 +583,17 @@
       <option name="project" value="LOCAL" />
       <updated>1441169618642</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2015090212">
+      <created>1441171620806</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1441171620806</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37295000" />
+    <option name="totallyTimeSpent" value="37574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
@@ -645,7 +650,8 @@
     <MESSAGE value="201508452" />
     <MESSAGE value="20150902" />
     <MESSAGE value="201509021" />
-    <option name="LAST_COMMIT_MESSAGE" value="201509021" />
+    <MESSAGE value="2015090212" />
+    <option name="LAST_COMMIT_MESSAGE" value="2015090212" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -656,28 +662,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="4655">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding>
-            <element signature="n#div#1;n#aside#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#aside#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#aside#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#aside#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5852">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="4655">
@@ -1069,10 +1053,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/img/naipaopao.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/img/gaga.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/ball_pool.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43881857" vertical-offset="201" max-vertical-offset="912">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.46554148" vertical-offset="201" max-vertical-offset="912">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
           <folding />
         </state>
       </provider>
