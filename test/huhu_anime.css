@@ -35,6 +35,9 @@
     margin-left:15px;
     -webkit-animation:titleanime 6s infinite linear ;
     -moz-animation:titleanime 6s infinite linear;
+    -ms-animation:titleanime 6s infinite linear;
+    -o-animation:titleanime 6s infinite linear;
+    animation:titleanime 6s infinite linear;
 }
 .cloud1{
     display: block;
@@ -44,7 +47,9 @@
     margin-left:15px;
     -webkit-animation:cloud1anime 3s infinite linear ;
     -moz-animation:cloud1anime 3s infinite linear;
-
+    -ms-animation:cloud1anime 3s infinite linear;
+    -o-animation:cloud1anime 3s infinite linear;
+    animation:cloud1anime 3s infinite linear;
 }
 .cloud2{
     display: block;
@@ -55,6 +60,9 @@
     margin-top:20px;
     -webkit-animation:cloud2anime 3s infinite linear ;
     -moz-animation:cloud2anime 3s infinite linear;
+    -ms-animation:cloud2anime 3s infinite linear;
+    -o-animation:cloud2anime 3s infinite linear;
+    animation:cloud2anime 3s infinite linear;
 }
 
 
@@ -127,6 +135,9 @@
     margin-left:10px;
     -webkit-animation:islandanime 3s infinite linear ;
     -moz-animation:islandanime 3s infinite linear;
+    -ms-animation:islandanime 3s infinite linear;
+    -o-animation:islandanime 3s infinite linear;
+    animation:islandanime 3s infinite linear;
 }
 .fish{
     position: relative;
@@ -135,6 +146,9 @@
     margin-left:50px;
     -webkit-animation:fishanime 3s infinite linear ;
     -moz-animation:fishanime 3s infinite linear;
+    -ms-animation:fishanime 3s infinite linear;
+    -o-animation:fishanime 3s infinite linear;
+    animation:fishanime 3s infinite linear;
 }
 .boat{
     position: relative;
@@ -143,6 +157,9 @@
     margin-left:180px;
     -webkit-animation:boatanime 3s infinite linear ;
     -moz-animation:boatanime 3s infinite linear;
+    -ms-animation:boatanime 3s infinite linear;
+    -o-animation:boatanime 3s infinite linear;
+    animation:boatanime 3s infinite linear;
 }
 .hoop{
     position: relative;
@@ -151,16 +168,25 @@
     margin-left:30px;
     -webkit-animation:hoopanime 3s infinite linear ;
     -moz-animation:hoopanime 3s infinite linear;
+    -ms-animation:hoopanime 3s infinite linear;
+    -o-animation:hoopanime 3s infinite linear;
+    animation:hoopanime 3s infinite linear;
 }
 .naipaopao{
     position:relative;
     margin:0 auto;
     -webkit-animation:balloonanime 3s infinite linear ;
     -moz-animation:balloonanime 3s infinite linear;
+    -ms-animation:balloonanime 3s infinite linear;
+    -o-animation:balloonanime 3s infinite linear;
+    animation:balloonanime 3s infinite linear;
 }
 .wave1{
     -webkit-animation:wave1amime 4s infinite linear ;
     -moz-animation:wave1amime 4s infinite linear;
+    -ms-animation:wave1amime 4s infinite linear;
+    -o-animation:wave1amime 4s infinite linear;
+    animation:wave1amime 4s infinite linear;
     /*-webkit-transition-property:all;*/
     /*-webkit-transition-duration:3000ms;*/
     /*-webkit-transition-timing-function:ease;*/
@@ -169,6 +195,9 @@
 .wave2{
     -webkit-animation:wave2amime 4s infinite linear ;
     -moz-animation:wave2amime 4s infinite linear;
+    -ms-animation:wave2amime 4s infinite linear;
+    -o-animation:wave2amime 4s infinite linear;
+    animation:wave2amime 4s infinite linear;
     /*-webkit-transition-property:all;*/
     /*-webkit-transition-duration:3000ms;*/
     /*-webkit-transition-timing-function:ease;*/
