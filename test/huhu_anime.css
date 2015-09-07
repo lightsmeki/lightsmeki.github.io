@@ -204,7 +204,7 @@
 }
 
 
-@keyframes wave1amime {
+@-webkit-keyframes wave1amime {
      /*0% {transform:translate(-50px, 0px) }*/
     /*50% {transform:translate(0px, 0px) }*/
      /*100% {transform:translate(50px, 0px) }*/
@@ -212,34 +212,34 @@
     50% {margin-left:0px;  }
     100% {margin-left:50px; }
 }
-@keyframes wave2amime {
+@-webkit-keyframes wave2amime {
     0% {transform:translate(0px, 0px) }
     50% {transform:translate(-50px, 0px) }
     100% {transform:translate(-100px, 0px) }
 }
 
-@keyframes hoopanime {
+@-webkit-keyframes hoopanime {
     0% {transform:translate(0px, 0px) }
     25% {transform:translate(30px, -10px) rotateZ(30deg) }
     50% {transform:translate(30px, 10px)  rotateZ(200deg) }
     /*70% {transform:translate(5px, 15px)  rotateZ(270deg) }*/
     100% {transform:translate(0px, 0px)  rotateZ(15deg) }
 }
-@keyframes boatanime {
+@-webkit-keyframes boatanime {
     0% {transform:translate(0px, 0px) }
     33% {transform:translate(15px, -15px)  rotateZ(-30deg) }
     66% {transform:translate(30px, -10px) }
     /*75% {transform:translate(5px, -5px)  rotateZ(15deg) }*/
     100% {transform:translate(0px, 0px) }
 }
-@keyframes fishanime {
+@-webkit-keyframes fishanime {
     0% {transform:translate(0px, 0px) }
     25% {transform:translate(15px, -50px)  rotateZ(50deg) }
     50% {transform:translate(50px, -30px)  rotateZ(20deg) }
     75% {transform:translate(20px, 5px)  rotateZ(15deg) }
     100% {transform:translate(0px, 0px) }
 }
-@keyframes islandanime {
+@-webkit-keyframes islandanime {
     0% {transform:translate(0px, 10px) }
     15% {transform:translate(-10px, 0px)  rotateZ(2deg) }
     30% {transform:translate(-20px, -10px)  rotateZ(5deg) }
@@ -249,7 +249,7 @@
     85% {transform:translate(10px, -3px)  rotateZ(-2deg) }
     100% {transform:translate(0px, 10px) }
 }
-@keyframes balloonanime {
+@-webkit-keyframes balloonanime {
     0% {transform:translate(0px, 10px) }
     15% {transform:translate(10px, 0px)  rotateZ(2deg) }
     30% {transform:translate(20px, -10px)  rotateZ(15deg) }
@@ -260,7 +260,7 @@
     100% {transform:translate(0px, 10px) }
 }
 
-@keyframes cloud1anime {
+@-webkit-keyframes cloud1anime {
      0% {transform:translate(0px, 10px) }
      15% {transform:translate(20px, 0px)  rotateZ(2deg) }
      30% {transform:translate(40px, -10px)  rotateZ(15deg) }
@@ -270,7 +270,7 @@
      85% {transform:translate(120px, -3px)  rotateZ(-2deg) }
      100% {transform:translate(140px, 10px) }
  }
-@keyframes cloud2anime {
+@-webkit-keyframes cloud2anime {
     0% {transform:translate(0px, 10px) }
     15% {transform:translate(20px, 0px)  rotateZ(2deg) }
     30% {transform:translate(40px, -10px)  rotateZ(15deg) }
@@ -280,7 +280,7 @@
     85% {transform:translate(120px, -3px)  rotateZ(-2deg) }
     100% {transform:translate(140px, 10px) }
 }
-@keyframes titleanime {
+@-webkit-keyframes titleanime {
     0% {transform:translate(300px, 0px) }
     100% {transform:translate(-300px, 0) }
 }
