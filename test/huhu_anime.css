@@ -182,11 +182,11 @@
     animation:balloonanime 3s infinite linear;
 }
 .wave1{
-    -webkit-animation:wave1amime 4s infinite linear ;
-    -moz-animation:wave1amime 4s infinite linear;
-    -ms-animation:wave1amime 4s infinite linear;
-    -o-animation:wave1amime 4s infinite linear;
-    animation:wave1amime 4s infinite linear;
+    -webkit-animation:wave1amime 3s infinite linear ;
+    -moz-animation:wave1amime 3s infinite linear;
+    -ms-animation:wave1amime 3s infinite linear;
+    -o-animation:wave1amime 3s infinite linear;
+    animation:wave1amime 3s infinite linear;
     /*-webkit-transition-property:all;*/
     /*-webkit-transition-duration:3000ms;*/
     /*-webkit-transition-timing-function:ease;*/
@@ -205,9 +205,12 @@
 
 
 @keyframes wave1amime {
-     0% {transform:translate(-50px, 0px) }
-    50% {transform:translate(0px, 0px) }
-     100% {transform:translate(50px, 0px) }
+     /*0% {transform:translate(-50px, 0px) }*/
+    /*50% {transform:translate(0px, 0px) }*/
+     /*100% {transform:translate(50px, 0px) }*/
+    0% {margin-left:-50px; }
+    50% {margin-left:0px;  }
+    100% {margin-left:50px; }
 }
 @keyframes wave2amime {
     0% {transform:translate(0px, 0px) }
