@@ -205,82 +205,84 @@
 
 
 @-webkit-keyframes wave1amime {
-     /*0% {transform:translate(-50px, 0px) }*/
-    /*50% {transform:translate(0px, 0px) }*/
-     /*100% {transform:translate(50px, 0px) }*/
+     /*0% {-webkit-transform:translate(-50px, 0px) }*/
+    /*50% {-webkit-transform:translate(0px, 0px) }*/
+     /*100% {-webkit-transform:translate(50px, 0px) }*/
     0% {margin-left:-50px; }
     50% {margin-left:0px;  }
     100% {margin-left:50px; }
 }
 @-webkit-keyframes wave2amime {
-    0% {transform:translate(0px, 0px) }
-    50% {transform:translate(-50px, 0px) }
-    100% {transform:translate(-100px, 0px) }
+    0% {margin-left:50px; }
+    50% {margin-left:0px;  }
+    100% {margin-left:-50px; }
 }
 
 @-webkit-keyframes hoopanime {
-    0% {transform:translate(0px, 0px) }
-    25% {transform:translate(30px, -10px) rotateZ(30deg) }
-    50% {transform:translate(30px, 10px)  rotateZ(200deg) }
-    /*70% {transform:translate(5px, 15px)  rotateZ(270deg) }*/
-    100% {transform:translate(0px, 0px)  rotateZ(15deg) }
+    0% {margin-left:0px;}
+    25% {
+        /*margin-left:30px;margin-top:-10px;*/
+        -webkit-transform:translate(30px, -10px) rotateZ(30deg) }
+    50% {-webkit-transform:translate(30px, 10px)  rotateZ(200deg) }
+    /*70% {-webkit-transform:translate(5px, 15px)  rotateZ(270deg) }*/
+    100% {-webkit-transform:translate(0px, 0px)  rotateZ(15deg) }
 }
 @-webkit-keyframes boatanime {
-    0% {transform:translate(0px, 0px) }
-    33% {transform:translate(15px, -15px)  rotateZ(-30deg) }
-    66% {transform:translate(30px, -10px) }
-    /*75% {transform:translate(5px, -5px)  rotateZ(15deg) }*/
-    100% {transform:translate(0px, 0px) }
+    0% {-webkit-transform:translate(0px, 0px) }
+    33% {-webkit-transform:translate(15px, -15px)  rotateZ(-30deg) }
+    66% {-webkit-transform:translate(30px, -10px) }
+    /*75% {-webkit-transform:translate(5px, -5px)  rotateZ(15deg) }*/
+    100% {-webkit-transform:translate(0px, 0px) }
 }
 @-webkit-keyframes fishanime {
-    0% {transform:translate(0px, 0px) }
-    25% {transform:translate(15px, -50px)  rotateZ(50deg) }
-    50% {transform:translate(50px, -30px)  rotateZ(20deg) }
-    75% {transform:translate(20px, 5px)  rotateZ(15deg) }
-    100% {transform:translate(0px, 0px) }
+    0% {-webkit-transform:translate(0px, 0px) }
+    25% {-webkit-transform:translate(15px, -50px)  rotateZ(50deg) }
+    50% {-webkit-transform:translate(50px, -30px)  rotateZ(20deg) }
+    75% {-webkit-transform:translate(20px, 5px)  rotateZ(15deg) }
+    100% {-webkit-transform:translate(0px, 0px) }
 }
 @-webkit-keyframes islandanime {
-    0% {transform:translate(0px, 10px) }
-    15% {transform:translate(-10px, 0px)  rotateZ(2deg) }
-    30% {transform:translate(-20px, -10px)  rotateZ(5deg) }
-    40% {transform:translate(-15px, 0px)  rotateZ(10deg) }
-    65% {transform:translate(10px, -5px)  rotateZ(-5deg) }
-    75% {transform:translate(20px, -10px)  rotateZ(-5deg) }
-    85% {transform:translate(10px, -3px)  rotateZ(-2deg) }
-    100% {transform:translate(0px, 10px) }
+    0% {-webkit-transform:translate(0px, 10px) }
+    15% {-webkit-transform:translate(-10px, 0px)  rotateZ(2deg) }
+    30% {-webkit-transform:translate(-20px, -10px)  rotateZ(5deg) }
+    40% {-webkit-transform:translate(-15px, 0px)  rotateZ(10deg) }
+    65% {-webkit-transform:translate(10px, -5px)  rotateZ(-5deg) }
+    75% {-webkit-transform:translate(20px, -10px)  rotateZ(-5deg) }
+    85% {-webkit-transform:translate(10px, -3px)  rotateZ(-2deg) }
+    100% {-webkit-transform:translate(0px, 10px) }
 }
 @-webkit-keyframes balloonanime {
-    0% {transform:translate(0px, 10px) }
-    15% {transform:translate(10px, 0px)  rotateZ(2deg) }
-    30% {transform:translate(20px, -10px)  rotateZ(15deg) }
-    50% {transform:translate(15px, 0px)  rotateZ(10deg) }
-    65% {transform:translate(5px, -5px)  rotateZ(-5deg) }
-    75% {transform:translate(-10px, -10px)  rotateZ(-2deg) }
-    85% {transform:translate(-15px, -3px)  rotateZ(-2deg) }
-    100% {transform:translate(0px, 10px) }
+    0% {-webkit-transform:translate(0px, 10px) }
+    15% {-webkit-transform:translate(10px, 0px)  rotateZ(2deg) }
+    30% {-webkit-transform:translate(20px, -10px)  rotateZ(15deg) }
+    50% {-webkit-transform:translate(15px, 0px)  rotateZ(10deg) }
+    65% {-webkit-transform:translate(5px, -5px)  rotateZ(-5deg) }
+    75% {-webkit-transform:translate(-10px, -10px)  rotateZ(-2deg) }
+    85% {-webkit-transform:translate(-15px, -3px)  rotateZ(-2deg) }
+    100% {-webkit-transform:translate(0px, 10px) }
 }
 
 @-webkit-keyframes cloud1anime {
-     0% {transform:translate(0px, 10px) }
-     15% {transform:translate(20px, 0px)  rotateZ(2deg) }
-     30% {transform:translate(40px, -10px)  rotateZ(15deg) }
-     50% {transform:translate(60px, 0px)  rotateZ(10deg) }
-     65% {transform:translate(80px, -5px)  rotateZ(-5deg) }
-     75% {transform:translate(100px, -10px)  rotateZ(-2deg) }
-     85% {transform:translate(120px, -3px)  rotateZ(-2deg) }
-     100% {transform:translate(140px, 10px) }
+     0% {-webkit-transform:translate(0px, 10px) }
+     15% {-webkit-transform:translate(20px, 0px)  rotateZ(2deg) }
+     30% {-webkit-transform:translate(40px, -10px)  rotateZ(15deg) }
+     50% {-webkit-transform:translate(60px, 0px)  rotateZ(10deg) }
+     65% {-webkit-transform:translate(80px, -5px)  rotateZ(-5deg) }
+     75% {-webkit-transform:translate(100px, -10px)  rotateZ(-2deg) }
+     85% {-webkit-transform:translate(120px, -3px)  rotateZ(-2deg) }
+     100% {-webkit-transform:translate(140px, 10px) }
  }
 @-webkit-keyframes cloud2anime {
-    0% {transform:translate(0px, 10px) }
-    15% {transform:translate(20px, 0px)  rotateZ(2deg) }
-    30% {transform:translate(40px, -10px)  rotateZ(15deg) }
-    50% {transform:translate(60px, 0px)  rotateZ(10deg) }
-    65% {transform:translate(80px, -5px)  rotateZ(-5deg) }
-    75% {transform:translate(100px, -10px)  rotateZ(-2deg) }
-    85% {transform:translate(120px, -3px)  rotateZ(-2deg) }
-    100% {transform:translate(140px, 10px) }
+    0% {-webkit-transform:translate(0px, 10px) }
+    15% {-webkit-transform:translate(20px, 0px)  rotateZ(2deg) }
+    30% {-webkit-transform:translate(40px, -10px)  rotateZ(15deg) }
+    50% {-webkit-transform:translate(60px, 0px)  rotateZ(10deg) }
+    65% {-webkit-transform:translate(80px, -5px)  rotateZ(-5deg) }
+    75% {-webkit-transform:translate(100px, -10px)  rotateZ(-2deg) }
+    85% {-webkit-transform:translate(120px, -3px)  rotateZ(-2deg) }
+    100% {-webkit-transform:translate(140px, 10px) }
 }
 @-webkit-keyframes titleanime {
-    0% {transform:translate(300px, 0px) }
-    100% {transform:translate(-300px, 0) }
+    0% {-webkit-transform:translate(300px, 0px) }
+    100% {-webkit-transform:translate(-300px, 0) }
 }
