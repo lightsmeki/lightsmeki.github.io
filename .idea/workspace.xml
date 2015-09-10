@@ -3,43 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="05b07489-0158-4994-900a-f408742a4b1c" name="Default" comment="201509074">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/音频播放.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/scroll/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/scroll/scroll.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/scroll/scroll.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/scroll/wow.min.js" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\assets\Main.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\assets\box2d.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\assets\protoclass.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\ball_pool.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\chungao.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_anime.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_anime.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\bg1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\bg2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\boat.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\cloud1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\cloud2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\fish.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\hoop.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\island.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\naipaopao_balloon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\title.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\wave1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\huhu_simg\wave2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\bg_img_w400h400.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\boat100.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\bocai100.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\gaga.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\gaga100.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\gaga_big.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\naipaopao.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\naipaopao100.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\naipaopao_big.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\not_joinin_img.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\sha100.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\img\shayu100.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\ZHOUYE\lightsmeki.github.io\test\web_svg.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="seniorzhai.github.io-master.iws" />
@@ -79,8 +42,8 @@
       <file leaf-file-name="ball_pool_mobile.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5611814" vertical-offset="114" max-vertical-offset="969">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.37412095" vertical-offset="114" max-vertical-offset="969">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -575,7 +538,7 @@
       <workItem from="1441780874754" duration="1202000" />
       <workItem from="1441851945330" duration="1754000" />
       <workItem from="1441865752732" duration="1700000" />
-      <workItem from="1441868841812" duration="465000" />
+      <workItem from="1441868841812" duration="504000" />
     </task>
     <task id="LOCAL-00001" summary="201507314">
       <created>1438312007520</created>
@@ -691,11 +654,17 @@
       <option name="project" value="LOCAL" />
       <updated>1441869284578</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="201509074">
+      <created>1441869338126</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1441869338126</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87489000" />
+    <option name="totallyTimeSpent" value="87528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -759,10 +728,10 @@
     <MESSAGE value="201509025" />
     <MESSAGE value="201509071" />
     <MESSAGE value="201509073" />
-    <MESSAGE value="201509074" />
     <MESSAGE value="20150908" />
     <MESSAGE value="20150910" />
-    <option name="LAST_COMMIT_MESSAGE" value="20150910" />
+    <MESSAGE value="201509074" />
+    <option name="LAST_COMMIT_MESSAGE" value="201509074" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1021,6 +990,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.130854" vertical-offset="0" max-vertical-offset="726">
           <caret line="5" column="57190" selection-start-line="5" selection-start-column="57190" selection-end-line="5" selection-end-column="57190" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,8 +1022,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5611814" vertical-offset="114" max-vertical-offset="969">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.37412095" vertical-offset="114" max-vertical-offset="969">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
