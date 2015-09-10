@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="05b07489-0158-4994-900a-f408742a4b1c" name="Default" comment="201509074">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/音频播放.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ball_pool/ball_pool.html" afterPath="$PROJECT_DIR$/test/ball_pool/ball_pool.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/assets/Main_mobile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html" afterPath="$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="seniorzhai.github.io-master.iws" />
@@ -43,8 +44,8 @@
       <file leaf-file-name="ball_pool_mobile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.321428" vertical-offset="114" max-vertical-offset="969">
-              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+            <state vertical-scroll-proportion="-12.214286" vertical-offset="171" max-vertical-offset="969">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -52,14 +53,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ball_pool.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool.html">
+      <file leaf-file-name="Main_mobile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/ball_pool/assets/Main_mobile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6146273" vertical-offset="0" max-vertical-offset="969">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.59133965" vertical-offset="5358" max-vertical-offset="13832">
+              <caret line="305" column="28" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ball_pool/assets/Main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5187" max-vertical-offset="13832">
+              <caret line="289" column="33" selection-start-line="289" selection-start-column="33" selection-end-line="289" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,7 +76,7 @@
       <file leaf-file-name="wow.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/scroll/wow.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="133">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="133">
               <caret line="1" column="4528" selection-start-line="1" selection-start-column="4528" selection-end-line="1" selection-end-column="4528" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -116,8 +125,9 @@
         <option value="$PROJECT_DIR$/test/scroll/animate.css" />
         <option value="$PROJECT_DIR$/test/scroll/scroll.css" />
         <option value="$PROJECT_DIR$/test/scroll/scroll.html" />
-        <option value="$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html" />
         <option value="$PROJECT_DIR$/test/ball_pool/ball_pool.html" />
+        <option value="$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html" />
+        <option value="$PROJECT_DIR$/test/ball_pool/assets/Main_mobile.js" />
       </list>
     </option>
   </component>
@@ -156,7 +166,7 @@
     <OptionsSetting value="true" id="Edit" />
     <OptionsSetting value="true" id="Undo Check Out" />
     <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -271,6 +281,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ZHOUYE\lightsmeki.github.io\test\ball_pool\assets" />
       <recent name="D:\ZHOUYE\lightsmeki.github.io\test\ball_pool" />
       <recent name="D:\ZHOUYE\lightsmeki.github.io\test\img" />
       <recent name="D:\ZHOUYE\lightsmeki.github.io-master\2015\01_06\第二篇博客" />
@@ -574,7 +585,7 @@
       <workItem from="1441780874754" duration="1202000" />
       <workItem from="1441851945330" duration="1754000" />
       <workItem from="1441865752732" duration="1700000" />
-      <workItem from="1441868841812" duration="855000" />
+      <workItem from="1441868841812" duration="2421000" />
     </task>
     <task id="LOCAL-00001" summary="201507314">
       <created>1438312007520</created>
@@ -708,11 +719,17 @@
       <option name="project" value="LOCAL" />
       <updated>1441869644433</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="201509103">
+      <created>1441869706145</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1441869706145</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87879000" />
+    <option name="totallyTimeSpent" value="89445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -737,7 +754,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18680556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18680556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -759,6 +776,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
@@ -781,7 +799,8 @@
     <MESSAGE value="201509074" />
     <MESSAGE value="201509101" />
     <MESSAGE value="201509102" />
-    <option name="LAST_COMMIT_MESSAGE" value="201509102" />
+    <MESSAGE value="201509103" />
+    <option name="LAST_COMMIT_MESSAGE" value="201509103" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1055,31 +1074,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/scroll/wow.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="133">
-          <caret line="1" column="4528" selection-start-line="1" selection-start-column="4528" selection-end-line="1" selection-end-column="4528" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/scroll/scroll.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.642858" vertical-offset="955" max-vertical-offset="3534">
           <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.321428" vertical-offset="114" max-vertical-offset="969">
-          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1090,11 +1089,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6146273" vertical-offset="0" max-vertical-offset="969">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.7482419" vertical-offset="0" max-vertical-offset="969">
+          <caret line="28" column="111" selection-start-line="28" selection-start-column="111" selection-end-line="28" selection-end-column="111" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/scroll/wow.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="133">
+          <caret line="1" column="4528" selection-start-line="1" selection-start-column="4528" selection-end-line="1" selection-end-column="4528" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ball_pool/assets/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5187" max-vertical-offset="13832">
+          <caret line="289" column="33" selection-start-line="289" selection-start-column="33" selection-end-line="289" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.214286" vertical-offset="171" max-vertical-offset="969">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ball_pool/assets/Main_mobile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59133965" vertical-offset="5358" max-vertical-offset="13832">
+          <caret line="305" column="28" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
