@@ -236,49 +236,51 @@ function createInstructions() {
 
 
 
-	var circle = document.createElement( 'canvas' );
-	circle.width = 10;
-	circle.height = 10;
+	//var circle = document.createElement( 'canvas' );
+	//circle.width = 10;
+	//circle.height = 10;
 
-	var graphics = circle.getContext( '2d' );
+	//var graphics = circle.getContext( '2d' );
+    //
+	//graphics.fillStyle = theme[ 3 ];
+	//graphics.beginPath();
+	//graphics.arc( size * .5, size * .5, size * .5, 0, PI2, true );
+	//graphics.closePath();
+	//graphics.fill();
 
-	graphics.fillStyle = theme[ 3 ];
-	graphics.beginPath();
-	graphics.arc( size * .5, size * .5, size * .5, 0, PI2, true );
-	graphics.closePath();
-	graphics.fill();
+	//element.appendChild( circle );
 
-	element.appendChild( circle );
+	//text = document.createElement( 'div' );
+	//text.onSelectStart = null;
 
-	text = document.createElement( 'div' );
-	text.onSelectStart = null;
 	//text.innerHTML = '<span style="color:' + theme[0] +
 	//';font-size:26px;">玩法介绍：</span><br /><span style="font-size:15px;"><br />1. 随意拖动圆球；<br />2.点击页面背景；' +
 	//'<br />3. 晃动浏览器；<br />4. 双击页面背景；<br />5. 按住鼠标左键。</span>';
-	text.style.color = theme[1];
-	text.style.position = 'absolute';
-	text.style.left = '0px';
-	text.style.top = '0px';
-	text.style.fontFamily = 'Georgia';
-	text.style.textAlign = 'center';
-	element.appendChild(text);
 
-	text.style.left = ((250 - text.clientWidth) / 2) +'px';
-	text.style.top = ((250 - text.clientHeight) / 2) +'px';
+	//text.style.color = theme[1];
+	//text.style.position = 'absolute';
+	//text.style.left = '0px';
+	//text.style.top = '0px';
+	//text.style.fontFamily = 'Georgia';
+	//text.style.textAlign = 'center';
+	//element.appendChild(text);
 
-	var b2body = new b2BodyDef();
+	//text.style.left = ((250 - text.clientWidth) / 2) +'px';
+	//text.style.top = ((250 - text.clientHeight) / 2) +'px';
 
-	var circle = new b2CircleDef();
-	circle.radius = size / 2;
-	circle.density = 1;
-	circle.friction = 0.3;
-	circle.restitution = 0.3;
-	b2body.AddShape(circle);
-	b2body.userData = {element: element};
+	//var b2body = new b2BodyDef();
 
-	b2body.position.Set( Math.random() * stage[2], Math.random() * -200 );
-	b2body.linearVelocity.Set( Math.random() * 400 - 200, Math.random() * 400 - 200 );
-	bodies.push( world.CreateBody(b2body) );	
+	//var circle = new b2CircleDef();
+	//circle.radius = size / 2;
+	//circle.density = 1;
+	//circle.friction = 0.3;
+	//circle.restitution = 0.3;
+	//b2body.AddShape(circle);
+	//b2body.userData = {element: element};
+
+	//b2body.position.Set( Math.random() * stage[2], Math.random() * -200 );
+	//b2body.linearVelocity.Set( Math.random() * 400 - 200, Math.random() * 400 - 200 );
+	//bodies.push( world.CreateBody(b2body) );
 }
 
 function createBall( x, y ) {
