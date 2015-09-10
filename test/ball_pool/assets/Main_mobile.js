@@ -527,16 +527,16 @@ function loop() {
 		element.style.left = (body.m_position0.x - (element.width >> 1)) + 'px';
 		element.style.top = (body.m_position0.y - (element.height >> 1)) + 'px';
 
-		if (element.tagName == 'DIV') {
+		//if (element.tagName == 'DIV') {
 
-			var style = 'rotate(' + (body.m_rotation0 * 57.2957795) + 'deg) translateZ(0)';
-			text.style.WebkitTransform = style;
-			text.style.MozTransform = style;
-			text.style.OTransform = style;
-			text.style.msTransform = style;
-			text.style.transform = style;
+			//var style = 'rotate(' + (body.m_rotation0 * 57.2957795) + 'deg) translateZ(0)';
+			//text.style.WebkitTransform = style;
+			//text.style.MozTransform = style;
+			//text.style.OTransform = style;
+			//text.style.msTransform = style;
+			//text.style.transform = style;
 
-		}
+		//}
 
 	}
 

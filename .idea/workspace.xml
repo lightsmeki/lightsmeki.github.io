@@ -64,8 +64,8 @@
       <file leaf-file-name="Main_mobile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/ball_pool/assets/Main_mobile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7235294" vertical-offset="4904" max-vertical-offset="13870">
-              <caret line="284" column="0" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.34411764" vertical-offset="9779" max-vertical-offset="13870">
+              <caret line="527" column="80" selection-start-line="527" selection-start-column="80" selection-end-line="527" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -593,7 +593,7 @@
       <workItem from="1441780874754" duration="1202000" />
       <workItem from="1441851945330" duration="1754000" />
       <workItem from="1441865752732" duration="1700000" />
-      <workItem from="1441868841812" duration="3436000" />
+      <workItem from="1441868841812" duration="3568000" />
     </task>
     <task id="LOCAL-00001" summary="201507314">
       <created>1438312007520</created>
@@ -751,11 +751,17 @@
       <option name="project" value="LOCAL" />
       <updated>1441872626157</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="201509106">
+      <created>1441872733801</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1441872733801</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90460000" />
+    <option name="totallyTimeSpent" value="90592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -829,7 +835,8 @@
     <MESSAGE value="201509103&#10;&#10;" />
     <MESSAGE value="201509104&#10;&#10;" />
     <MESSAGE value="201509105&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="201509105&#10;&#10;" />
+    <MESSAGE value="201509106" />
+    <option name="LAST_COMMIT_MESSAGE" value="201509106" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1121,7 +1128,7 @@
         <state vertical-scroll-proportion="0.7482419" vertical-offset="0" max-vertical-offset="969">
           <caret line="28" column="111" selection-start-line="28" selection-start-column="111" selection-end-line="28" selection-end-column="111" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1174,8 +1181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ball_pool/assets/Main_mobile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7235294" vertical-offset="4904" max-vertical-offset="13870">
-          <caret line="284" column="0" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.34411764" vertical-offset="9779" max-vertical-offset="13870">
+          <caret line="527" column="80" selection-start-line="527" selection-start-column="80" selection-end-line="527" selection-end-column="80" />
           <folding />
         </state>
       </provider>
