@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05b07489-0158-4994-900a-f408742a4b1c" name="Default" comment="201509074">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/bg1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/bg2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/bg_img_w400h400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/boat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/boat100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/bocai100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/cloud1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/cloud2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/fish.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/gaga.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/gaga100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/gaga_big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/hoop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/island.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/naipaopao.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/naipaopao100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/naipaopao_balloon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/naipaopao_big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/not_joinin_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/sha100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/img/shayu100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/title.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/wave1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_simg/wave2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/collie/Collie_files/yame_walk.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/音频播放.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/collie/Collie.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/assets/Main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/ball_pool.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/collie/Collie_files/box2d-web-2.1.a.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/assets/box2d.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/svg/chungao.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/collie/Collie_files/collie.Box2d.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/collie/Collie_files/collie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/collie/Collie_files/collie.tool.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_anime.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/huhu_anime/huhu_anime.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ball_pool/assets/protoclass.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/svg/web_svg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ball_pool/ball_pool.html" afterPath="$PROJECT_DIR$/test/ball_pool/ball_pool.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="seniorzhai.github.io-master.iws" />
@@ -92,8 +55,8 @@
       <file leaf-file-name="ball_pool.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5611814" vertical-offset="0" max-vertical-offset="969">
-              <caret line="21" column="86" selection-start-line="21" selection-start-column="86" selection-end-line="21" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.6146273" vertical-offset="0" max-vertical-offset="969">
+              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -154,6 +117,7 @@
         <option value="$PROJECT_DIR$/test/scroll/scroll.css" />
         <option value="$PROJECT_DIR$/test/scroll/scroll.html" />
         <option value="$PROJECT_DIR$/test/ball_pool/ball_pool_mobile.html" />
+        <option value="$PROJECT_DIR$/test/ball_pool/ball_pool.html" />
       </list>
     </option>
   </component>
@@ -610,7 +574,7 @@
       <workItem from="1441780874754" duration="1202000" />
       <workItem from="1441851945330" duration="1754000" />
       <workItem from="1441865752732" duration="1700000" />
-      <workItem from="1441868841812" duration="733000" />
+      <workItem from="1441868841812" duration="855000" />
     </task>
     <task id="LOCAL-00001" summary="201507314">
       <created>1438312007520</created>
@@ -738,11 +702,17 @@
       <option name="project" value="LOCAL" />
       <updated>1441869354896</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="201509102">
+      <created>1441869644433</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1441869644433</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87757000" />
+    <option name="totallyTimeSpent" value="87879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -767,7 +737,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18680556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18680556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -810,7 +780,8 @@
     <MESSAGE value="20150910" />
     <MESSAGE value="201509074" />
     <MESSAGE value="201509101" />
-    <option name="LAST_COMMIT_MESSAGE" value="201509101" />
+    <MESSAGE value="201509102" />
+    <option name="LAST_COMMIT_MESSAGE" value="201509102" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1062,6 +1033,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1776505" vertical-offset="0" max-vertical-offset="3876">
           <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1116,8 +1090,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ball_pool/ball_pool.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5611814" vertical-offset="0" max-vertical-offset="969">
-          <caret line="21" column="86" selection-start-line="21" selection-start-column="86" selection-end-line="21" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.6146273" vertical-offset="0" max-vertical-offset="969">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
