@@ -268,7 +268,7 @@ function createInstructions() {
 	//text.style.left = ((250 - text.clientWidth) / 2) +'px';
 	//text.style.top = ((250 - text.clientHeight) / 2) +'px';
 
-	//var b2body = new b2BodyDef();
+	var b2body = new b2BodyDef();
 
 	//var circle = new b2CircleDef();
 	//circle.radius = size / 2;
@@ -276,11 +276,11 @@ function createInstructions() {
 	//circle.friction = 0.3;
 	//circle.restitution = 0.3;
 	//b2body.AddShape(circle);
-	//b2body.userData = {element: element};
+	b2body.userData = {element: element};
 
-	//b2body.position.Set( Math.random() * stage[2], Math.random() * -200 );
-	//b2body.linearVelocity.Set( Math.random() * 400 - 200, Math.random() * 400 - 200 );
-	//bodies.push( world.CreateBody(b2body) );
+	b2body.position.Set( Math.random() * stage[2], Math.random() * -200 );
+	b2body.linearVelocity.Set( Math.random() * 400 - 200, Math.random() * 400 - 200 );
+	bodies.push( world.CreateBody(b2body) );
 }
 
 function createBall( x, y ) {
