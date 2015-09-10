@@ -1,0 +1,286 @@
+
+.fleft{
+    float:left;
+}
+.wcenter{
+    width:100%;
+    height:auto;
+    display:block;
+    position:relative;
+    text-align: center;
+    margin:0 auto;
+}
+.bg{
+    width: 100%;
+    height:auto;
+    display: block;
+    background: url("./huhu_simg/bg2.png");
+    z-index: 0;
+}
+.bgwave{
+    /*background: url("./huhu_simg/bg1.png");*/
+    display: block;
+    width: 150%;
+    height:auto;
+    position:relative;
+    z-index: 5;
+    margin-left:-50px;
+
+}
+.title{
+    display: block;
+    height:auto;
+    position:relative;
+    z-index: 35;
+    margin-left:15px;
+    -webkit-animation:titleanime 6s infinite linear ;
+    -moz-animation:titleanime 6s infinite linear;
+    -ms-animation:titleanime 6s infinite linear;
+    -o-animation:titleanime 6s infinite linear;
+    animation:titleanime 6s infinite linear;
+}
+.cloud1{
+    display: block;
+    height:auto;
+    position:relative;
+    z-index: 35;
+    margin-left:15px;
+    -webkit-animation:cloud1anime 3s infinite linear ;
+    -moz-animation:cloud1anime 3s infinite linear;
+    -ms-animation:cloud1anime 3s infinite linear;
+    -o-animation:cloud1anime 3s infinite linear;
+    animation:cloud1anime 3s infinite linear;
+}
+.cloud2{
+    display: block;
+    height:auto;
+    position:relative;
+    z-index: 35;
+    margin-left:140px;
+    margin-top:20px;
+    -webkit-animation:cloud2anime 3s infinite linear ;
+    -moz-animation:cloud2anime 3s infinite linear;
+    -ms-animation:cloud2anime 3s infinite linear;
+    -o-animation:cloud2anime 3s infinite linear;
+    animation:cloud2anime 3s infinite linear;
+}
+
+
+.waveposition1{
+    display: block;
+    width: 150%;
+    height:auto;
+    position:relative;
+    z-index: 15;
+    left:-15px;
+    margin-top:-55px;
+}
+
+.waveposition2{
+    display: block;
+    width: 150%;
+    height:auto;
+    position:relative;
+    z-index: 15;
+    left:-50px;
+    margin-top:-45px;
+}
+.waveposition3{
+    display: block;
+    width: 150%;
+    height:auto;
+    position:relative;
+    z-index: 25;
+    left:-15px;
+    margin-top:-100px;
+}
+
+.waveposition4{
+    display: block;
+    width: 150%;
+    height:auto;
+    position:relative;
+    z-index: 30;
+    left:-50px;
+    margin-top:-65px;
+}
+.waveposition5{
+    display: block;
+    width: 150%;
+    height:auto;
+    position:relative;
+    z-index: 35;
+    left:-15px;
+    margin-top:-45px;
+}
+
+.waveposition6{
+    display: block;
+    width: 150%;
+    height:auto;
+    position:relative;
+    z-index: 40;
+    left:-50px;
+    margin-top:-45px;
+}
+/*.cloud{*/
+    /*position:relative;*/
+    /*margin-top:30px;*/
+    /*margin-left:50px;*/
+/*}*/
+.island{
+    position: relative;
+    z-index: 10;
+    margin-top: -110px;
+    margin-left:10px;
+    -webkit-animation:islandanime 3s infinite linear ;
+    -moz-animation:islandanime 3s infinite linear;
+    -ms-animation:islandanime 3s infinite linear;
+    -o-animation:islandanime 3s infinite linear;
+    animation:islandanime 3s infinite linear;
+}
+.fish{
+    position: relative;
+    z-index:20;
+    margin-top: -120px;
+    margin-left:50px;
+    -webkit-animation:fishanime 3s infinite linear ;
+    -moz-animation:fishanime 3s infinite linear;
+    -ms-animation:fishanime 3s infinite linear;
+    -o-animation:fishanime 3s infinite linear;
+    animation:fishanime 3s infinite linear;
+}
+.boat{
+    position: relative;
+    z-index:30;
+    margin-top: -180px;
+    margin-left:180px;
+    -webkit-animation:boatanime 3s infinite linear ;
+    -moz-animation:boatanime 3s infinite linear;
+    -ms-animation:boatanime 3s infinite linear;
+    -o-animation:boatanime 3s infinite linear;
+    animation:boatanime 3s infinite linear;
+}
+.hoop{
+    position: relative;
+    z-index:35;
+    margin-top: -100px;
+    margin-left:30px;
+    -webkit-animation:hoopanime 3s infinite linear ;
+    -moz-animation:hoopanime 3s infinite linear;
+    -ms-animation:hoopanime 3s infinite linear;
+    -o-animation:hoopanime 3s infinite linear;
+    animation:hoopanime 3s infinite linear;
+}
+.naipaopao{
+    position:relative;
+    margin:0 auto;
+    -webkit-animation:balloonanime 3s infinite linear ;
+    -moz-animation:balloonanime 3s infinite linear;
+    -ms-animation:balloonanime 3s infinite linear;
+    -o-animation:balloonanime 3s infinite linear;
+    animation:balloonanime 3s infinite linear;
+}
+.wave1{
+    -webkit-animation:wave1amime 3s infinite linear ;
+    -moz-animation:wave1amime 3s infinite linear;
+    -ms-animation:wave1amime 3s infinite linear;
+    -o-animation:wave1amime 3s infinite linear;
+    animation:wave1amime 3s infinite linear;
+    /*-webkit-transition-property:all;*/
+    /*-webkit-transition-duration:3000ms;*/
+    /*-webkit-transition-timing-function:ease;*/
+}
+
+.wave2{
+    -webkit-animation:wave2amime 4s infinite linear ;
+    -moz-animation:wave2amime 4s infinite linear;
+    -ms-animation:wave2amime 4s infinite linear;
+    -o-animation:wave2amime 4s infinite linear;
+    animation:wave2amime 4s infinite linear;
+    /*-webkit-transition-property:all;*/
+    /*-webkit-transition-duration:3000ms;*/
+    /*-webkit-transition-timing-function:ease;*/
+}
+
+
+@-webkit-keyframes wave1amime {
+     /*0% {-webkit-transform:translate(-50px, 0px) }*/
+    /*50% {-webkit-transform:translate(0px, 0px) }*/
+     /*100% {-webkit-transform:translate(50px, 0px) }*/
+    0% {margin-left:-50px; }
+    50% {margin-left:0px;  }
+    100% {margin-left:50px; }
+}
+@-webkit-keyframes wave2amime {
+    0% {margin-left:50px; }
+    50% {margin-left:0px;  }
+    100% {margin-left:-50px; }
+}
+
+@-webkit-keyframes hoopanime {
+    0% {margin-left:0px;}
+    25% { -webkit-transform:translate(30px, -10px) rotateZ(30deg) }
+    50% {-webkit-transform:translate(30px, 10px)  rotateZ(200deg) }
+    /*70% {-webkit-transform:translate(5px, 15px)  rotateZ(270deg) }*/
+    100% {-webkit-transform:translate(0px, 0px)  rotateZ(15deg) }
+}
+@-webkit-keyframes boatanime {
+    0% {-webkit-transform:translate(0px, 0px) }
+    33% {-webkit-transform:translate(15px, -15px)  rotateZ(-30deg) }
+    66% {-webkit-transform:translate(30px, -10px) }
+    /*75% {-webkit-transform:translate(5px, -5px)  rotateZ(15deg) }*/
+    100% {-webkit-transform:translate(0px, 0px) }
+}
+@-webkit-keyframes fishanime {
+    0% {-webkit-transform:translate(0px, 0px) }
+    25% {-webkit-transform:translate(15px, -50px)  rotateZ(50deg) }
+    50% {-webkit-transform:translate(50px, -30px)  rotateZ(20deg) }
+    75% {-webkit-transform:translate(20px, 5px)  rotateZ(15deg) }
+    100% {-webkit-transform:translate(0px, 0px) }
+}
+@-webkit-keyframes islandanime {
+    0% {-webkit-transform:translate(0px, 10px) }
+    15% {-webkit-transform:translate(-10px, 0px)  rotateZ(2deg) }
+    30% {-webkit-transform:translate(-20px, -10px)  rotateZ(5deg) }
+    40% {-webkit-transform:translate(-15px, 0px)  rotateZ(10deg) }
+    65% {-webkit-transform:translate(10px, -5px)  rotateZ(-5deg) }
+    75% {-webkit-transform:translate(20px, -10px)  rotateZ(-5deg) }
+    85% {-webkit-transform:translate(10px, -3px)  rotateZ(-2deg) }
+    100% {-webkit-transform:translate(0px, 10px) }
+}
+@-webkit-keyframes balloonanime {
+    0% {-webkit-transform:translate(0px, 10px) }
+    15% {-webkit-transform:translate(10px, 0px)  rotateZ(2deg) }
+    30% {-webkit-transform:translate(20px, -10px)  rotateZ(15deg) }
+    50% {-webkit-transform:translate(15px, 0px)  rotateZ(10deg) }
+    65% {-webkit-transform:translate(5px, -5px)  rotateZ(-5deg) }
+    75% {-webkit-transform:translate(-10px, -10px)  rotateZ(-2deg) }
+    85% {-webkit-transform:translate(-15px, -3px)  rotateZ(-2deg) }
+    100% {-webkit-transform:translate(0px, 10px) }
+}
+
+@-webkit-keyframes cloud1anime {
+     0% {-webkit-transform:translate(0px, 10px) }
+     15% {-webkit-transform:translate(20px, 0px)  rotateZ(2deg) }
+     30% {-webkit-transform:translate(40px, -10px)  rotateZ(15deg) }
+     50% {-webkit-transform:translate(60px, 0px)  rotateZ(10deg) }
+     65% {-webkit-transform:translate(80px, -5px)  rotateZ(-5deg) }
+     75% {-webkit-transform:translate(100px, -10px)  rotateZ(-2deg) }
+     85% {-webkit-transform:translate(120px, -3px)  rotateZ(-2deg) }
+     100% {-webkit-transform:translate(140px, 10px) }
+ }
+@-webkit-keyframes cloud2anime {
+    0% {-webkit-transform:translate(0px, 10px) }
+    15% {-webkit-transform:translate(20px, 0px)  rotateZ(2deg) }
+    30% {-webkit-transform:translate(40px, -10px)  rotateZ(15deg) }
+    50% {-webkit-transform:translate(60px, 0px)  rotateZ(10deg) }
+    65% {-webkit-transform:translate(80px, -5px)  rotateZ(-5deg) }
+    75% {-webkit-transform:translate(100px, -10px)  rotateZ(-2deg) }
+    85% {-webkit-transform:translate(120px, -3px)  rotateZ(-2deg) }
+    100% {-webkit-transform:translate(140px, 10px) }
+}
+@-webkit-keyframes titleanime {
+    0% {-webkit-transform:translate(300px, 0px) }
+    100% {-webkit-transform:translate(-300px, 0) }
+}
