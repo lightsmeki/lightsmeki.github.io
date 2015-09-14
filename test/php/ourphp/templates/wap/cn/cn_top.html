@@ -1,0 +1,42 @@
+<div class="head">
+	<div class="nav"><a href="#menu"><img src="[.$templatepath.]ourphp_ui/images/nav.png"></a></div>
+	<div class="logo"><a href="/client/wap/"><img src="[.$ourphp_web.weblogo.]"></a></div>
+	<div class="user"><a href="#" id="show"><img src="[.$templatepath.]ourphp_ui/images/user.png"></a></div>
+</div>
+
+<div id="page">
+	<nav id="menu">
+		<ul>
+			<li class="Selected"><a href="">网站导航</a></li>
+			[.callcolumn id="0" row="20" lang="cn" type="td" name="callcolumn".]
+			<li><a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]">[.$callcolumn.title.]</a></li>
+			[./callcolumn.]
+		</ul>
+	</nav>
+</div>
+
+		<div class="clear"></div>
+		
+		<div id="userlogin" class="hide userloign">
+		  <form name="form1" method="post" action="[.$webpath.]client/wap/ourphp_play.class.php?ourphp_cms=login">
+		  <div class="index_login">
+		  [.if isset($smarty.session.username).]
+		  <p style="margin-top:5px;"><a href="?cn-usercenter.html" class="w300 h30 b-r10 show btgb">进入会员中心</a></p>
+		  [.else.]
+				<div class="index_user_left">账号:</div><div class="index_user_right">
+				  <input type="text" name="useremail" class="w230 h25 b-r10 logininput">
+				</div>
+				<div class="index_user_left">密码:</div><div class="index_user_right">
+				  <input type="password" name="password" class="w230 h25 b-r10 logininput">
+				</div>
+			<div class="clear"></div>
+			<p style="margin-top:10px;">
+			<input type="hidden" name="lang" value="cn" />
+			<input type="hidden" name="type" value="login" />
+		    <input type="submit" name="Submit" class="w300 h30 b-r10 show btgb border" value="提交登录"></p>
+			<p style="margin-top:5px;"><a href="?cn-userreg.html" class="w300 h30 b-r10 show btgb">免费注册</a></p>
+		  [./if.]
+			<p style="margin-top:5px;"><a href="#" id="hide" class="w300 h30 b-r10 show btgb">关&nbsp;&nbsp;&nbsp;&nbsp;闭</a></p>
+		  </div>
+		  </form>
+	  </div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	
+	  <div class="clear"></div>
+	  <div class="productlist">
+	  	<h1><span class="f1">&nbsp;</span>品牌商品&nbsp;&nbsp;[<a href="#" id="showclass">更多品牌</a>]</h1>
+		<div class="clear"></div>
+		
+	  <div id="classlist" class="hide newsclass">
+	  		<li>选择品牌:</li>
+			[.foreach $brandclass as $op.]
+			<li><a href="[.$op.wapurl.]" title="[.$op.title.]">[.$op.title.]</a></li>
+			[./foreach.]
+			<li><a href="#" id="hideclass">[关闭]</a></li>
+	  </div>
+	  
+		<div class="clear"></div>
+	  	<ul>
+			[.brandlist id="$listid" name="brand".]
+			<li><a href="[.$brand.wapurl.]" title="[.$brand.title.]"><img src="[.$brand.minimg.]"></a>
+			<p><a href="[.$brand.wapurl.]" title="[.$brand.title.]">[.$brand.title.]</a></p></li>
+			[./brandlist.]
+		</ul>
+		
+		<div class="clear"></div>
+		<div class="page">[.$ourphppage.]</div>
+	  </div>
+	  
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

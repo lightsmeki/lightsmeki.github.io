@@ -1,0 +1,46 @@
+    <div id="full-screen-slider">
+    <ul id="slides">
+	
+	
+				[.banner lang="cn" row="5" name="banner" id="0".]
+    	        <li style="background:url('[.$banner.img.]') no-repeat center top">
+                <a></a>
+                </li>
+				[./banner.]
+
+				
+    </ul>
+  </div>
+  <div class="notice">
+  <div class="main">
+    <div class="noticetxt">
+      <marquee>
+	  
+      这里是公告，打开模板来修改这里的内容。      
+	  
+	  </marquee>
+    </div>
+    <div class="search">
+      <form name="search" method="post" action="[.$webpath.]search.php?temp=search">
+        <input type="text" class="text" name="content" id="content" value="请输入搜索关键词" onfocus="this.value=''" onblur="if(!value){value=defaultValue}"/>
+        <div class="select">
+          <select id="sid" style="display: none" name="sid">
+                        <option value="article" selected="selected">文章</option>
+                        <option value="product" >商品</option>
+                        <option value="photo" >案例</option>
+						<option value="video" >视频</option>
+						<option value="down" >文档</option>
+						<option value="job" >招聘</option>
+          </select>
+        </div>
+        <input type="hidden" name="lang" value="cn" />
+        <input type="submit" title="搜索" class="button" value="搜索"/>
+      </form>
+      <script type=text/javascript>
+                jQuery(document).ready(function() {
+                    jQuery("#sid").selectbox();
+                });
+      </script> 
+    </div>
+  </div>
+</div>

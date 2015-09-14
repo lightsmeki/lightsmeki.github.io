@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>企业商城 - [.$ourphp_web.website.]</title>
+<meta name="keywords" content="[.$ourphp_web.webkeywords.]" />
+<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+<meta name="Author" content="www.ourphp.net" />
+<LINK href="[.$templatepath.]shop/ourphp_shop.css" rel=stylesheet>
+<script language="JavaScript" type="text/javascript" src="[.$templatepath.]js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var mod_menu=$(".mod-menu");//导航模块区
+	var menu=function(){
+		var menuItem=$(".menu-item li");//选择导航列表
+		menuItem.each(function(){
+			var _index=$(this).index();//获取当前选择菜单列表的索引
+			$(this).mouseenter(function(){
+				var y = $(this).position().top+1;//获取当前鼠标滑过的列表的顶部坐标
+				$(".menu-cont").show();
+				$(".menu-cont").css("top",y);//需要显示的对应索引内容
+				$(this).addClass("mouse-bg").siblings().removeClass("mouse-bg");
+				$(".menu-cont>div").eq(_index).show().siblings().hide();
+			});
+		});/*导航菜单菜单*/
+		$(".mod-menu").mouseleave(function(){
+			$(".menu-cont").hide();
+			menuItem.removeClass("mouse-bg");
+		})
+	}//展开二级菜单	
+	menu();//执行展开二级菜单函
+});
+function  showImg(){
+document.getElementById("wxImg").style.display='block';
+}
+function hideImg(){
+document.getElementById("wxImg").style.display='none';
+}
+</script>
+
+</head>
+<body>
+[.assign var="show" value="1".]
+[.include file="cn/cn_shoptop.html".]
+
+	
+	</div>
+</div>
+<div class="clear h20"></div>
+	<div class="center">
+		<div class="bmx">
+			<a href="/">网站首页</a> 
+			[.foreach $crumbs as $op.]
+			>> <a href="[.$op.url.]" title="[.$op.title.]">[.$op.title.]</a>
+			[./foreach.]
+		</div>
+		<div class="clear"></div>
+		<div class="listnav">
+			<span>品牌导航:</span>
+			[.foreach $brandclass as $op.]
+			<a href="[.$op.url.]" title="[.$op.title.]">[.$op.title.]</a>
+			[./foreach.]
+		</div>
+		<div class="clear h20"></div>
+		<div class="shoplist">
+			<ul>
+				[.brandlist id="$listid" name="brand".]
+				<li><a href="[.$brand.url.]" title="[.$brand.title.]"><img src="[.$brand.minimg.]" width="210" height="260" /><p>[.$brand.title|truncate:40:"...".]</p></a>
+				<p><del>￥[.$brand.market.]</del>&nbsp;&nbsp;<span>￥[.$brand.webmarket.]</span></p>
+				</li>
+				[./brandlist.]
+			</ul>
+		</div>
+		<div class="clear h20"></div>
+		<div class="page">[.$ourphppage.]</div>
+	</div>
+<div class="clear h20"></div>
+[.include file="cn/cn_shopfoot.html".]
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+[.include file="cn/cn_top.html".]
+	  <div class="clear"></div>
+		<div class="usertop">
+			<div class="usercenter2">
+				<div class="usertx"><img src="/skin/user.png" class="touxiang b-r30"></div>
+				<div class="userjf">
+					<p>账号:[.$user.email.]</p>
+					<p>现金:[.$user.money.] 元</p>
+					<p>积分:[.$user.integral.] 分</p>
+					<p>会员组:[.$user.class.]</p>
+				</div>
+			</div>
+		</div>
+	  <div class="clear"></div>
+	  <div class="usernav">
+	  	<ul>
+			<li><a href="[.$webpath.]client/wap/?cn-usercenter.html" class="goup">返回上一页</a></li>
+		</ul>
+	  </div>
+	  <div class="clear"></div>
+	[.*订单处理模板开始，如果更换模板请从这里复制*.]
+	<style type="text/css">td { padding:10px;}</style>
+		<form id="form1" name="form1" method="post" action="[.$webpath.]client/wap/?cn-shoppingorders.html-&ourphp_cms=buyok&type=wap" class="registerform">
+		  <table width="100%" border="0" cellpadding="10" bgcolor="#ffffff" style="font-size:14px;">
+			<tr>
+			  <td colspan="6" bgcolor="#CFEBF3">我购买的宝贝：</td>
+			</tr>
+			<tr>
+			  <td width="20%">&nbsp;</td>
+			  <td>商品信息</td>
+			</tr>
+			[.foreach $orderslist as $op.]
+			<tr bgcolor="[.cycle values="#f0f0f0,#f5f5f5".]">
+			  <td rowspan="2"><div align="center">订单([.$op.i.])</div></td>
+			  <td>
+			  <p>[.$op.title|truncate:33:"...".]<input type="hidden" name="id[]" value="[.$op.id.]" /></p>
+			  <p>规格/备注：[.$op.pratt.]([.$op.text.])</p>
+			  <p>网站价格：[.$op.webmarket.]&nbsp;元</p>
+			  <p style="color:#FF3300;">您的价格：[.$op.usermarket.]&nbsp;元</p>
+			  <p>数量/重量：[.$op.num.]&nbsp;&nbsp;/&nbsp;&nbsp;[.$op.weight.]KG</p>			  </td>
+			</tr>
+			<tr bgcolor="[.cycle values="#f0f0f0,#f5f5f5".]">
+			  <td>
+			  <p>收件人信息：[.$op.username.]__[.$op.usertel.]__[.$op.useradd.]</p>
+			  <p>运费：[.$op.freight.]元</p>			  </td>
+			</tr>
+			<tr>
+			  <td colspan="6"><div style="height:10px; border-bottom:1px #CCCCCC dashed;"></div></td>
+			</tr>
+			[./foreach.]
+		  </table>
+		  
+		  <div style="clear:both;">&nbsp;</div>
+		
+		<table width="100%" border="0" align="left" cellpadding="10" style="font-size:14px;">
+		  <tr>
+			<td width="30%"><div align="right">共计付款：</div></td>
+			<td width="70%"><span style="font-size:20px; color:#FF3300; font-family:Arial, Helvetica, sans-serif">[.$op.total.]</span>&nbsp;&nbsp;元
+			&nbsp;&nbsp;&nbsp;<span style="font-size:16px; font-family:Arial, Helvetica, sans-serif">+&nbsp;[.$op.freightt.]&nbsp;&nbsp;元(运费)</span>
+			</td>
+		  </tr>
+		  <tr>
+			<td><div align="right">账户余额：</div></td>
+			<td><span style="font-size:20px; color: #999999; font-family:Arial, Helvetica, sans-serif">[.$userview.money.]</span>&nbsp;&nbsp;元</td>
+		  </tr>
+		  <tr>
+			<td colspan="2">
+			[.if $userview.money < $op.total+$op.freightt.]
+			  <input id="x" type="button" value="付 款" style="padding:5px; border:0px; height:30px; width:100px;" />
+			  <p>&nbsp;</p>
+			  <p>对不起，您的账号余额无法支付订单，请先<a href="[.$webpath.]client/wap/?cn-userpay.html">[<font color="#0099CC">点击充值</font>]</a>后在试！</p>
+				<script>
+				document.getElementById("x").disabled=true;
+				</script>
+			[.else.]
+				<input type="submit" name="Submit" value="付 款" style="padding:5px; border:0px; height:30px; background:#FF3300; color:#FFFFFF; width:100px;" class="b-r10" onclick="javascript:return confirm('付款后订单即时生成，无法后退等操作。')" />
+			[./if.]
+			</td>
+		  </tr>
+		</table>
+		</form>
+	[.*订单模板结束*.]
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+</div>
+</body>
+</html>

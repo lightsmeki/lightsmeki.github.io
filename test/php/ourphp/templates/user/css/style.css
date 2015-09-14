@@ -1,0 +1,63 @@
+* {
+	margin:0 auto;
+	list-style:none;
+	padding:0px;
+}
+a {
+	color:#0268cd;
+	text-decoration:none;
+}
+a:hover {
+	color:#ff0000;
+	text-decoration:underline;
+}
+a img {
+	border:none;
+}
+.clear {
+	clear:both;
+}
+body {
+	font-size:12px;
+	background:url(../images/gb2.gif);
+}
+div,ul,li,dl,dt,dd,form {
+	list-style:none;
+}
+tr,td { padding:3px;}
+.h20 { height:20px;}
+.h40 { height:40px;}
+.ourphp_head { width:100%; height:90px; border-bottom:1px #CCCCCC solid; background:#FFFFFF;}
+.ourphp_center { width:980px;}
+.ourphp_logo { width:420px; float:left;}
+.ourphp_link { float:right; margin-right:20px;}
+.ourphp_link p{ font-size:16px; color:#999999; margin-top:20px;}
+.ourphp_link p a{ color:#333333}
+.ourphp_center p { font-size:12px; color: #666666; text-align:center; height:40px; line-height:40px;}
+.ourphp_login { width:890px; height:auto; overflow:hidden; padding:40px; border:7px #CCCCCC solid; background:#FFFFFF;}
+.ourphp_left{ width:500px; border-right:1px #CCCCCC solid; float:left;}
+.ourphp_left h1 { font-size:16px; color:#666666; height:30px; line-height:30px; float:left;}
+.ourphp_right{ float:left; width:350px;}
+.textarea { width:330px; height:330px; border:1px #CCCCCC solid; padding:10px; margin-left:20px; color:#666666}
+
+.input { width:270px; height:15px; line-height:15px; border:1px #CCCCCC solid; color:#999999; padding:5px;}
+.input2 { width:270px; height:70px; line-height:15px; border:1px #CCCCCC solid; color:#999999; padding:5px;}
+.input3 { width:90px; height:15px; line-height:15px; border:1px #CCCCCC solid; color:#999999; padding:5px;}
+.regtologin { background:url(../../../skin/reg.gif) left no-repeat; width:210px; height:70px; float:left; margin-left:15px; padding:30px 0px 0px 30px;}
+.regtologin a{ font-size:36px; color:#666666; }
+
+.ourphp_user_left { width:220px; float:left;}
+.user_touxiang { border:1px #CCCCCC solid; width:224px; padding:5px; text-align:center;}
+.ourphp_user_left ul { padding:0px;}
+.ourphp_user_left ul li { width:220px; height:35px; margin-top:10px; border:1px #CCCCCC solid; line-height:35px; font-size:14px; padding-left:15px; }
+.ourphp_user_left ul li a { color:#666666; display:block;position:absolute;}
+.ourphp_user_left ul li span { float:right; margin-right:15px;}
+.shoppingcart {  width:14px; height:14px; font-size:14px; line-height:14px; text-align:center; position:relative; left:50px; top:-40px; background:#FF0000; color:#FFFFFF;}
+
+.ourphp_user_right { width:600px; height:auto; overflow:hidden; float:left; margin-left:60px;}
+.ourphp_user_up { width:600px; height:100px; border-bottom:1px #CCCCCC dashed;}
+.ourphp_user_up p { width:200px; height:35px; line-height:35px; font-size:14px; color:#666666; float:left;}
+.ourphp_user_down { width:600px;}
+.ourphp_user_down h1{ font-size:14px; height:40px; line-height:40px; color:#666666; font-weight:500;}
+
+.ourphp_textarea { width:400px; height:100px; border:1px #CCCCCC solid;}

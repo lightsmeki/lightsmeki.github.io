@@ -1,0 +1,255 @@
+<div class="top">
+	<div class="center">
+		<div class="topleft">欢迎来到&nbsp;[.$ourphp_web.webname.]&nbsp;商城!&nbsp;
+		[.if isset($smarty.session.username).]
+		您好！<a href="client/user/">[.$smarty.session.username.]</a>
+		[.else.]
+		请&nbsp;<a href="/client/user/?cn-login.html">登录</a>&nbsp;或&nbsp;<a href="/client/user/?cn-reg.html">免费注册</a>
+		[./if.]
+		</div>
+		<div class="topright">
+		<p class="mobile"><a href="javascript:void(0)" onMouseOut="hideImg()"  onmouseover="showImg()">手机 / 微信</a>
+		<div id="wxImg" style="display:none; width:300px;height:190px;back-ground:#f00;position:absolute;top:36px; background:#f6f6f6; z-index:10;">
+			<p style="float:left; width:150px; text-align:center;"><img src="[.$templatepath.]images/erweima.png" width="150" height="150" /><br />手机访问扫我</p>
+			<p style="float:left; width:150px; text-align:center;"><img src="[.$templatepath.]images/erweima2.png" width="150" height="150" /><br />微信关注扫我</p>
+		</div>
+		</p>
+		<p>&nbsp;|&nbsp;</p>
+		<p><a href="/">网站首页</a></p>
+		<p>&nbsp;|&nbsp;</p>
+		<p><a href="/?cn-about-9.html">关于我们</a></p>
+		<p>&nbsp;|&nbsp;</p>
+		<p><a href="#">联系我们</a></div></p>
+	</div>
+</div>
+<div class="clear h20"></div>
+<div class="center">
+	<div class="logo"><img src="[.$ourphp_web.weblogo.]" /><img src="[.$templatepath.]shop/logo2.jpg" /></div>
+	<div class="search">
+		<p>
+			<form name="search" method="post" action="[.$webpath.]search.php?temp=search">
+			<input type="text" class="text" name="content" value="请输入搜索关键词" onfocus="this.value=''" onblur="if(!value){value=defaultValue}" />
+			<input type="submit" title="商品搜索" class="button" value="商品搜索"/>
+			<input type="hidden" name="lang" value="cn" />
+	<input type="hidden" name="sid" value="product" />
+			</form>
+		</p>
+		<p class="ss">大家都在搜:
+			[.sql mysql="SELECT * FROM `ourphp_search` order by OP_Searchclick desc limit 0,5" name="sql".]
+			<a href="search.php?cn-&content=[.$sql.OP_Searchtext.]&lang=cn&sid=product">[.$sql.OP_Searchtext.]</a>&nbsp;
+			[./sql.]
+		</p>
+	</div>
+</div>
+<div class="clear h20"></div>
+<div class="center">
+
+[.if $show == 0.]
+	<div class="leftclass">
+	[.else.]
+	<div class="leftclass2">
+    <script language="javascript" type="text/javascript">
+        function click_a(divDisplay)
+        {
+            if(document.getElementById(divDisplay).style.display != "block")
+            {
+                document.getElementById(divDisplay).style.display = "block";
+            }
+            else
+            {
+                document.getElementById(divDisplay).style.display = "none";
+            }
+        }
+    </script>
+[./if.]
+
+[.*左则导航*.]
+<div class="mod-menu">
+	<h1><a onclick="return click_a('divOne_1')" style="cursor:pointer;">全部商品分类</a></h1>
+	<ul class="menu-item" [.if $show != 0.] id="divOne_1" style="display:none;" [./if.]>
+	
+		[.callcolumn id="2" row="6" lang="cn" type="td" name="callcolumn".]
+		<li><a href="[.$callcolumn.url.]" title="[.$callcolumn.title.]">[.$callcolumn.title.]</a></li>
+		[./callcolumn.]
+		
+	</ul>
+	
+	<div class="menu-cont" style="display:none;top:241px;">
+	
+		<div class="menu-cont-list" style="display:none;">
+			<ul>
+				<li>
+					<h3><a href="#">手机</a></h3>
+					<div class="menu-list-link">
+						<a href="#">苹果手机</a>
+						<span class="long-string">|</span>
+						<a href="#">三星手机</a>
+						<span class="long-string">|</span>
+						<a href="#">联想手机</a>
+						<span class="long-string">|</span>
+						<a href="#">小米手机</a>
+						<span class="long-string">|</span>
+						<a href="#">魅族手机</a>
+						<span class="long-string">|</span>
+						<a href="#">小米NOTE</a>
+						<span class="long-string">|</span>
+						<a href="#">三星NOTE</a>
+					</div>
+				</li>
+				<li>
+					<h3><a href="#">电脑</a></h3>
+					<div class="menu-list-link">
+						<a href="#">三星笔记本</a>
+						<span class="long-string">|</span>
+						<a href="#">苹果笔记本</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="menu-cont-list" style="display:none;">
+			<ul>
+				<li>
+					<h3><a href="#">男装</a></h3>
+					<div class="menu-list-link">
+						<a href="#">外套</a>
+						<span class="long-string">|</span>
+						<a href="#">风衣</a>
+						<span class="long-string">|</span>
+						<a href="#">小衫</a>
+					</div>
+				</li>
+				<li>
+					<h3><a href="#">女装</a></h3>
+					<div class="menu-list-link">
+						<a href="#">连衣裙</a>
+						<span class="long-string">|</span>
+						<a href="#">貂皮</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="menu-cont-list" style="display:none;">
+			<ul>
+				<li>
+					<h3><a href="#">男鞋</a></h3>
+					<div class="menu-list-link">
+						<a href="#">皮鞋</a>
+						<span class="long-string">|</span>
+						<a href="#">布鞋</a>
+						<span class="long-string">|</span>
+						<a href="#">运动鞋</a>
+					</div>
+				</li>
+				<li>
+					<h3><a href="#">女包</a></h3>
+					<div class="menu-list-link">
+						<a href="#">单肩包</a>
+						<span class="long-string">|</span>
+						<a href="#">双肩包</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="menu-cont-list" style="display:none;">
+			<ul>
+				<li>
+					<h3><a href="#">NIKE</a></h3>
+					<div class="menu-list-link">
+						<a href="#">皮鞋</a>
+						<span class="long-string">|</span>
+						<a href="#">布鞋</a>
+						<span class="long-string">|</span>
+						<a href="#">运动鞋</a>
+					</div>
+				</li>
+				<li>
+					<h3><a href="#">ADIDAS</a></h3>
+					<div class="menu-list-link">
+						<a href="#">单肩包</a>
+						<span class="long-string">|</span>
+						<a href="#">双肩包</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="menu-cont-list" style="display: none;">
+			<ul>
+				<li>
+					<h3><a href="#">周大福</a></h3>
+					<div class="menu-list-link">
+						<a href="#">项链</a>
+						<span class="long-string">|</span>
+						<a href="#">手镯</a>
+						<span class="long-string">|</span>
+						<a href="#">配饰</a>
+					</div>
+				</li>
+				<li>
+					<h3><a href="#">玉品</a></h3>
+					<div class="menu-list-link">
+						<a href="#">玉石</a>
+						<span class="long-string">|</span>
+						<a href="#">玉镯</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="menu-cont-list" style="display:none;">
+			<ul>
+				<li>
+					<h3><a href="#">欧莱雅</a></h3>
+					<div class="menu-list-link">
+						<a href="#">补水套装</a>
+						<span class="long-string">|</span>
+						<a href="#">粉底</a>
+						<span class="long-string">|</span>
+						<a href="#">彩妆</a>
+					</div>
+				</li>
+				<li>
+					<h3><a href="#">男士护肤</a></h3>
+					<div class="menu-list-link">
+						<a href="#">护手霜</a>
+						<span class="long-string">|</span>
+						<a href="#">护肤品</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="menu-cont-list" style="display:none;">
+			<ul>
+				<li>
+					<h3><a href="#">其它</a></h3>
+					<div class="menu-list-link">
+						<a href="#">其它</a>
+						<span class="long-string">|</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+[.*左则导航结束*.]
+
+	
+	</div>
+	[.if $show == 0.]
+	<div class="rightnav">
+		[.else.]
+	<div class="rightnav2">
+	[./if.]
+		<div class="nav">
+			<li><a href="/">返回网站</a></li><span>|</span>
+			<li><a href="/?cn-shop.html">商城首页</a></li><span>|</span>
+			<li><a href="#">最新商品</a></li><span>|</span>
+			<li><a href="#">特价商品</a></li><span>|</span>
+			<li><a href="/?cn-product-11.html">积分兑换</a></li>
+		</div>
+		<div class="clear"></div>

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物车 - [.$ourphp_web.website.]</title>
+<meta name="keywords" content="[.$ourphp_web.webkeywords.]" />
+<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+<meta name="Author" content="www.ourphp.net" />
+<LINK href="[.$templatepath.]shop/ourphp_shop.css" rel=stylesheet>
+<script language="JavaScript" type="text/javascript" src="[.$templatepath.]js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var mod_menu=$(".mod-menu");//导航模块区
+	var menu=function(){
+		var menuItem=$(".menu-item li");//选择导航列表
+		menuItem.each(function(){
+			var _index=$(this).index();//获取当前选择菜单列表的索引
+			$(this).mouseenter(function(){
+				var y = $(this).position().top+1;//获取当前鼠标滑过的列表的顶部坐标
+				$(".menu-cont").show();
+				$(".menu-cont").css("top",y);//需要显示的对应索引内容
+				$(this).addClass("mouse-bg").siblings().removeClass("mouse-bg");
+				$(".menu-cont>div").eq(_index).show().siblings().hide();
+			});
+		});/*导航菜单菜单*/
+		$(".mod-menu").mouseleave(function(){
+			$(".menu-cont").hide();
+			menuItem.removeClass("mouse-bg");
+		})
+	}//展开二级菜单	
+	menu();//执行展开二级菜单函
+});
+function  showImg(){
+document.getElementById("wxImg").style.display='block';
+}
+function hideImg(){
+document.getElementById("wxImg").style.display='none';
+}
+</script>
+
+</head>
+<body>
+[.assign var="show" value="1".]
+[.include file="cn/cn_shoptop.html".]
+
+	
+	</div>
+</div>
+<div class="clear h20"></div>
+	<div class="center">
+		[.*购物车模板开始，如果更换模板请从这里复制*.]
+		<script> 
+		$(function(){ 
+			var _url = $('#siteurl').val();
+			$('.delete').click(function(){
+			  setTotal();
+			  t.hide();
+			});
+		
+			$(".add").click(function(){ 
+				var t=$(this).parent('li').find('input[class*=text_box]'); 
+				t.val(parseInt(t.val())+1); 
+				setTotal(); 
+			}); 
+		
+			$(".min").click(function(){ 
+				var t=$(this).parent('li').find('input[class*=text_box]'); 
+				t.val(parseInt(t.val())-1) 
+				if(parseInt(t.val())<1){ 
+					t.val(1); 
+				} 
+		
+			setTotal(); 
+		  });
+		
+		  $('.text_box').keyup(function(){
+			setTotal();
+		  });
+		  
+		  function setTotal(){ 
+			var s=0; 
+			$("#tab dt").each(function(){ 
+			  var numbers = parseInt($(this).find('input[class*=text_box]').val());
+			  if($.isNumeric(numbers))
+			  {
+					numbers = parseInt(numbers);
+			  }else
+			 {
+				numbers = 0;
+			 }
+			  $(this).find('input[class*=text_box]').val(numbers);
+			  s += numbers*parseFloat($(this).find('span[class*=price]').text()); 
+		
+				// bof 用ajax在_url中删除指定的购物车中$_SESSION相关信息
+				var pid =$(this).find('input[class*=product_id]');
+				$.ajax({
+					url:_url,
+					type: 'post',
+					data:{proid : pid.val()},
+					success: function(data){ 
+						// 回应    
+					}
+				}); 
+				// end
+			}); 
+			$("#total").html(s.toFixed(2)); 
+		  } 
+		 // setTotal(); 
+		
+		}); 
+		</script> 
+		<style type="text/css">
+			.min{ width:20px; height:30px; border:0px; float:left;}
+			.text_box { width:50px; height:28px; border:1px #CCCCCC solid; line-height:28px; float:left; text-align:center}
+			.add{ width:20px; height:30px; border:0px; float:left;}
+			td { padding:10px;}
+		</style>
+			<form id="form1" name="form1" method="post" action="[.$webpath.]?cn-shoppingorders.html-&ourphp_cms=buy" class="registerform">
+			<table width="100%" border="1" cellpadding="10" bordercolor="#CCCCCC" bgcolor="#FFFFFF" style="margin-bottom:30px; border-collapse:collapse;" id="tab">
+			<tr>
+				<td colspan="6"><img src="[.$webpath.]skin/shoppingcart.png" /></td>
+			  </tr>
+			  <tr style="background:url([.$webpath.]skin/clubgb.png) repeat-x;">
+				<td width="150"><div align="center">缩略图</div></td>
+				<td><div align="center">购物信息</div></td>
+				<td width="80"><div align="center">网站价格</div></td>
+				<td width="80"><div align="center">您的价格</div></td>
+				<td width="120"><div align="center">购买数量</div></td>
+				<td width="40">&nbsp;</td>
+			  </tr>
+			  
+			  [.foreach $shoppingcart as $op.]
+			  <tr>
+				<td rowspan="2"><div align="center"><img src="[.$op.img.]" width="130" height="130" /></div></td>
+				<td><p style="font-size:14px; color:#000000;">[.$op.title.]</p>
+				<p style="color: #999999; font-size:12px; margin-top:10px;">[.$op.attribute.]</p>
+				
+				<input type="hidden" name="ourphp_opcms[]" value="[.$op.id.]" />
+				<input type="hidden" name="ourphp_opcms[]" value="[.$op.title.]" />
+				<input type="hidden" name="ourphp_opcms[]" value="[.$op.attribute.]" />
+				<input type="hidden" name="ourphp_opcms[]" value="[.$op.weight.]" />
+				<input type="hidden" name="ourphp_opcms[]" value="[.$op.freight.]" />
+				</td>
+				<td rowspan="2" style="font-size:16px;">[.$op.webmarket.]元
+				<input type="hidden" name="ourphp_opcms[]" value="[.$op.webmarket.]" />		</td>
+				
+				
+				<td colspan="2" rowspan="2" style="font-size:16px;">
+					<dt>
+					  <table width="100%" border="0" cellpadding="10">
+						<tr>
+						  <td style="border-right:1px #CCCCCC solid; width:70px;"><span class="price" style="color:#cc0000">[.$op.usermarket.]</span>元<input type="hidden" name="ourphp_opcms[]" value="[.$op.usermarket.]" /></td>
+						  <td>
+								  <li>
+								  <input class="min" name="" type="button" value="-" /> 
+								  <input class="text_box" name="ourphp_opcms[]" type="text" value="[.$op.number.]" /> 
+								  <input class="add" name="" type="button" value="+" />
+								  </li>
+						  </td>
+						</tr>
+					  </table> 
+					</dt> 
+				</td>
+				
+				
+				<td rowspan="2" style="font-size:16px;"><div align="center"><a href="[.$webpath.]function/ourphp_play.class.php?ourphp_shopping=[.$op.cartid.]&lang=cn" onclick="javascript:return confirm('确认删除吗?')">删除</a></div></td>
+			  </tr>
+			  <tr>
+				<td>留言备注：
+				<input type="text" name="ourphp_opcms[]" style="width:300px; height:25px; line-height:25px; border:1px #CCCCCC solid;" />
+				[.*隐藏的表单元素，非常重要。更新模板时这里要保留不可以删除！ --开始*.]
+				<input type="hidden" name="ourphp_opcms[]" value="|" />
+				[.*隐藏的表单元素，非常重要。更新模板时这里要保留不可以删除！ --结束*.]
+				</td>
+			  </tr>
+			  [./foreach.]
+			  
+			  <tr>
+				<td colspan="2" rowspan="2"><table width="100%" border="0" cellpadding="10">
+				  <tr>
+					<td><div align="right">收货人姓名：</div></td>
+					<td><input name="shoppingname" type="text" style="width:300px; height:25px; line-height:25px; border:1px #CCCCCC solid; background:#FFFFFF;" value="[.$userop.name.]" datatype="*" />
+					<font color="#FF0000">*</font>
+					</td>
+				  </tr>
+				  <tr>
+					<td><div align="right">收货人电话：</div></td>
+					<td><input type="text" name="shoppingtel" style="width:300px; height:25px; line-height:25px; border:1px #CCCCCC solid; background:#FFFFFF;" value="[.$userop.tel.]" datatype="n" />
+					<font color="#FF0000">*</font>
+					</td>
+				  </tr>
+				  <tr>
+					<td><div align="right">收货地址：</div></td>
+					<td><input type="text" name="shoppingadd" style="width:300px; height:25px; line-height:25px; border:1px #CCCCCC solid; background:#FFFFFF;" value="[.$userop.add.]" datatype="*" />
+					<font color="#FF0000">*</font>
+					</td>
+				  </tr>
+				  <tr>
+					<td>&nbsp;</td>
+					<td><input type="submit" name="Submit" value="收银台结算" style="width:100px; height:30px; border:0px; background: #FF3300; color:#FFFFFF;" />&nbsp;<input name="button" type="button" style="width:100px; height:30px; border:0px; background:#0099FF; color:#FFFFFF;"  onclick=window.open("[.$webpath.]","_self") value="继续购物" />
+					
+			<link rel="stylesheet" href="[.$webpath.]function/plugs/Validform/style.css" type="text/css" />
+			<script type="text/javascript" src="[.$webpath.]function/plugs/Validform/Validform_v5.3.2.js"></script>
+			<script type="text/javascript">
+			$(function(){
+				$(".registerform").Validform();  //就这一行代码！;
+			})
+			</script>
+			
+					  </td>
+				  </tr>
+				</table></td>
+				<td colspan="4" valign="top">商品总价：
+				  <label id="total" style="font-size:16px; color:#CC0000; font-family: Verdana, Arial, Helvetica, sans-serif;">[.$op.total.]</label>元</td>
+				</tr>
+			</table>
+			</form>
+		[.*购物车模板结束*.]
+	</div>
+<div class="clear h20"></div>
+[.include file="cn/cn_shopfoot.html".]
+</body>
+</html>

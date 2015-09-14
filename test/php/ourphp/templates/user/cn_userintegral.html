@@ -1,0 +1,55 @@
+[.config_load file="../../config/ourphp.conf".]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员中心 - [.$ourphp_web.website.] </title>
+<link rel="stylesheet" href="[.$templatepath.]css/style.css" type="text/css" />
+[.#jq172#.]
+</head>
+
+<body>
+[.include file="cn_head.html".] 
+<div class="clear h40"></div>
+<div class="ourphp_login">
+
+	<div class="ourphp_user_left">
+		<div class="user_touxiang"><img src="[.$webpath.]skin/user.png" width="150" /></div>	
+		<div style="clear:both"></div>
+		[.include file="cn_leftnav.html".] 
+	</div>
+	<div class="ourphp_user_right">
+	
+	[.*积分领取开始*.]
+	<script src="../../function/plugs/layer/layer.min.js"></script>
+	<style type="text/css">
+	tr,td { padding:6px;}
+	</style>
+	  <table width="100%" border="1" bordercolor="#e7eff3" bgcolor="#ffffff" style="text-align:left; font-size:12px; border-collapse:collapse;">
+        <tr>
+          <td colspan="6">我的当前积分:<b>[.$user.integral.]</b>		  </td>
+        </tr>
+        <tr  style="background:url([.$webpath.]skin/clubgb.png) repeat-x;">
+          <td width="50"><div align="center">积分ID</div></td>
+          <td>积分名称</td>
+          <td width="60"><div align="center">可领积分</div></td>
+          <td width="140"><div align="center">领取状态</div></td>
+        </tr>
+		[.foreach $integrallist as $op.]
+        <tr bgcolor="[.cycle values="#ffffff,#f5f5f5".]">
+          <td><div align="center">[.$op.id.]</div></td>
+          <td>[.$op.name.]</td>
+          <td><div align="center">[.$op.integral.]</div></td>
+          <td><div align="center">[.if $op.confirm == 0.]<a href="ourphp_play.class.php?ourphp_cms=integral&id=[.$op.id.]&lang=[.$ip.lang.]">领取</a>[.elseif $op.confirm == 1.]</div>
+            <p align="center">已领取</p><p align="center">[.$op.lqtime.]</p>
+          <div align="center">[./if.]</div></td>
+        </tr>
+		[./foreach.]
+      </table>
+	  [.*领取积分结束*.]
+	  
+	</div>
+</div>
+[.include file="cn_foot.html".] 
+</body>
+</html>

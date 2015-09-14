@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	
+	  <div class="clear"></div>
+	  <div class="newslist">
+	  	<h1><span class="f1">&nbsp;</span>[.$listname.title.]&nbsp;&nbsp;[<a href="#" id="showclass">选择分类</a>]</h1>
+		<div class="clear"></div>
+		
+	  <div id="classlist" class="hide newsclass">
+	  		<li>选择分类:</li>
+			[.callcolumn id="8" row="8" lang="cn" type="td" name="callcolumn".]
+			<li><a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]">[.$callcolumn.title.]</a></li>
+			[./callcolumn.]
+			<li><a href="#" id="hideclass">[关闭]</a></li>
+	  </div>
+	  
+		<div class="clear"></div>
+	  	<ul>
+			[.list id="$listid" form="job" name="list".] 
+			<li><a href="[.$list.wapurl.]" title="[.$list.title.]">[.$list.title.]<span class="fr">[.$list.time|date_format:"%Y,%m,%d".]</span></a></li>
+			[./list.]
+		</ul>
+		
+		<div class="clear"></div>
+		<div class="page">[.$ourphppage.]</div>
+	  </div>
+	  
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	
+	  <div class="clear"></div>
+	  <div class="newslist">
+	  	<h1><span class="f1">&nbsp;</span>[.$listname.title.]&nbsp;&nbsp;[<a href="#" id="showclass">选择分类</a>]</h1>
+		<div class="clear"></div>
+		
+	  <div id="classlist" class="hide newsclass">
+	  		<li>选择分类:</li>
+			[.callcolumn id="7" row="8" lang="cn" type="td" name="callcolumn".]
+			<li><a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]">[.$callcolumn.title.]</a></li>
+			[./callcolumn.]
+			<li><a href="#" id="hideclass">[关闭]</a></li>
+	  </div>
+	  
+		<div class="clear"></div>
+	  	<ul>
+			<h2>[.$opcms.title.]</h2>
+			<div class="newstime">时间:[.$opcms.time.]</div>
+			
+			  <table width="100%" border="0" cellpadding="10" class="font14">
+			  <tr>
+				  <td colspan="2" valign="top"><div align="center"><img src="[.$opcms.minimg.]" width="100%" border="0" /></div></td>
+				  </tr>
+				<tr>
+				  <td width="32%">授权方式：[.$opcms.empower.]</td>
+				  <td width="56%">软件类型：[.$opcms.type.]</td>
+				</tr>
+				<tr>
+				  <td>操作语言：[.$opcms.lang.]</td>
+				  <td>软件大小：[.$opcms.size.]</td>
+				</tr>
+				<tr>
+				  <td>软件厂商：[.$opcms.make.]</td>
+				  <td>运行环境：[.$opcms.setup.]</td>
+				</tr>
+				<tr>
+				  <td colspan="2"><a href="[.$opcms.downurl.]" target="_blank"><img src="[.$webpath.]skin/down.png" /></a></td>
+				  </tr>
+			  </table>
+  
+  			<div class="nr">
+				<div class="nrtitle">详细</div>
+			<div class="img">
+			[.$opcms.content.]
+			</div>
+			</div>
+		</ul>
+		
+		<div class="clear h50"></div>
+		<div class="pagetop h30 b-r10">[.uptext form="down" type="up" font="上一条：" noacc="暂无数据" url="wap".]</div>
+		<div class="pagefoot h30 b-r10">[.uptext form="down" type="down" font="下一条：" noacc="暂无数据" url="wap".]</div>
+	  </div>
+	  
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

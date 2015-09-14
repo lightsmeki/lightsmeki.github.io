@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	
+	  <div class="clear"></div>
+	  <div class="productlist">
+	  	<h1><span class="f1">&nbsp;</span>[.$listname.title.]&nbsp;&nbsp;[<a href="#" id="showclass">选择分类</a>]</h1>
+		<div class="clear"></div>
+		
+	  <div id="classlist" class="hide newsclass">
+	  		<li>选择分类:</li>
+			[.callcolumn id=$ip.listid row="30" lang="cn" type="ty" name="callcolumn".]
+			<li><a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]">[.$callcolumn.title.]</a></li>
+			[./callcolumn.]
+			<li><a href="#" id="hideclass">[关闭]</a></li>
+	  </div>
+	  
+		<div class="clear h20"></div>
+		<div class="shop_prnav">
+			<li><a href="?[.$ip.lang.]-[.$ip.type.]-[.$ip.listid.].html" [.if $smarty.get.type == ''.]class="xz"[./if.]>全部</a></li>
+			<li><a href="?[.$ip.lang.]-[.$ip.type.]-[.$ip.listid.].html=&type=OP_Webmarket" [.if $smarty.get.type == 'OP_Webmarket'.]class="xz"[./if.]>价格</a></li>
+			<li><a href="?[.$ip.lang.]-[.$ip.type.]-[.$ip.listid.].html=&type=OP_Click" [.if $smarty.get.type == 'OP_Click'.]class="xz"[./if.]>人气</a></li>
+		</div>
+		
+		<div class="clear"></div>
+	  	<ul>
+			[.list id="$listid" form="product" type=$smarty.get.type name="list".] 
+			<li><a href="[.$list.wapurl.]" title="[.$list.title.]"><img src="[.$list.minimg.]"></a>
+			<p><del>$[.$list.market.]</del>&nbsp;&nbsp;<span class="jg">$[.$list.webmarket.]</span></p>
+			<p><a href="[.$list.wapurl.]" title="[.$list.title.]">[.$list.title.]</a></p></li>
+			[./list.]
+		</ul>
+		
+		<div class="clear"></div>
+		<div class="page">[.$ourphppage.]</div>
+	  </div>
+	  
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

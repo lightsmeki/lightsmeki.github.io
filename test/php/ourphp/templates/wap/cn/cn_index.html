@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	  
+	[.include file="cn/cn_banner.html".]
+	  
+	  <div class="clear"></div>
+	  
+		  <div class="search">
+			<form name="form2" method="post" action="[.$webpath.]client/wap/search.php?temp=search">      
+			<div class="search_input w250 h40 b-r10">
+				<select name="sid" class="select">
+				<option value="article" selected="selected">文章</option>
+				<option value="product" >商品</option>
+				<option value="photo" >案例</option>
+				<option value="video" >视频</option>
+				<option value="down" >文档</option>
+				<option value="job" >招聘</option>
+				</select>
+				<input type="text" class="text" name="content" />
+			</div>
+			<div class="search_bt">
+			<input type="hidden" name="lang" value="cn" />
+			<input type="hidden" name="type" value="wap" />
+			<input type="submit" name="Submit2" value="搜索" class="w50 h40 b-r10 sbt"></div>
+			</form>
+		</div>
+	
+	  <div class="clear"></div>
+	  
+			<div id="tabBox1" class="tabBox">
+				<div class="hd">
+					<h3></h3>
+					<ul>
+						<li><a href="javascript:void(0)">公司产品</a></li>
+						<li><a href="javascript:void(0)">公司案例</a></li>
+					</ul>
+				</div>
+				<div class="bd" id="tabBox1-bd"><!-- 添加id，js用到 -->
+					<div class="con"><!-- 高度自适应需添加外层 -->
+						<ul>
+							[.ourphp form="product" row="6" lang="cn" id="0" type="op" name="ourphp".]
+							<li><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]"><img src="[.$ourphp.minimg.]" alt="[.$ourphp.title.]"></a>
+							<p><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]">[.$ourphp.title.]</a></p>
+							</li>
+							[./ourphp.]
+						</ul>
+					</div>
+					<div class="con"><!-- 高度自适应需添加外层 -->
+						<ul>
+							[.ourphp form="photo" row="6" lang="cn" id="0" type="op" name="ourphp".]
+							<li><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]"><img src="[.$ourphp.minimg.]" alt="[.$ourphp.title.]"></a>
+							<p><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]">[.$ourphp.title.]</a></p>
+							</li>
+							[./ourphp.]
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			
+			<a class="readMore b-r10" href="#">更多产品&gt;&gt;</a>
+			<script type="text/javascript">
+			TouchSlide( { slideCell:"#tabBox1",
+
+				endFun:function(i){ //高度自适应
+					var bd = document.getElementById("tabBox1-bd");
+					//bd.parentNode.style.height = bd.children[i].children[0].offsetHeight+"px";
+					if(i>0)bd.parentNode.style.transition="200ms";//添加动画效果
+				}
+
+			} );</script>
+
+	  <div class="clear"></div>
+	  
+	  <div class="lou">
+	  	<h1 class="redfont">公司简介</h1>
+		<div class="clear"></div>
+			<div class="index_about">
+				　　[.info type="about" id="9" html="1" size="300".]...
+			</div>
+			<p><a class="readMore b-r10" href="#">详细查看&gt;&gt;</a></p>
+	  </div>
+	  
+	  <div class="clear"></div>
+
+	  <div class="lou">
+	  	<h1 class="redfont">公司新闻</h1>
+		<div class="clear"></div>
+			<div class="index_newslist">
+				<ul>
+					[.ourphp form="article" row="8" lang="cn" id="0" type="op" name="ourphp".]
+					<li><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]">[.$ourphp.title.]</a></li>
+					[./ourphp.]
+				</ul>
+			</div>
+	  </div>
+	  
+	  <div class="clear"></div>
+	  
+	  <div class="index_lx">
+	  	<p class="tel b-r10"><a href="tel:[.$ourphp_web.webtel.]">[.$ourphp_web.webtel.]<img src="[.$templatepath.]ourphp_ui/images/tel.png"></a></p>
+		<p class="qq b-r10"><a href="http://wpa.qq.com/msgrd?v=3&uin=[.$ourphp_web.webqq.]&site=qq&menu=yes">[.$ourphp_web.webqq.]<img src="[.$templatepath.]ourphp_ui/images/qq.png"></a></p>
+	  </div>
+	  
+	  <div class="clear"></div>
+	  
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

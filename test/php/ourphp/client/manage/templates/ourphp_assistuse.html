@@ -1,0 +1,84 @@
+[.config_load file="../../config/ourphp.conf".]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[.$OP_Adminpowerfont.admintitle.]</title>
+<link href="templates/images/ourphp_login.css" rel="stylesheet" type="text/css"> 
+[.#jq172#.]
+<style type="text/css">
+	.list { float:left; height: auto; padding:10px; }
+	.list ul { padding:0px;}
+	.list ul li { width:160px; height:40px; background:#f3f3f3; color:#999999; text-align:left; float:left; margin-right:20px; margin-bottom:20px; text-align:center; line-height:40px;}
+	.list ul li a { color:#999999;}
+	.list ul li a:hover { width:160px; height:40px; background: #0099FF; color:#FFFFFF; display:block; text-align:center; line-height:40px;}
+</style>
+</head>
+
+<body>
+
+
+<table width="90%" border="1" align="center" cellpadding="10" bordercolor="#F4f4f4" style="margin-top:10px; border-collapse:collapse;">
+  <tr>
+    <td style="height:20px; background:#f4f4f4; color:#999999;">勤劳的&nbsp;[.$OP_Adminname.]&nbsp;您好，以下功能您都可以参与管理：</td>
+  </tr>
+  <tr>
+    <td>
+		<div class="list">
+			<ul>
+				[.if strstr($OP_Adminpower,"01").]<li><a href="ourphp_lang.php?id=ourphp">网站语言配置</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"02").]<li><a href="ourphp_webdeploy.php?id=ourphp">网站功能管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"03").]<li><a href="ourphp_watermark.php?id=ourphp">图片水印设置</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"04").]<li><a href="ourphp_mail.php?id=ourphp">系统邮件设置</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"05").]<li><a href="ourphp_template.php?id=ourphp">模板安装使用</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"06").]<li><a href="filebox.php">上传文件管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"07").]<li><a href="tags.php">模板标签</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"08").]<li><a href="ourphp_column.php?id=ourphp">网站栏目管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"09").]<li><a href="ourphp_web.php?id=ourphp">基本信息设置</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"10").]<li><a href="ourphp_book.php?id=ourphp">留言板管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"11").]<li><a href="ourphp_banner.php?id=ourphp">BANNER管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"12").]<li><a href="ourphp_qq.php?id=ourphp">浮动客服管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"13").]<li><a href="ourphp_usersearch.php?id=ourphp">热门搜索词</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"14").]<li><a href="ourphp_article.php?id=ourphp">文章管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"15").]<li><a href="ourphp_photo.php?id=ourphp">图集管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"16").]<li><a href="ourphp_video.php?id=ourphp">视频管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"17").]<li><a href="ourphp_down.php?id=ourphp">下载管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"18").]<li><a href="ourphp_job.php?id=ourphp">招聘管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"19").]<li><a href="ourphp_usercontrol.php?id=ourphp">会员选项</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"20").]<li><a href="ourphp_user.php?id=ourphp">会员管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"21").]<li><a href="ourphp_usergroup.php?id=ourphp">用户组管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"22").]<li><a href="ourphp_usermessage.php?id=ourphp">站内邮件</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"23").]<li><a href="ourphp_pay.php?id=ourphp">会员充值</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"24").]<li><a href="ourphp_manage.php?id=ourphp">管理员角色</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"25").]<li><a href="ourphp_ad.php?id=ourphp">广告管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"26").]<li><a href="ourphp_link.php?id=ourphp">友情链接管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"27").]<li><a href="ourphp_plug.php?id=ourphp">插件管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"28").]<li><a href="ourphp_wap.php?id=ourphp">手机网站管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"29").]<li><a href="ourphp_weixin.php?id=ourphp">微信网站管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"30").]<li><a href="ourphp_yixin.php?id=ourphp">易信网站管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"31").]<li><a href="ourphp_bak.php?id=ourphp">数据库操作</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"32").]<li><a href="ourphp_sql.php?id=ourphp">执行SQL语句</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"33").]<li><a href="ourphp_adminsearch.php?id=ourphp">后台信息检索</a></li>[./if.]			
+				[.if strstr($OP_Adminpower,"36").]<li><a href="ourphp_api.php?id=ourphp">API接口管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"37").]<li><a href="ourphp_comment.php?opcms=articleview">评论管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"38").]<li><a href="ourphp_productlist.php?id=ourphp">商品管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"39").]<li><a href="ourphp_productset.php?id=ourphp">商城设置</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"40").]<li><a href="ourphp_orders.php?id=ourphp">订单处理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"41").]<li><a href="ourphp_productlibrary.php?id=ourphp">仓库管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"42").]<li><a href="ourphp_productspecifications.php?id=ourphp">商品规格管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"43").]<li><a href="ourphp_productattribute.php?id=ourphp">商品属性管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"44").]<li><a href="ourphp_productp.php?id=ourphp">品牌管理</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"45").]<li><a href="ourphp_freight.php?id=ourphp">运费模板</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"46").]<li><a href="ourphp_webseo.php?id=ourphp">网站相关优化</a></li>[./if.]
+				[.if strstr($OP_Adminpower,"47").]<li><a href="ourphp_integral.php?id=ourphp">积分领取管理</a></li>[./if.]
+			</ul>
+		</div>
+	</td>
+  </tr>
+</table>
+
+
+
+[.include file="ourphp_foot.html".]
+</body>
+</html>

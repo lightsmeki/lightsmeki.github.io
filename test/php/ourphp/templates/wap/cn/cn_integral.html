@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	
+	  <div class="clear"></div>
+	  <div class="productlist">
+	  	<h1><span class="f1">&nbsp;</span>[.$listname.title.]</h1>
+		<div class="clear h20"></div>
+	  	<ul>
+			[.list id="$listid" form="product" sql="&& `OP_Integralok`=1" name="list".] 
+			<li><a href="[.$list.wapurl.]" title="[.$list.title.]"><img src="[.$list.minimg.]"></a>
+			<p>需要&nbsp;<span>[.$list.integralexchange.]</span>&nbsp;积分兑换</p>
+			<p><a href="[.$list.wapurl.]" title="[.$list.title.]">[.$list.title.]</a></p></li>
+			[./list.]
+		</ul>
+		
+		<div class="clear"></div>
+		<div class="page">[.$ourphppage.]</div>
+	  </div>
+	  
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

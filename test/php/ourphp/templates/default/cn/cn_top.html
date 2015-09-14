@@ -1,0 +1,50 @@
+[.$ad.head.]
+<div class="header">
+  <div class="main"> <a href="/index.php" title="[.$ourphp_web.website.]限公司" class="logo"><img src="[.$ourphp_web.weblogo.]" width="262" height="38" alt="[.$ourphp_web.website.]" /></a>
+    <div class="tel">
+	<script src="[.$webpath.]function/plugs/layer/layer.min.js"></script>
+	<p style="text-align:right;">
+	[.if isset($smarty.session.username).]
+	您好！<a href="client/user/">[.$smarty.session.username.]</a>
+	[.else.]
+	<a href="javascript:dialog()">登录</a> - <a href="client/user/?cn-reg.html">注册</a>
+	[./if.]
+	</p>
+	<p>服务热线：[.$ourphp_web.webtel.]</p>
+	<script> 
+	function dialog(){
+		$.layer({
+			type: 1,
+			title: '会员登录',
+			shade: [0],
+			border: [5, 0.3, '#000'],
+			area: ['410px', '220px'],
+			page: {html: '<form id="form1" name="form1" method="POST" action="[.$webpath.]client/user/ourphp_play.class.php?ourphp_cms=login" class="registerform"><table width="100%" border="0" cellpadding="5" style="font-size:12px;"><tr><td><div align="right">登录账号：</div></td><td><input type="text" name="OP_Useremail" style="width:300px; height:30px; border:1px #CCCCCC solid; line-height:30px; color:#999999" /><font color="#FF0000">*</font></td></tr><tr><td><div align="right">登录密码：</div></td><td><input type="password" name="OP_Userpass" style="width:300px; height:30px; border:1px #CCCCCC solid; line-height:30px; color:#999999" /><font color="#FF0000">*</font></td></tr><tr><td><div align="right">验证码：</div></td><td><input type="text" name="code" style="width:100px; height:30px; border:1px #CCCCCC solid; line-height:30px; color:#999999" onfocus="document.getElementById(\'checkcode\').src+=\'?\'" /><font color="#FF0000">*</font>&nbsp;<img title="点击刷新" id="checkcode" src="[.$webpath.]function/ourphp_code.php" align="absbottom" onclick="this.src=\'[.$webpath.]function/ourphp_code.php?\'+Math.random();" width="80" height="25"></img></td></tr><tr><td><div align="right"></div></td><td><input type="submit" name="Submit" value="登录" style="width:100px; height:30px; border:0px; background:#0099FF; color:#FFFFFF;"/></td></tr></table></form>'}
+
+		});
+	};
+	</script>
+	</div>
+  </div>
+</div>
+<div class="menu">
+<div class="nav_ourphp">
+	<ul class="nav">
+	
+		[.function name=menu.]
+				[.foreach $data as $op.]
+					<li class="item [.if $ip.type == 'shop.html'.][.assign var="navid" value="3".][.if $op.id == $navid.]navgb[./if.][./if.]"><a href="[.$op.url.]">[.$op.title.]</a>
+					[.*无限级开始*.][.if isset($op.child).]
+					<ul class="nav navheight">
+						[.call name=menu data=$op.child.]
+					</ul>
+					[./if.][.*无限级结束*.]
+					</li>
+				[./foreach.]
+		[./function.]
+		[.call name=menu data=$column.]
+
+
+	</ul>
+	</div>
+  </div>

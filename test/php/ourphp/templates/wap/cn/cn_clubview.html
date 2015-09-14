@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	
+	  <div class="clear"></div>
+	  <div class="view">
+	  	<h1>在线留言</h1>
+	  	<div class="content">
+		
+[.*留言开始*.]
+<table width="100%" border="1" cellpadding="10" bordercolor="#e7eff3" bgcolor="#ffffff" style="text-align:left; font-size:12px; border-collapse:collapse; padding:0px;">
+<tr style="background:url([.$webpath.]skin/clubgb.png) repeat-x;">
+<td style="padding:0px 0px 0px 10px; height:31px; width:600px;"><div align="left">留言列表</div></td>
+</tr>
+<tr>
+<td>
+<form id="form1" name="form1" method="post" action="[.$bookform.]">
+<table width="100%" border="0">
+<tr>
+<td><div align="right">姓名：</div></td>
+<td><input type="text" name="bookname" style="width:200px; height:25px; border:1px #CCCCCC solid; background:#FFFFFF; font-size:14px; line-height:25px; color:#666666;" /></td>
+</tr>
+<tr>
+<td><div align="right">联系方式：</div></td>
+<td><input type="text" name="booktel" style="width:200px; height:25px; border:1px #CCCCCC solid; background:#FFFFFF; font-size:14px; line-height:25px; color:#666666;" /></td>
+</tr>
+<tr>
+<td valign="top"><div align="right">留言内容：</div></td>
+<td><textarea name="bookcontent" style="width:200px; height:100px; border:1px #CCCCCC solid; background:#FFFFFF; font-size:14px; line-height:25px; color:#666666;"></textarea></td>
+</tr>
+<tr>
+<td><div align="right">验证码：</div></td>
+<td><input type="text" name="bookcode" style="width:100px; height:25px; border:1px #CCCCCC solid; background:#FFFFFF; font-size:14px; line-height:25px; color:#666666;" onFocus="document.getElementById('checkcode').src+='?'" />&nbsp;<img title="点击刷新" id="checkcode" src="[.$webpath.]function/ourphp_code.php" align="absbottom" onClick="this.src='[.$webpath.]function/ourphp_code.php?'+Math.random();" width="80" height="25"></img></td>
+</tr>
+<tr>
+<td><div align="right"><input type="hidden" name="wapbook" value="ourphp"></div></td>
+<td><input type="submit" name="Submit" value="提 交" style="width:80px; height:25px; border:0px; background:#0099FF; color:#FFFFFF;" /></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="hidden" name="ip" value="[.$ip.ip.]" />
+<input type="hidden" name="class" value="[.$ip.listid.]" />
+<input type="hidden" name="lang" value="[.$ip.lang.]" />
+</td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+<table width="100%" border="0" cellpadding="10">
+[.foreach $opcms as $key => $op.] 
+<tr>
+<td width="20%" rowspan="2" valign="top"><div align="center"><img src="[.$webpath.]skin/userhead_s.jpg" border="0" /></div></td>
+<td width="80%" style="min-height:60px;" valign="top">
+<p style=" height:30px; line-height:30px; border-bottom:1px #CCCCCC dashed;"><span style="float:right; font-size:12px; color:#999999;">([.$op.time.])</span>[.$op.name.]</p>
+<p style=" margin-top:20px;">[.$op.content.]</p>
+</td>
+</tr>
+<tr>
+<td>
+[.if $op.reply != ''.]
+<table width="100%" border="0" cellpadding="5" bgcolor="#D7E1F9">
+<tr>
+<td style="border-bottom:1px #ffffff dashed;">管理员回复：</td>
+</tr>
+<tr>
+<td valign="top">[.$op.reply.]</td>
+</tr>
+</table>
+[./if.]
+</td>
+</tr>
+<tr>
+<td style="border-bottom:1px #CCCCCC dashed; height:10px;">&nbsp;</td>
+<td style="border-bottom:1px #CCCCCC dashed; height:10px;">&nbsp;</td>
+</tr>
+[./foreach.]
+</table> 
+
+</td>
+</tr>
+</table>
+<div style="clear:both; height:20px;"></div>
+[.$ourphppage.]
+[.*留言结束*.]
+
+		</div>
+	  </div>
+	  <div class="clear"></div>
+	  
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

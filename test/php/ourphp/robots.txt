@@ -1,0 +1,12 @@
+﻿#
+# robots.txt for OurPHP
+#
+User-agent: * 
+Disallow: /config/
+Disallow: /templates/
+Disallow: /admin.php
+Allow: /function/uploadfile
+Disallow: /function/
+Allow: /client/user
+Allow: /client/wap
+Disallow: /client/

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>收银台 - [.$ourphp_web.website.]</title>
+<meta name="keywords" content="[.$ourphp_web.webkeywords.]" />
+<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+<meta name="Author" content="www.ourphp.net" />
+<LINK href="[.$templatepath.]shop/ourphp_shop.css" rel=stylesheet>
+<script language="JavaScript" type="text/javascript" src="[.$templatepath.]js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var mod_menu=$(".mod-menu");//导航模块区
+	var menu=function(){
+		var menuItem=$(".menu-item li");//选择导航列表
+		menuItem.each(function(){
+			var _index=$(this).index();//获取当前选择菜单列表的索引
+			$(this).mouseenter(function(){
+				var y = $(this).position().top+1;//获取当前鼠标滑过的列表的顶部坐标
+				$(".menu-cont").show();
+				$(".menu-cont").css("top",y);//需要显示的对应索引内容
+				$(this).addClass("mouse-bg").siblings().removeClass("mouse-bg");
+				$(".menu-cont>div").eq(_index).show().siblings().hide();
+			});
+		});/*导航菜单菜单*/
+		$(".mod-menu").mouseleave(function(){
+			$(".menu-cont").hide();
+			menuItem.removeClass("mouse-bg");
+		})
+	}//展开二级菜单	
+	menu();//执行展开二级菜单函
+});
+function  showImg(){
+document.getElementById("wxImg").style.display='block';
+}
+function hideImg(){
+document.getElementById("wxImg").style.display='none';
+}
+</script>
+
+</head>
+<body>
+[.assign var="show" value="1".]
+[.include file="cn/cn_shoptop.html".]
+
+	
+	</div>
+</div>
+<div class="clear h20"></div>
+	<div class="center">
+	[.*订单处理模板开始，如果更换模板请从这里复制*.]
+	<style type="text/css">td { padding:10px;}</style>
+		<form id="form1" name="form1" method="post" action="[.$webpath.]?cn-shoppingorders.html-&ourphp_cms=buyok" class="registerform">
+		  <table width="100%" border="0" cellpadding="10" bgcolor="#ffffff" style="font-size:14px;">
+			<tr>
+			  <td colspan="6" bgcolor="#CFEBF3">我购买的宝贝：</td>
+			</tr>
+			<tr>
+			  <td width="10%">&nbsp;</td>
+			  <td>商品名称</td>
+			  <td>规格</td>
+			  <td>网站价格</td>
+			  <td>您的价格</td>
+			  <td>数量&nbsp;/&nbsp;重量</td>
+			</tr>
+			[.foreach $orderslist as $op.]
+			<tr bgcolor="[.cycle values="#f0f0f0,#f5f5f5".]">
+			  <td rowspan="2"><div align="center">订单([.$op.i.])</div></td>
+			  <td>[.$op.title|truncate:33:"...".]
+				<input type="hidden" name="id[]" value="[.$op.id.]" />		  </td>
+			  <td>[.$op.pratt.]([.$op.text.])</td>
+			  <td>[.$op.webmarket.]&nbsp;元</td>
+			  <td style="color:#FF3300;">[.$op.usermarket.]&nbsp;元</td>
+			  <td>[.$op.num.]&nbsp;&nbsp;/&nbsp;&nbsp;[.$op.weight.]KG</td>
+			</tr>
+			<tr bgcolor="[.cycle values="#f0f0f0,#f5f5f5".]">
+			  <td colspan="3">收件人信息：[.$op.username.]__[.$op.usertel.]__[.$op.useradd.]</td>
+			  <td colspan="2">运费：[.$op.freight.]元</td>
+			</tr>
+			<tr>
+			  <td colspan="6"><div style="height:10px; border-bottom:1px #CCCCCC dashed;"></div></td>
+			</tr>
+			[./foreach.]
+		  </table>
+		  
+		  <table width="100%" border="0" align="center" cellpadding="10" bgcolor="#FFFFFF" style="font-size:14px; font-family:Arial, Helvetica, sans-serif;">
+			<tr>
+			  <td>系统自动计算运费，公式如(数量 * 重量 - 首重 * 续重 + 首重)，如需要更改运费请联系网站客服，修改后在提交订单。谢谢合作！</td>
+			</tr>
+		  </table>
+		  
+		  <div style="clear:both;">&nbsp;</div>
+		
+		<table width="100%" border="0" align="left" cellpadding="10" style="font-size:14px;">
+		  <tr>
+			<td width="10%"><div align="right">共计付款：</div></td>
+			<td width="90%"><span style="font-size:20px; color:#FF3300; font-family:Arial, Helvetica, sans-serif">[.$op.total.]</span>&nbsp;&nbsp;元
+			&nbsp;&nbsp;&nbsp;<span style="font-size:16px; font-family:Arial, Helvetica, sans-serif">+&nbsp;[.$op.freightt.]&nbsp;&nbsp;元(运费)</span>
+			</td>
+		  </tr>
+		  <tr>
+			<td><div align="right">账户余额：</div></td>
+			<td><span style="font-size:20px; color: #999999; font-family:Arial, Helvetica, sans-serif">[.$userview.money.]</span>&nbsp;&nbsp;元</td>
+		  </tr>
+		  <tr>
+			<td colspan="2">
+			<style type="text/css">
+				.fukuan {padding:5px; border:0px; height:30px; background:#FF3300; color:#FFFFFF; width:100px;border-radius:5px 5px 5px 5px;}
+				.btnGray { width:100px; border-radius:5px 5px 5px 5px; height:30px; padding:5px; background: #CCCCCC; border:0px; color:#333333;}
+				.btn {padding:5px; border:0px; height:30px; background:#FF3300; color:#FFFFFF; width:100px;border-radius:5px 5px 5px 5px;}
+			</style>
+			<script language="javascript">
+				function agree()
+				{
+				  if (document.getElementById('btn_license').checked)
+					{
+					document.getElementById('x').disabled=false;
+					document.getElementById('x').className='btn';  
+					return confirm('付款后订单即时生成，无法后退等操作。');
+					}
+				  else
+					{
+					document.getElementById('x').disabled='disabled';  
+					document.getElementById('x').className='btnGray';  
+					}
+				}
+			</script>
+			[.if $userview.money < $op.total+$op.freightt.]
+			<input id="x" type="submit" name="Submit" value="付 款" class="btnGray" disabled="disabled" /><p>&nbsp;</p>对不起，您的账号余额无法支付订单，请先<a href="[.$webpath.]client/user/?cn-userpay.html">[<font color="#0099CC">点击充值</font>]</a>后在试！
+			[.else.]
+			<input type="submit" name="Submit" value="付 款" class="fukuan" onclick="javascript:return confirm('付款后订单即时生成，无法后退等操作。')" />
+			[./if.]
+			[.if $shopset['delivery'] == 1.]
+			&nbsp;&nbsp;<input name="delivery" type="checkbox" onclick="agree();" id="btn_license" value="1"/>&nbsp;使用货到付款
+			[./if.]
+			</td>
+			</tr>
+		</table>
+		</form>
+	[.*订单模板结束*.]
+	</div>
+<div class="clear h20"></div>
+[.include file="cn/cn_shopfoot.html".]
+</body>
+</html>

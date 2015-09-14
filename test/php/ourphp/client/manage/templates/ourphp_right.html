@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="x-ua-compatible" content="ie=7" /> 
+<title></title> 
+<link href="templates/images/ourphp_login.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript" src="../../function/plugs/jquery/1.8.3/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript" src="../../function/plugs/highcharts/highcharts.js"></script> 
+<script type="text/javascript" src="../../function/plugs/highcharts/exporting.js"></script> 
+<script src="../../function/plugs/layer/layer.min.js"></script>
+<script>
+$(function () {
+    $('#container').highcharts({
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+		credits: { //去掉链接
+    		 enabled: false
+		} ,
+        xAxis: {
+            categories: ['1月', '2月', '3月', '4月', '5月', '6月','7月', '8月', '9月', '10月', '11月', '12月']
+        },
+        yAxis: {
+            title: {
+                text: '[.$ourphp_rdate.d.]年度数据报告'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '个'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '商品订单量',
+            data: [[.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="01".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="02".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="03".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="04".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="05".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="06".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="07".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="08".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="09".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="10".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="11".], [.ourphp_tongji type="buy" datey=$ourphp_rdate.d datem="12".]]
+        }, {
+            name: '订单发货量',
+            data: [[.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="01".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="02".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="03".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="04".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="05".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="06".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="07".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="08".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="09".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="10".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="11".], [.ourphp_tongji type="send" datey=$ourphp_rdate.d datem="12".]]
+        }, {
+            name: '成交量',
+            data: [[.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="01".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="02".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="03".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="04".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="05".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="06".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="07".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="08".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="09".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="10".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="11".], [.ourphp_tongji type="pay" datey=$ourphp_rdate.d datem="12".]]
+        }, {
+            name: '会员注册数',
+            data: [[.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="01".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="02".],[.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="03".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="04".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="05".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="06".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="07".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="08".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="09".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="10".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="11".], [.ourphp_tongji type="user" datey=$ourphp_rdate.d datem="12".]]
+        }]
+    });
+});
+</script>
+</head>
+<body>
+
+<div id="loading" style=" width:500px; height:60px; padding-top:30px; background:#FFFFFF; border:1px #6699FF solid; text-align:center; z-index:9999; position:absolute; top:200px; left:200px;">
+<p><img src="../../skin/ajax_loader.gif" border="0"></p>
+<p style="margin-top:20px;">系统初始化，请稍等为您加载中... ...</p>
+</div>
+
+	<div style="width:94%; height:auto; padding:20px;">
+			<div class="ourphp_data">
+				<h1><span style="float:right; margin-right:20px;">
+				[.*
+				<select name="select">
+				  <option value="[.$ourphp_rdate.d.]">[.$ourphp_rdate.d.]</option>
+				  <option value="[.$ourphp_rdate.q.]">[.$ourphp_rdate.q.]</option>
+				  <option value="[.$ourphp_rdate.j.]">[.$ourphp_rdate.j.]</option>
+			    </select>
+				*.]
+				
+				</span>[.$ourphp_rdate.d.]&nbsp;网站数据报告</h1>
+				<div style="clear:both;"></div>
+				<div id="container" style="height:360px"></div>
+	  </div>
+			<div style="clear:both; height:50px;"></div>
+			<div class="ourphp_data2">
+				<h1>内部统计</h1>
+				<div style="clear:both;"></div>
+				<div class="banben">
+					<p>当前系统版本：[.$version.]</p>
+					<p><button id="version" onClick="javascript:test()" style="height:20px; border:0px; background:#fff; color:#999999; text-align:left;">>>>检测版本<<<</button><span id="urlcom"></span></p>
+				</div>
+				<div class="tongji">
+				<ul>
+					<li>文章：[.$shuju[0].]条</li>
+					<li>商品：[.$shuju[1].]件</li>
+					<li>图集：[.$shuju[2].]条</li>
+					<li>视频：[.$shuju[3].]条</li>
+					<li>下载：[.$shuju[4].]条</li>
+					<li>招聘：[.$shuju[5].]条</li>
+					<li>留言：[.$shuju[6].]条</li>
+					<li>友链：[.$shuju[7].]条</li>
+					<li style="background: #0099FF;"><a href="ourphp_statistics.php"><font color="#FFFFFF">查看网站流量</font></a></li>
+				</ul>
+				</div>
+			</div>
+			
+			[.if $ourphp_empower == "2".]
+			
+			[.*   
+			
+			
+			
+			未购买授权版，禁止删除OURPHP版权信息，一但我们发现必将追究法律责任！ 切记！！！
+			  
+			
+			
+			*.]
+			<div style="clear:both; height:50px;"></div>
+	 		 <div class="ourphp_data3">
+				<h1>版权信息&nbsp;(购买授权版，此信息将不在显示。)</h1>
+				<div style="clear:both;"></div>
+				
+			    <table width="100%" border="0" cellpadding="10">
+                  <tr>
+                    <td width="46%" style="border-right:1px #CCCCCC solid;">
+					
+					  <table width="100%" border="0" cellpadding="5">
+                        <tr>
+                          <td><div align="right">软件开发：</div></td>
+                          <td><a href="http://www.ourphp.net" target="_blank">哈尔滨伟成科技有限公司</a></td>
+                        </tr>
+                        <tr>
+                          <td><div align="right">软件名称：</div></td>
+                          <td>OURPHP</td>
+                        </tr>
+						<tr>
+                          <td><div align="right">软件其它常用名称：</div></td>
+                          <td>傲派、傲派CMS、OPCMS</td>
+                        </tr>
+                        <tr>
+                          <td><div align="right">专利证书：</div></td>
+                          <td>2015SR078193&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:dialog()">[查看]</a></td>
+                        </tr>
+                        <tr>
+                          <td><div align="right">项目负责人：</div></td>
+                          <td>唐晓伟</td>
+                        </tr>
+                        <tr>
+                          <td><div align="right">开发团队成员：</div></td>
+                          <td>大鹏、超超、小娟</td>
+                        </tr>
+                        <tr>
+                          <td><div align="right">相关链接：</div></td>
+                          <td><a href="http://ourphp.net/club/forum.php?mod=forumdisplay&fid=2" target="_blank">问题反馈</a> - <a href="http://ourphp.net/club/forum.php?mod=forumdisplay&fid=36" target="_blank">模板下载</a> - <a href="http://ourphp.net/club/forum.php?mod=forumdisplay&fid=37" target="_blank">插件下载</a></td>
+                        </tr>
+                      </table>
+					  
+					  
+				    </td>
+                    <td width="54%" valign="top">
+					<style type="text/css">
+						.module {}
+						.module ul li { height:22px; line-height:22px; color:#CCCCCC;}
+						.module ul li a { color:#333333;}
+					</style>
+					<script type="text/javascript" src="http://www.ourphp.net/club/api.php?mod=js&bid=5"></script>
+					</td>
+                  </tr>
+                </table>
+				
+	  </div>
+				[./if.]
+	</div>
+	
+<script>
+
+function test(){
+    $.ajax({
+    url: 'http://www.ourphp.net/opcms/key.php',
+    type: 'GET',  //这里用GET
+    async: false,
+    data:{version:"[.$versiondate.]"},
+    dataType: 'jsonp',  //类型
+    jsonp: 'callback', //jsonp回调参数，必需
+    success: function(result) {
+            //alert(result.version); //回调输出
+			document.getElementById('version').innerHTML=result.version;
+			document.getElementById('urlcom').innerHTML='<a href="'+result.url+'" target="_blank">'+result.title+'</a>';
+        }
+    });
+};
+
+		function dialog(){
+			$.layer({
+				type: 1,
+				title: '专利证书:',
+				shade: [0],
+				border: [5, 0.3, '#000'],
+				area: ['448px', '635px'],
+				page: {html: '<img src="../../skin/zhengshu.png" width="448" height="600" border="0">'}
+			});
+		};
+		
+
+			function fadeOut(){
+			   document.getElementById("loading").style.display="none";
+			}
+
+		</script>
+		<script language='javascript'>fadeOut()</script>
+		<link rel="stylesheet" type="text/css" href="../../function/plugs/context/context.standalone.css">
+		<script src="../../function/plugs/context/context.js"></script>
+		<script src="../../function/plugs/context/demo.js"></script>
+
+</body>
+</html>

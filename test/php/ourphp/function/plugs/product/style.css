@@ -1,0 +1,64 @@
+/* clearfix */
+.clearfix:after{ visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0;}
+*html .clearfix{ zoom:1;}
+
+
+.preview{width:400px; height:465px;}
+/* smallImg */
+.smallImg{position:relative; height:52px; margin-top:1px; background-color:#F1F0F0; padding:6px 5px; width:390px; overflow:hidden;float:left;}
+.scrollbutton{width:14px; height:50px; overflow:hidden; position:relative; float:left; cursor:pointer; }
+.scrollbutton.smallImgUp , .scrollbutton.smallImgUp.disabled{background:url(d_08.png) no-repeat;}
+.scrollbutton.smallImgDown , .scrollbutton.smallImgDown.disabled{background:url(d_09.png) no-repeat; margin-left:375px; margin-top:-50px;}
+
+#imageMenu {height:50px; width:360px; overflow:hidden; margin-left:0; float:left;}
+#imageMenu li {height:50px; width:60px; overflow:hidden; float:left; text-align:center;}
+#imageMenu li img{width:50px; height:50px;cursor:pointer;}
+#imageMenu li#onlickImg img, #imageMenu li:hover img{ width:44px; height:44px; border:3px solid #959595;}
+/* bigImg */
+.bigImg{position:relative; float:left; width:400px; height:400px; overflow:hidden;}
+.bigImg #midimg{width:400px; height:400px;}
+.bigImg #winSelector{width:235px; height:210px;}
+#winSelector{position:absolute; cursor:crosshair; filter:alpha(opacity=15); -moz-opacity:0.15; opacity:0.15; background-color:#000; border:1px solid #fff;}
+/* bigView */
+#bigView{position:absolute;border: 1px solid #959595; overflow: hidden; z-index:99999; margin-left:-200px;}
+#bigView img{position:absolute;}
+
+
+.prleft { width:450px; height:auto; float:left;}
+.prright { float:left;}
+.prright {}
+.prright ul{ padding:0px;}
+.prright ul li{ font-size:14px; margin-top:15px;}
+
+
+/*选项卡第一种形式*/
+#tabs0 {
+	height: auto;
+	width: 100%;
+	margin:0 auto;
+}
+.menu0{
+	width: 100%;
+}
+.menu0 li{
+	display:block;
+	float: left;
+	width:150px;
+	height:30px;
+	line-height:30px;
+	text-align: center;
+	cursor:pointer;
+	background: #f4f4f4;
+}
+.menu0 li.hover{
+	color:#FFFFFF;
+	background: #488fcd;
+}
+#main0 ul{
+	display: none;
+	padding:0px;
+	padding-top:20px;
+}
+#main0 ul.block{
+	display: block;
+}

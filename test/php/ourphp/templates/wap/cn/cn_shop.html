@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	  
+	[.include file="cn/cn_banner.html".]
+	  
+	  <div class="clear"></div>
+	  
+		  <div class="search">
+			<form name="form2" method="post" action="[.$webpath.]client/wap/search.php?temp=search">      
+			<div class="search_input w250 h40 b-r10">
+				<select name="sid" class="select">
+				<option value="article">文章</option>
+				<option value="product"  selected="selected">商品</option>
+				<option value="photo" >案例</option>
+				<option value="video" >视频</option>
+				<option value="down" >文档</option>
+				<option value="job" >招聘</option>
+				</select>
+				<input type="text" class="text" name="content" />
+			</div>
+			<div class="search_bt">
+			<input type="hidden" name="lang" value="cn" />
+			<input type="hidden" name="type" value="wap" />
+			<input type="submit" name="Submit2" value="搜索" class="w50 h40 b-r10 sbt"></div>
+			</form>
+		</div>
+	
+	  <div class="clear"></div>
+	  
+			<div id="tabBox1" class="tabBox">
+				<div class="hd">
+					<h3></h3>
+					<ul>
+						<li><a href="javascript:void(0)">商品展示</a></li>
+						<li><a href="javascript:void(0)">品牌商品</a></li>
+					</ul>
+				</div>
+				<div class="bd" id="tabBox1-bd"><!-- 添加id，js用到 -->
+					<div class="con"><!-- 高度自适应需添加外层 -->
+						<ul>
+							[.ourphp form="product" row="6" lang="cn" id="0" type="op" name="ourphp".]
+							<li class="fbr"><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]"><img src="[.$ourphp.minimg.]" alt="[.$ourphp.title.]"></a>
+							<p><del>$[.$ourphp.market.]</del>&nbsp;&nbsp;<span class="jg">$[.$ourphp.webmarket.]</span></p>
+							<p><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]">[.$ourphp.title.]</a></p>
+							</li>
+							[./ourphp.]
+						</ul>
+					</div>
+					<div class="con"><!-- 高度自适应需添加外层 -->
+						<ul>
+						[.foreach $brandclass as $op.]
+						[.if $op.i < 7.]
+							<li><a href="[.$op.wapurl.]" title="[.$op.title.]"><img src="[.$op.minimg.]" alt="[.$op.title.]"></a>
+							<p><a href="[.$op.wapurl.]" title="[.$op.title.]">[.$op.title.]</a></p>
+							</li>
+						[./if.]
+						[./foreach.]	
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			
+			<a class="readMore b-r10" href="#">更多产品&gt;&gt;</a>
+			<script type="text/javascript">
+			TouchSlide( { slideCell:"#tabBox1",
+
+				endFun:function(i){ //高度自适应
+					var bd = document.getElementById("tabBox1-bd");
+					//bd.parentNode.style.height = bd.children[i].children[0].offsetHeight+"px";
+					if(i>0)bd.parentNode.style.transition="200ms";//添加动画效果
+				}
+
+			} );</script>
+
+	  <div class="clear"></div>
+	  
+	  <div class="lou">
+	  	<h1><span class="f1">&nbsp;</span>1F&nbsp;科技数码</h1>
+		<div class="clear"></div>
+		<ul>
+							[.ourphp form="product" row="2" lang="cn" id="0" type="op" name="ourphp".]
+							<li><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]"><img src="[.$ourphp.minimg.]" alt="[.$ourphp.title.]"></a>
+							<p><del>$[.$ourphp.market.]</del>&nbsp;&nbsp;<span class="jg">$[.$ourphp.webmarket.]</span></p>
+							<p><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]">[.$ourphp.title.]</a></p>
+							</li>
+							[./ourphp.]
+							<div class="clear bordertop h20"></div>
+							[.callcolumn id="2" row="10" lang="cn" type="td" name="callcolumn".]
+							<a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]" class="class f1">[.$callcolumn.title.]</a>
+							[./callcolumn.]
+
+		</ul>
+	  </div>
+	  
+	  <div class="clear"></div>
+
+	  <div class="lou">
+	  	<h1><span class="f2">&nbsp;</span>2F&nbsp;男装女装</h1>
+		<div class="clear"></div>
+		<ul>
+							[.ourphp form="product" row="2" lang="cn" id="0" type="op" name="ourphp".]
+							<li><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]"><img src="[.$ourphp.minimg.]" alt="[.$ourphp.title.]"></a>
+							<p><del>$[.$ourphp.market.]</del>&nbsp;&nbsp;<span class="jg">$[.$ourphp.webmarket.]</span></p>
+							<p><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]">[.$ourphp.title.]</a></p>
+							</li>
+							[./ourphp.]
+							<div class="clear bordertop h20"></div>
+							[.callcolumn id="2" row="10" lang="cn" type="td" name="callcolumn".]
+							<a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]" class="class f2">[.$callcolumn.title.]</a>
+							[./callcolumn.]
+
+		</ul>
+	  </div>
+	  
+	  <div class="clear"></div>
+
+	  <div class="lou">
+	  	<h1><span class="f3">&nbsp;</span>3F&nbsp;鞋靴箱包</h1>
+		<div class="clear"></div>
+		<ul>
+							[.ourphp form="product" row="2" lang="cn" id="0" type="op" name="ourphp".]
+							<li><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]"><img src="[.$ourphp.minimg.]" alt="[.$ourphp.title.]"></a>
+							<p><del>$[.$ourphp.market.]</del>&nbsp;&nbsp;<span class="jg">$[.$ourphp.webmarket.]</span></p>
+							<p><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]">[.$ourphp.title.]</a></p>
+							</li>
+							[./ourphp.]
+							<div class="clear bordertop h20"></div>
+							[.callcolumn id="2" row="10" lang="cn" type="td" name="callcolumn".]
+							<a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]" class="class f3">[.$callcolumn.title.]</a>
+							[./callcolumn.]
+
+		</ul>
+	  </div>
+	  
+	  <div class="clear"></div>
+
+	  <div class="lou">
+	  	<h1><span class="f4">&nbsp;</span>4F&nbsp;护外运动</h1>
+		<div class="clear"></div>
+		<ul>
+							[.ourphp form="product" row="2" lang="cn" id="0" type="op" name="ourphp".]
+							<li><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]"><img src="[.$ourphp.minimg.]" alt="[.$ourphp.title.]"></a>
+							<p><del>$[.$ourphp.market.]</del>&nbsp;&nbsp;<span class="jg">$[.$ourphp.webmarket.]</span></p>
+							<p><a href="[.$ourphp.wapurl.]" title="[.$ourphp.title.]">[.$ourphp.title.]</a></p>
+							</li>
+							[./ourphp.]
+							<div class="clear bordertop h20"></div>
+							[.callcolumn id="2" row="10" lang="cn" type="td" name="callcolumn".]
+							<a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]" class="class f4">[.$callcolumn.title.]</a>
+							[./callcolumn.]
+
+		</ul>
+	  </div>
+	  
+	  <div class="clear"></div>
+	  
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

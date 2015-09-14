@@ -1,0 +1,52 @@
+[.config_load file="../../config/ourphp.conf".]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员中心 - [.$ourphp_web.website.] </title>
+<link rel="stylesheet" href="[.$templatepath.]css/style.css" type="text/css" />
+[.#jq172#.]
+</head>
+
+<body>
+[.include file="cn_head.html".] 
+<div class="clear h40"></div>
+<div class="ourphp_login">
+
+	<div class="ourphp_user_left">
+		<div class="user_touxiang"><img src="[.$webpath.]skin/user.png" width="150" /></div>	
+		<div style="clear:both"></div>
+		[.include file="cn_leftnav.html".] 
+	</div>
+	<div class="ourphp_user_right">
+		<div class="ourphp_user_up">
+			<p>账号：[.$user.email.]</p>
+			<p>姓名：[.$user.name.]</p>
+			<p>电话：[.$user.tel.]</p>
+			<p style="color:#990000">现金：[.$user.money.]</p>
+			<p style="color:#990000">积分：[.$user.integral.]</p>
+			<p>用户组：[.$user.class.]</p>
+		</div>
+	  <div class="ourphp_user_down">
+	  <div class="clear h20"></div>
+			<h1>我的自助推广：</h1>
+			<div class="clear h20"></div>
+			
+			
+			
+		    <table width="90%" border="0" cellpadding="10">
+              <tr>
+                <td width="20%"><div align="right">推广地址：</div></td>
+                <td width="80%"><textarea style=" width:440px; height:80px; border:1px #CCCCCC solid; padding:10px;">http://[.$ourphp_web.weburl.]/client/user/?cn-reg.html-&introducer=[.$user.id.]</textarea></td>
+              </tr>
+              <tr>
+                <td><div align="right">说明：</div></td><td><p>复制上面地址，邀请其它会员来注册。</p><p>成功注册一个用户，奖励网站现金：[.$usercontrol.money[2].]&nbsp;&nbsp;&nbsp;&nbsp;积分：[.$usercontrol.money[3].]</p></td>
+              </tr>
+            </table>
+		</div>
+	</div>
+	
+</div>
+[.include file="cn_foot.html".] 
+</body>
+</html>

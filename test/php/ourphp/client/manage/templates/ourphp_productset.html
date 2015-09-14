@@ -1,0 +1,105 @@
+[.config_load file="../../config/ourphp.conf".]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[.$ourphp_adminfont.admintitle.]</title>
+<link href="templates/images/ourphp_login.css" rel="stylesheet" type="text/css"> 
+[.#jq172#.]
+<script>
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+}
+//-->
+</script>
+
+</head>
+
+<body>
+<div style="height:50px;"></div>
+<div style="clear:both"></div>
+<div id="tabs0">
+ <ul class="menu0" id="menu0">
+  <li class="hover">商城设置</li>
+ </ul>
+ <div class="main" id="main0" style="border-top:2px #488fcd solid; clear:both;">
+  <ul class="block">
+	  <li>
+		<form id="form1" name="form1" method="POST" action="?ourphp_cms=edit" class="registerform">
+		<table width="98%" border="0" cellpadding="5" cellspacing="0" bordercolor="#666666" style="border-collapse:collapse; margin-top:20px;" align="center">
+		  <tr>
+		  	<td width="15%" valign="top"><div align="right">商城模式</div></td>
+			<td width="85%"><input name="OP_Pattern" type="radio" value="1" [.if $ourphp_set.OP_Pattern == 1.]checked="checked"[./if.] /> &nbsp;产品展示模式&nbsp;&nbsp;
+			<input type="radio" name="OP_Pattern" value="2" [.if $ourphp_set.OP_Pattern == 2.]checked="checked"[./if.] />&nbsp;商城模式&nbsp;&nbsp;
+			
+			<div style="clear:both;"></div>
+			<div style="background:url(../../skin/admintitlebg.gif) no-repeat; width:610px; height:60px; float:left; padding:30px 0px 0px 20px;">
+				<p>1.产品展示模式：只用于企业产品展示，不能提交订单。</p>
+				<p>2.商城模式：可以帮助企业在线电商，可以提交订单购买等操作。</p>
+			</div>
+			</td>
+		  </tr>
+		 <tr>
+		  	<td valign="top"><div align="right">价格方案</div></td>
+			<td><input type="radio" name="OP_Scheme" value="1" [.if $ourphp_set.OP_Scheme == 1.]checked="checked"[./if.] />&nbsp;统一价格方案&nbsp;&nbsp;
+			<input type="radio" name="OP_Scheme" value="2" [.if $ourphp_set.OP_Scheme == 2.]checked="checked"[./if.] />&nbsp;按会员等级制定价格&nbsp;&nbsp;
+
+			<div style="clear:both;"></div>
+			<div style="background:url(../../skin/admintitlebg.gif) no-repeat; width:610px; height:60px; float:left; padding:30px 0px 0px 20px;">
+				<p>1.统一价格方案：所有会员购买商品都是按本站价格计算。</p>
+				<p>2.按会员等级制定价格：不同等级的会员可以设置不同的价格。</p>
+			</div>
+			
+			</td>
+		  </tr>
+		  <tr>
+		  	<td valign="top"><div align="right">支持货到付款？</div></td>
+			<td><input type="radio" name="OP_Delivery" value="0" [.if $ourphp_set.OP_Delivery == 0.]checked="checked"[./if.] />&nbsp;不支持&nbsp;&nbsp;
+			<input type="radio" name="OP_Delivery" value="1" [.if $ourphp_set.OP_Delivery == 1.]checked="checked"[./if.] />&nbsp;支持&nbsp;&nbsp;	
+			</td>
+		  </tr>
+		  <tr>
+		  	<td><div align="right">库存数量报警</div></td>
+			<td><input type="text" name="OP_Stock" class="win2" value="[.$ourphp_set.OP_Stock.]" datatype="*" nullmsg="库存报警是必填项!" />&nbsp;(低于这个数量，系统会报警)</td>
+		  </tr>
+		  <tr>
+		  	<td valign="top"><div align="right">订单选项</div></td>
+			<td><input type="radio" name="OP_buy" value="1" [.if $ourphp_set.OP_buy == 1.]checked="checked"[./if.] />&nbsp;游客可以提交订单&nbsp;&nbsp;
+			<input type="radio" name="OP_buy" value="2" [.if $ourphp_set.OP_buy == 2.]checked="checked"[./if.] />&nbsp;只有会员可以提交订单&nbsp;&nbsp;
+
+			<div style="clear:both;"></div>
+			<div style="background:url(../../skin/admintitlebg.gif) no-repeat; width:610px; height:60px; float:left; padding:30px 0px 0px 20px;">
+				<p>1.游客可以提交订单：开启后，游客(未登录)可以在线提交订单，并且不会有支付。</p>
+				<p>2.只有会员可以提交订单：只有登录以后的会员才可以提交订单，并且按价格支付。</p>
+			</div>
+						
+			</td>
+		  </tr>
+		  <tr>
+		  	<td valign="top"><div align="right">发货方式</div></td>
+			<td>
+			前台调用标签[.literal.][.$shopset.sendout.][./literal.]
+			<textarea name="OP_Sendout" class="wtextarea" id="container" style="width:80%; height:400px;">[.$ourphp_set.OP_Sendout.]</textarea><font color=red> (*)</font>
+			[.include file="ourphp_editor.html".]	
+			</td>
+		  </tr>
+		   <tr>
+		   	<td></td>
+			<td><input type="submit" name="submit" value="提 交" class="ourphp-anniu"/></td>
+		  </tr>
+		</table>
+		</form>
+	  </li>
+  </ul>
+ </div>
+</div>
+[.include file="ourphp_foot.html".]
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+[.include file="cn/cn_top.html".]
+	  <div class="clear"></div>
+		<div class="usertop">
+			<div class="usercenter2">
+				<div class="usertx"><img src="/skin/user.png" class="touxiang b-r30"></div>
+				<div class="userjf">
+					<p>账号:[.$user.email.]</p>
+					<p>现金:[.$user.money.] 元</p>
+					<p>积分:[.$user.integral.] 分</p>
+					<p>会员组:[.$user.class.]</p>
+				</div>
+			</div>
+		</div>
+	  <div class="clear"></div>
+	  <div class="usernav">
+	  	<ul>
+			<li><a href="[.$webpath.]client/wap/?cn-usercenter.html" class="goup">返回上一页</a></li>
+		</ul>
+	  </div>
+	  <div class="clear"></div>
+		[.*积分领取开始*.]
+		<style type="text/css">
+		tr,td { padding:6px;}
+		</style>
+		  <table width="100%" border="1" bordercolor="#e7eff3" bgcolor="#ffffff" style="text-align:left; font-size:16px; border-collapse:collapse;">
+			<tr>
+			  <td colspan="6">我的当前积分:<b>[.$user.integral.]</b>		  </td>
+			</tr>
+			<tr  style="background:url([.$webpath.]skin/clubgb.png) repeat-x;">
+			  <td width="50"><div align="center">积分ID</div></td>
+			  <td>积分详情</td>
+			</tr>
+			[.foreach $integrallist as $op.]
+			<tr bgcolor="[.cycle values="#ffffff,#f5f5f5".]">
+			  <td><div align="center">[.$op.id.]</div></td>
+			  <td>
+			  <p>积分名称：[.$op.name.]</p>
+			  <p>可领积分：[.$op.integral.]</p>
+			  
+			  [.if $op.confirm == 0.]
+			  <p>领取状态：<a href="ourphp_play.class.php?ourphp_cms=integral&id=[.$op.id.]&lang=[.$ip.lang.]&type=wap">【点击领取】</a></p>
+			  [.elseif $op.confirm == 1.]
+			  <p>领取状态：已领取</p>
+			  <p align="center">[.$op.lqtime.]</p>
+			  [./if.]
+			  </td>
+			</tr>
+			[./foreach.]
+		  </table>
+		  [.*领取积分结束*.]
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<style>
+    .file-group {
+        position: relative;
+        width: 200px;
+        height: 80px;
+        border: 1px solid #ccc; /* 为了显示可见区域，非必须 */
+        overflow: hidden;
+        cursor: pointer;
+        line-height: 80px;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+        background-color: #f50;
+        border-radius: 4px;
+    }
+    .file-group input {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 300px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        cursor: pointer;
+    }
+    .file-group:hover {
+        background-color: #f60;
+    }
+</style>
+<div class="file-group">
+    <input type="file" name="" id="J_File">
+    选择文件
+</div>
+
+<!--<style>-->
+    <!--.file-group {-->
+        <!--position: relative;-->
+        <!--width: 200px;-->
+        <!--height: 80px;-->
+        <!--border: 1px solid #ccc; /* 为了显示可见区域，非必须 */-->
+        <!--overflow: hidden;-->
+    <!--}-->
+    <!--.file-group input {-->
+        <!--position: absolute;-->
+        <!--right: 0;-->
+        <!--top: 0;-->
+        <!--font-size: 300px;-->
+    <!--}-->
+<!--</style>-->
+<!--<div class="file-group">-->
+    <!--<input type="file" name="" id="J_File">-->
+<!--</div>-->
+</body>
+</html>

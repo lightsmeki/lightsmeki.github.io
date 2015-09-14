@@ -1,0 +1,124 @@
+[.config_load file="../../config/ourphp.conf".]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员中心 - [.$ourphp_web.website.] </title>
+<link rel="stylesheet" href="[.$templatepath.]css/style.css" type="text/css" />
+[.#jq172#.]
+</head>
+
+<body>
+[.include file="cn_head.html".] 
+<div class="clear h40"></div>
+<div class="ourphp_login">
+  <div class="ourphp_left">
+		<h1>会员注册</h1>
+		<div class="clear h20"></div>
+		
+		
+	[.*会员注册表单开始*.]
+	[.if $usercontrol.regoff == 1.]
+	<form id="form1" name="form1" method="post" action="[.$webpath.]client/user/ourphp_play.class.php?ourphp_cms=reg" class="registerform">
+	<table width="100%" border="0" cellpadding="8">
+          <tr>
+            <td><div align="right">登录账号：</div></td>
+            <td><input type="text" name="OP_Useremail" class="input" datatype="e" value="格式:77701950@qq.com" onfocus="if (value =='格式:77701950@qq.com'){value =''}" onblur="if (value ==''){value='格式:77701950@qq.com'}" /> <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">登录密码：</div></td>
+            <td><input type="password" name="OP_Userpass" class="input" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间！" /> 
+            <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">密码确认：</div></td>
+            <td><input type="password" name="OP_Userpass2" class="input" datatype="*" recheck="OP_Userpass" nullmsg="请再输入一次密码！" errormsg="您两次输入的密码不一致！" /> 
+            <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">姓名：</div></td>
+            <td><input type="text" name="OP_Username" class="input" datatype="*" /> <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">手机号码：</div></td>
+            <td><input type="text" name="OP_Usertel" class="input" id="mobiles" datatype="m" /> <font color="#FF0000">*</font></td>
+          </tr>
+			[.$regsms.]
+          <tr>
+            <td><div align="right">QQ：</div></td>
+            <td><input type="text" name="OP_Userqq" class="input" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">SKYPE：</div></td>
+            <td><input type="text" name="OP_Userskype" class="input" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">旺旺：</div></td>
+            <td><input type="text" name="OP_Useraliww" class="input" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">收货地址：</div></td>
+            <td><input type="text" name="OP_Useradd" class="input" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">安全问题：</div></td>
+            <td>
+			<select name="OP_Userproblem">
+			[.foreach $problem as $op.]
+			    <option value="[.$op.title.]">[.$op.title.]</option>
+			[./foreach.]
+			</select>
+			 <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">问题答案：</div></td>
+            <td><input type="text" name="OP_Useranswer" class="input" datatype="*" /> <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">人生宣言：</div></td>
+            <td><input type="text" name="OP_Usertext" class="input2" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">验证码：</div></td>
+            <td><input type="text" name="code" class="input3" datatype="*" onfocus="document.getElementById('checkcode').src+='?'" /> <font color="#FF0000">*</font>&nbsp;<img title="点击刷新" id="checkcode" src="[.$webpath.]function/ourphp_code.php" align="absbottom" onclick="this.src='[.$webpath.]function/ourphp_code.php?'+Math.random();" width="80" height="25"></img></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+			<input type="hidden" name="ip" value="[.$ip.ip.]" />
+			<input type="hidden" name="source" value="[.$ip.listid.]" />
+			<input type="hidden" name="lang" value="[.$ip.lang.]" />
+			<input type="hidden" name="introducer" value="[.$regconfig['introducer'].]" />
+            <input type="submit" name="Submit" value="提交" style="width:91px; height:27px; border:0px; background:url([.$webpath.]skin/anniu.gif) no-repeat; color:#FFFFFF;" />
+           &nbsp;&nbsp; <input type="reset" name="Submit2" value="重置" style="width:91px; height:27px; border:0px; background:url([.$webpath.]skin/anniu.gif) no-repeat; color:#FFFFFF;" /></td>
+          </tr>
+    </table>
+	</form>
+	<link rel="stylesheet" href="../../function/plugs/Validform/style.css" type="text/css" />
+	<script type="text/javascript" src="../../function/plugs/Validform/Validform_v5.3.2.js"></script>
+	<script type="text/javascript" src="[.$templatepath.]js/fromsend.js"></script>
+	[.else.]
+		暂时无法提供注册，请联系管理员！
+	[./if.]
+	[.*会员注册表单结束*.]
+	
+	</div>
+	<div class="ourphp_right">
+	
+	  <table width="90%" border="0" align="center" cellpadding="10">
+        <tr>
+          <td><textarea class="textarea">[.$usercontrol.protocol.]</textarea></td>
+        </tr>
+        <tr>
+          <td style="text-align:center"><p>&nbsp;</p><p>请同意以上注册协议后注册</p></td>
+        </tr>
+		<tr>
+          <td><div class="regtologin"><a href="[.$webpath.]client/user/?cn-login.html">登 录</a></div></td>
+        </tr>
+      </table>
+	  
+	</div>
+</div>
+[.include file="cn_foot.html".] 
+</body>
+</html>

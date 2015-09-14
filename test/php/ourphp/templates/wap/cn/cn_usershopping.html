@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+[.include file="cn/cn_top.html".]
+	  <div class="clear"></div>
+		<div class="usertop">
+			<div class="usercenter2">
+				<div class="usertx"><img src="/skin/user.png" class="touxiang b-r30"></div>
+				<div class="userjf">
+					<p>账号:[.$user.email.]</p>
+					<p>现金:[.$user.money.] 元</p>
+					<p>积分:[.$user.integral.] 分</p>
+					<p>会员组:[.$user.class.]</p>
+				</div>
+			</div>
+		</div>
+	  <div class="clear"></div>
+	  <div class="usernav">
+	  	<ul>
+			<li><a href="[.$webpath.]client/wap/?cn-usercenter.html" class="goup">返回上一页</a></li>
+		</ul>
+	  </div>
+	  <div class="clear"></div>
+	[.*订单模板开始*.]
+	<style type="text/css">
+	tr,td { padding:6px;}
+	</style>
+	  <table width="100%" border="1" bordercolor="#e7eff3" bgcolor="#ffffff" style="text-align:left; font-size:16px; border-collapse:collapse;">
+        <tr>
+          <td colspan="6">
+		 	 <input type="button" value="未付款商品统一付款" style="padding:5px; border:0px; height:30px; background: #81B9E7; color:#FFFFFF; width:150px;" onclick=window.open("[.$webpath.]client/wap/?cn-shoppingorders.html","_self") />
+		  </td>
+        </tr>
+        <tr  style="background:url([.$webpath.]skin/clubgb.png) repeat-x;">
+          <td width="150">我的订单</td>
+        </tr>
+		[.foreach $orderslist as $op.]
+        <tr bgcolor="[.cycle values="#ffffff,#f5f5f5".]">
+          <td>
+		  <p>[.$op.title|truncate:20:"...".]</p>
+		  <p>单号：[.$op.number.]</p>
+		  <p style="color:#999999;">规格：([.$op.pratt.])</p>
+		  <p>价格/数码：[.$op.usermarket.]&nbsp;×&nbsp;[.$op.num.]</p>
+		  <p style="color:#999999;">运费：[.$op.freight.]元</p>
+		  [.if $op.pay == 1.]
+		  <p><a href="[.$webpath.]client/wap/?cn-shoppingorders.html-&id=[.$op.id.]&type=wap"><img src="[.$webpath.]skin/fukuan.gif" border="0" /></a></p>
+		  [.else.]
+			  [.if $op.send == 1.]
+			  <p>状态：待发货...</p>
+			  [.else.]
+			  <p>状态：已发货</p>
+			  [./if.]
+		  [./if.]
+		  <p>&nbsp;</p>
+		  [.if $op.pay == 1.]
+		  <p style="float:right;">[<a href="[.$webpath.]client/wap/?cn-usershopping.html-&ourphp_cms=del&id=[.$op.id.]&dh=[.$op.number.]&type=wap">删除</a>]</p>
+		  [./if.]
+		  </td>
+        </tr>
+		[./foreach.]
+      </table>
+		<div style=" clear:both; height:20px;"></div>
+		[.$ourphppage.]
+	  [.*订单模板结束*.]
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	
+	  <div class="clear"></div>
+	  <div class="prview">
+	  	<h1><span class="f1">&nbsp;</span>[.$listname.title.]&nbsp;&nbsp;[<a href="#" id="showclass">选择分类</a>]</h1>
+		<div class="clear"></div>
+		
+	  <div id="classlist" class="hide newsclass">
+	  		<li>选择分类:</li>
+			[.callcolumn id=$ip.listid row="30" lang="cn" type="ty" name="callcolumn".]
+			<li><a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]">[.$callcolumn.title.]</a></li>
+			[./callcolumn.]
+			<li><a href="#" id="hideclass">[关闭]</a></li>
+	  </div>
+
+		<div class="clear"></div>
+	  	<ul>
+			<h2>[.$opcms.title.]</h2>
+			<div class="newstime">时间:[.$opcms.time.]</div>
+			<div class="clear"></div>
+			<div class="tu">
+							<div id="slideBox" class="slideBox">
+				
+								<div class="bd">
+									<ul>
+										[.foreach $opcms.img as $key => $op.]
+											<li><a class="pic" href="#"><img src="[.$webpath.][.$op.img.]" alt="[.$opcms.title.]"/></a></li>
+										[./foreach.]
+									</ul>
+								</div>
+				
+								<div class="hd">
+									<ul></ul>
+								</div>
+							</div>
+							<script type="text/javascript">
+								TouchSlide({ 
+									slideCell:"#slideBox",
+									titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+									mainCell:".bd ul", 
+									effect:"leftLoop", 
+									autoPage:true,//自动分页
+									autoPlay:true //自动播放
+								});
+							</script>
+			</div>
+		<form id="form1" name="form1" method="post" action="[.$webpath.]?cn-shoppingcart.html-&ourphp_cms=shopping">
+		[.ourphp_gg id=$opcms.specificationsid arr=$opcms.specifications mktprice=$opcms.market price=$opcms.webmarket mktpricefont="市场价" pricefont="本站价" stock="库存" stocks=$opcms.stock numberfont="货号" number=$opcms.number amount="购买数量" vipfont="所有会员价" freightfont="快递" symbol="：" usermoney=$opcms.usermoney freight=$opcms.freight.]
+		  <input type="hidden" name="pid" value="[.$opcms.id.]" />
+		  <input type="submit" name="Submit" value="放入购物车" style="width:120px; height:30px; border:0px; color:#FFFFFF; font-size:14px; text-align:center; background:#488fcd;" />
+		</form>
+			<div class="clear"></div>
+			<div class="nr">
+				<div class="nrtitle">属性</div>
+				<div class="prsx2 font14">
+					[.foreach from=$opcms.attribute item=aop.]
+					<p>[.$aop.name.]：[.$aop.key.]</p>
+					[./foreach.]
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="nr">
+				<div class="nrtitle">详细</div>
+			[.$opcms.content.]
+			</div>
+		</ul>
+
+		<div class="clear h50"></div>
+		<div class="pagetop h30 b-r10">[.uptext form="product" type="up" font="上一条：" noacc="暂无数据" url="wap".]</div>
+		<div class="pagefoot h30 b-r10">[.uptext form="product" type="down" font="下一条：" noacc="暂无数据" url="wap".]</div>
+	  </div>
+	  
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

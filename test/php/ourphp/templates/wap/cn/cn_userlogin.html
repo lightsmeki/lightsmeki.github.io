@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+[.include file="cn/cn_top.html".]
+	  <div class="clear"></div>
+		<div class="usertop">
+			<div class="usercenter">
+				<li class="b-r10"><a href="?cn-userlogin.html">我要登录</a></li>
+				<li class="b-r10"><a href="?cn-userreg.html">我要注册</a></li>
+			</div>
+		</div>
+	  <div class="clear"></div>
+	  
+	  <form name="form1" method="post" action="[.$webpath.]client/wap/ourphp_play.class.php?ourphp_cms=login">
+	  <table width="100%" border="0" cellpadding="10"  style="margin-top:30px;">
+        <tr>
+          <td colspan="2"><h1>会员登录</h1></td>
+        </tr>
+        <tr>
+          <td><div align="right">Email账号:</div></td>
+          <td><input type="text" name="useremail" class="w230 h30 b-r10 userinput"> *</td>
+        </tr>
+        <tr>
+          <td><div align="right">密码:</div></td>
+          <td><input type="password" name="password" class="w230 h30 b-r10 userinput"> *</td>
+        </tr>
+        <tr>
+          <td><input type="hidden" name="lang" value="cn" /></td>
+          <td><input type="submit" name="Submit" value="登录" class="w100 h30 b-r10 useran"></td>
+        </tr>
+      </table>
+      </form>
+	  
+	  <div class="clear h200"></div>
+[.include file="cn/cn_foot.html".]
+</div>
+</body>
+</html>

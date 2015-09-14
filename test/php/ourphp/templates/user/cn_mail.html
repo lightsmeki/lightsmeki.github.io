@@ -1,0 +1,93 @@
+[.config_load file="../../config/ourphp.conf".]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员中心 - [.$ourphp_web.website.] </title>
+<link rel="stylesheet" href="[.$templatepath.]css/style.css" type="text/css" />
+[.#jq172#.]
+</head>
+
+<body>
+[.include file="cn_head.html".] 
+<div class="clear h40"></div>
+<div class="ourphp_login">
+
+	<div class="ourphp_user_left">
+		<div class="user_touxiang"><img src="[.$webpath.]skin/user.png" width="150" /></div>	
+		<div style="clear:both"></div>
+		[.include file="cn_leftnav.html".] 
+	</div>
+	<div class="ourphp_user_right">
+	[.*站内邮件表单开始*.]
+	<script src="../../function/plugs/layer/layer.min.js"></script>
+	<form id="form1" name="form1" method="post" action="[.$webpath.]client/user/ourphp_play.class.php?ourphp_cms=mail" class="registerform">
+	<table width="100%" border="0" cellpadding="8" bgcolor="#F6F6F6">
+          <tr>
+            <td><div align="right">收件账号：</div></td>
+            <td><input type="text" name="OP_Usercollect" class="input" datatype="e" /> <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><div align="right">信件内容：</div></td>
+            <td><textarea name="OP_Usercontent" class="ourphp_textarea"  datatype="*" ></textarea> 
+            <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td>
+			  <div align="right">
+			    验证码：
+	          </div><input type="hidden" name="lang" value="[.$ip.lang.]" /></td>
+            <td><input type="text" name="code" class="input3" datatype="*" onfocus="document.getElementById('checkcode').src+='?'" /> <font color="#FF0000">*</font>&nbsp;<img title="点击刷新" id="checkcode" src="[.$webpath.]function/ourphp_code.php" align="absbottom" onclick="this.src='[.$webpath.]function/ourphp_code.php?'+Math.random();" width="80" height="25"></img>&nbsp;&nbsp;&nbsp;<input type="submit" name="Submit" value="发送" style="width:91px; height:27px; border:0px; background:url([.$webpath.]skin/anniu.gif) no-repeat; color:#FFFFFF;" /></td>
+          </tr>
+    </table>
+	</form>
+	<link rel="stylesheet" href="../../function/plugs/Validform/style.css" type="text/css" />
+	<script type="text/javascript" src="../../function/plugs/Validform/Validform_v5.3.2.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".registerform").Validform();  //就这一行代码！;
+	})
+	</script>
+
+	<div class="ourphp_user_down">
+	  <div class="clear h20"></div>
+			<h1>信件列表：</h1>
+	  <div class="clear h20"></div>
+	  <table width="100%" border="1" cellpadding="10" bordercolor="#e7eff3" bgcolor="#ffffff" style="text-align:left; font-size:12px; border-collapse:collapse;">
+        <tr style="background:url([.$webpath.]skin/clubgb.png) repeat-x;">
+          <td style="padding:0px 0px 0px 10px; height:31px; width:110px;">发送人</td>
+		  <td style="padding:0px 0px 0px 10px; height:31px; width:110px;">接收人</td>
+          <td style="padding:0px 0px 0px 10px; height:31px;">内容</td>
+		  <td style="padding:0px 0px 0px 10px; height:31px; width:100px;">时间</td>
+        </tr>
+		[.foreach $mail as $op.]
+        <tr bgcolor="[.cycle values="#f0f0f0,#ffffff".]">
+          <td valign="top">[.if $op.send == $user.email.]我[.else.][.$op.send.][./if.]</td>
+		  <td valign="top">[.if $op.collect == $user.email.]我[.else.][.$op.collect.][./if.]</td>
+		  <td valign="top"><p>[.$op.content|truncate:33:"...".]&nbsp;&nbsp;&nbsp;<a href="javascript:dialog([.$op.id.])">[查看]</a></p></td>
+		  <td valign="top">[.$op.time.]</td>
+        </tr>
+		[./foreach.]
+      </table>
+	  <div style="clear:both; height:20px;"></div>
+	  [.$ourphppage.]
+	</div>
+	</div>
+	<script> 
+	//弹出一个页面层
+	function dialog(id){
+		$.layer({
+			type: 2,
+			title: '邮件内容ID:'+id,
+			shade: [0],
+			border: [5, 0.3, '#000'],
+			area: ['600px', '300px'],
+			iframe:{src: '[.$webpath.]client/user/ourphp_mail.php?id='+id,scrolling: 'yes'}
+		});
+	};
+	</script>
+	[.*站内邮件表单结束*.]
+</div>
+[.include file="cn_foot.html".] 
+</body>
+</html>

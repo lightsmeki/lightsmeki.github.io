@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+
+	[.include file="cn/cn_top.html".]
+	
+	  <div class="clear"></div>
+	  <div class="newslist">
+	  	<h1><span class="f1">&nbsp;</span>[.$listname.title.]&nbsp;&nbsp;[<a href="#" id="showclass">选择分类</a>]</h1>
+		<div class="clear"></div>
+		
+	  <div id="classlist" class="hide newsclass">
+	  		<li>选择分类:</li>
+			[.callcolumn id="5" row="8" lang="cn" type="td" name="callcolumn".]
+			<li><a href="[.$callcolumn.wapurl.]" title="[.$callcolumn.title.]">[.$callcolumn.title.]</a></li>
+			[./callcolumn.]
+			<li><a href="#" id="hideclass">[关闭]</a></li>
+	  </div>
+	  
+		<div class="clear"></div>
+	  	<ul>
+			<h2>[.$opcms.title.]</h2>
+			<div class="newstime">时间:[.$opcms.time.]</div>
+
+			[.foreach $opcms.img as $key => $op.]
+			<p><img src="[.$webpath.][.$op.img.]" width="100%" /></p>
+			[./foreach.]
+			<div class="img">
+			[.$opcms.content.]
+			</div>
+		</ul>
+		
+		<div class="clear h50"></div>
+		<div class="pagetop h30 b-r10">[.uptext form="photo" type="up" font="上一条：" noacc="暂无数据" url="wap".]</div>
+		<div class="pagefoot h30 b-r10">[.uptext form="photo" type="down" font="下一条：" noacc="暂无数据" url="wap".]</div>
+	  </div>
+	  
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+
+</div>
+</body>
+</html>

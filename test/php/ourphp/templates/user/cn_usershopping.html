@@ -1,0 +1,102 @@
+[.config_load file="../../config/ourphp.conf".]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员中心 - [.$ourphp_web.website.] </title>
+<link rel="stylesheet" href="[.$templatepath.]css/style.css" type="text/css" />
+[.#jq172#.]
+</head>
+
+<body>
+[.include file="cn_head.html".] 
+<div class="clear h40"></div>
+<div class="ourphp_login">
+
+	<div class="ourphp_user_left">
+		<div class="user_touxiang"><img src="[.$webpath.]skin/user.png" width="150" /></div>	
+		<div style="clear:both"></div>
+		[.include file="cn_leftnav.html".] 
+	</div>
+	<div class="ourphp_user_right">
+	
+	[.*订单模板开始*.]
+	<script src="../../function/plugs/layer/layer.min.js"></script>
+	<style type="text/css">
+	tr,td { padding:6px;}
+	</style>
+	  <table width="100%" border="1" bordercolor="#e7eff3" bgcolor="#ffffff" style="text-align:left; font-size:12px; border-collapse:collapse;">
+        <tr>
+          <td colspan="6">
+		 	 <input type="button" value="未付款商品统一付款" style="padding:5px; border:0px; height:30px; background: #81B9E7; color:#FFFFFF; width:150px;" onclick=window.open("[.$webpath.]?cn-shoppingorders.html","_self") />
+		  </td>
+        </tr>
+        <tr  style="background:url([.$webpath.]skin/clubgb.png) repeat-x;">
+          <td width="150">单号</td>
+          <td>商品</td>
+          <td width="80">价格</td>
+          <td width="80">&nbsp;</td>
+          <td width="40">&nbsp;</td>
+        </tr>
+		[.foreach $orderslist as $op.]
+        <tr bgcolor="[.cycle values="#ffffff,#f5f5f5".]">
+          <td>[.$op.number.]</td>
+          <td>
+		  <p style="font-size:14px;">[.$op.title|truncate:20:"...".]</p>
+		  <p style="font-size:12px; margin-top:5px; color:#999999;">([.$op.pratt.])</p>
+		  </td>
+          <td>
+		  <p>[.$op.usermarket.]&nbsp;×&nbsp;[.$op.num.]</p>
+		  <p style="margin-top:5px; color:#999999;">(运费：[.$op.freight.]元)</p>
+		  </td>
+          <td><div align="center">
+		  [.if $op.pay == 1.]
+		  <a href="[.$webpath.]?cn-shoppingorders.html-&id=[.$op.id.]"><img src="[.$webpath.]skin/fukuan.gif" border="0" /></a>
+		  [.else.]
+			  [.if $op.send == 1.]
+			  <p>待发货...</p>
+			  [.else.]
+			  <p>已发货</p>
+			  <p><a href="javascript:dialog('[.$op.express.]','[.$op.expressnum.]')"><span style="color:#999999;">物流查询</span></a></p>
+			  [./if.]
+		  [./if.]
+		  </div></td>
+          <td><div align="center">
+		  [.if $op.pay == 1.]
+		  <a href="[.$webpath.]client/user/?cn-usershopping.html-&ourphp_cms=del&id=[.$op.id.]&dh=[.$op.number.]">删除</a>
+		  [.else.]
+		  <a href="../../function/plugs/Comment/product-content.php?id=[.$op.prid.]&type=productview&row=10" target="_blank">评论</a>
+		  [./if.]
+		  </div></td>
+        </tr>
+		[./foreach.]
+      </table>
+	  <script> 
+		function dialog(title,number){
+			$.layer({
+				type: 2,
+				title: '快递查询',
+				shade: [0],
+				border: [5, 0.3, '#000'],
+				area: ['600px', '340px'],
+				iframe:{src: '../../function/api/kuaidi100/index.php?title='+title+'&number='+number}
+			});
+		};
+		</script>
+		 
+		<link rel="stylesheet" href="../../function/plugs/Validform/style.css" type="text/css" />
+		<script type="text/javascript" src="../../function/plugs/Validform/Validform_v5.3.2.js"></script>
+		<script type="text/javascript"> 
+		$(function(){
+			$(".registerform").Validform();
+		})
+		</script>
+		<div style=" clear:both; height:20px;"></div>
+		[.$ourphppage.]
+	  [.*订单模板结束*.]
+	  
+	</div>
+</div>
+[.include file="cn_foot.html".] 
+</body>
+</html>

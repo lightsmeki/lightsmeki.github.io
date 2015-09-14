@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://dreamsky.github.io/main/blog/common/jquery.min.js"></script>
+
+
+</head>
+<body>
+<img id="img1" src="./src/12345.png" style="width:150px;height:150px" alt="" />
+</body>
+
+<script type="text/javascript">
+    $(function(){
+        $("#img1").click(function(){
+            var width = $(this).width();
+            if(width==150)
+            {
+                $(this).width(400);
+                $(this).height(400);
+            }
+            else
+            {
+                $(this).width(150);
+                $(this).height(150);
+            }
+        });
+    });
+</script>
+</html>

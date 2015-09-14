@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>[.$ourphp_web.website.]</title>
+	<meta name="keywords" content="[.$ourphp_web.webkeywords.]"/>
+	<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+	[.include file="cn/cn_head.html".]
+</head>
+<body>
+<div class="center">
+[.include file="cn/cn_top.html".]
+	  <div class="clear"></div>
+		<div class="usertop">
+			<div class="usercenter2">
+				<div class="usertx"><img src="/skin/user.png" class="touxiang b-r30"></div>
+				<div class="userjf">
+					<p>账号:[.$user.email.]</p>
+					<p>现金:[.$user.money.] 元</p>
+					<p>积分:[.$user.integral.] 分</p>
+					<p>会员组:[.$user.class.]</p>
+				</div>
+			</div>
+		</div>
+	  <div class="clear"></div>
+	  <div class="usernav">
+	  	<ul>
+			<li><a href="[.$webpath.]client/wap/?cn-usercenter.html" class="goup">返回上一页</a></li>
+		</ul>
+	  </div>
+	  <div class="clear"></div>
+	[.*在线支付表单开始*.]
+	<style type="text/css">.new-btn-login-sp{border:1px solid #d74c00;padding:1px;display:inline-block}.new-btn-login{background-color:transparent;background-image:url("../../function/api/alipay_quick/images/new-btn-fixed.png");border:medium none}.new-btn-login{background-position:0 -198px;width:82px;color:#fff;font-weight:bold;height:28px;line-height:28px;padding:0 10px 3px}.new-btn-login:hover{background-position:0 -167px;width:82px;color:#fff;font-weight:bold;height:28px;line-height:28px;padding:0 10px 3px}</style>
+	[.if $payquick.key[1] == 1.]
+	<form name="alipayment" action="../../function/api/alipay_quick/alipayapi.php" method="post" target="_blank">
+	  <table width="100%" border="0" align="center" cellpadding="10">
+        <tr>
+          <td width="60">&nbsp;</td>
+          <td>
+		  <p style="height:45px; line-height:45px;"><img src="../../function/api/alipay_quick/images/alipay.gif" />&nbsp;在线充值接口</p>
+		  <p style="margin-top:20px;">1、确认信息 →2、点击确认 →3、确认完成</p>
+		  </td>
+        </tr>
+        <tr>
+          <td><div align="right">充值金额：</div></td>
+          <td><input size="30" name="WIDtotal_fee" style="border:1px #CCCCCC solid; line-height:18px; font-size:14px; color:#999999; padding:5px;" class="w150 h20 b-r10" value="0.00" /><p>(必填，最大支持小数点后2位)</p></td>
+        </tr>
+        <tr>
+          <td><div align="right">备注留言：</div></td>
+          <td><input size="30" name="WIDbody" style="border:1px #CCCCCC solid; line-height:18px; font-size:14px; color:#999999; padding:5px;" class="w150 h20 b-r10" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+		    <input type="hidden" size="30" name="WIDsubject" value="在线充值" />
+			<input type="hidden" size="30" name="WIDout_trade_no" value="CZ_[.$smarty.now.]" />
+			<input type="hidden" size="30" name="type" value="wap" />
+			<button class="new-btn-login b-r10" type="submit" style="text-align:center;" >确 认</button>
+		  </td>
+        </tr>
+		<tr>
+          <td>&nbsp;</td>
+          <td>
+		    说明：付款后要等到支付宝页面跳转回我公司页面后，在关闭页面或浏览器。
+		  </td>
+        </tr>
+      </table>
+	  </form>
+		[.else.]
+	<form name="alipayment" action="../../function/api/alipay_webpay/alipayapi.php?type=wap" method="post" target="_blank">
+	  <table width="100%" border="0" align="center" cellpadding="10">
+        <tr>
+          <td width="60">&nbsp;</td>
+          <td>
+		  <p style="height:45px; line-height:45px;"><img src="../../function/api/alipay_webpay/images/alipay.gif" />&nbsp;网银充值接口</p>
+		  <p style="margin-top:20px;">1、确认信息 →2、点击确认 →3、确认完成</p>
+		  </td>
+        </tr>
+		<tr>
+			<td><div align="right">选择网银：</div></td>
+			<td>
+			
+			<p style="width:110px; height:90px; float:left; text-align:center;"><img src="../../function/api/alipay_webpay/images/gs.jpg" width="100" /><br />
+			  <input type="radio" name="WIDdefaultbank" value="ICBC-DEBIT" />工商
+			</p>
+			<p style="width:110px; height:90px; float:left; text-align:center;"><img src="../../function/api/alipay_webpay/images/ny.jpg" width="100" /><br />
+			  <input name="WIDdefaultbank" type="radio" value="ABC" checked="checked" />农业
+			</p>
+			<DIV style="clear:both;"></DIV>
+			<p style="width:110px; height:90px; float:left; text-align:center;"><img src="../../function/api/alipay_webpay/images/zh.jpg" width="100" /><br />
+			  <input type="radio" name="WIDdefaultbank" value="BOC-DEBIT" />中行</p>
+			<p style="width:110px; height:90px; float:left; text-align:center;"><img src="../../function/api/alipay_webpay/images/js.jpg" width="100" /><br />
+			  <input type="radio" name="WIDdefaultbank" value="CCB-DEBIT" />建设</p>
+			  <DIV style="clear:both;"></DIV>
+			<p style="width:110px; height:90px; float:left; text-align:center;"><img src="../../function/api/alipay_webpay/images/gf.jpg" width="100" /><br />
+			  <input type="radio" name="WIDdefaultbank" value="GDB-DEBIT" />广发</p>
+			<p style="width:110px; height:90px; float:left; text-align:center;"><img src="../../function/api/alipay_webpay/images/xy.jpg" width="100" /><br />
+			  <input type="radio" name="WIDdefaultbank" value="CIB" />兴业</p>
+			  <DIV style="clear:both;"></DIV>
+			<p style="width:110px; height:90px; float:left; text-align:center;"><img src="../../function/api/alipay_webpay/images/zs.jpg" width="100" /><br />
+			  <input type="radio" name="WIDdefaultbank" value="CMB-DEBIT" />招商</p>
+			<p style="width:110px; height:90px; float:left; text-align:center;"><img src="../../function/api/alipay_webpay/images/pd.jpg" width="100" /><br />
+			  <input type="radio" name="WIDdefaultbank" value="SPDB-DEBIT" />浦发</p>
+			
+		  </td>
+		</tr>
+        <tr>
+          <td><div align="right">充值金额：</div></td>
+          <td><input size="30" name="WIDtotal_fee" style="border:1px #CCCCCC solid; line-height:18px; font-size:14px; color:#999999; padding:5px;" class="w150 h20 b-r10" value="0.00" />
+		  <p>(必填，最大支持小数点后2位)</p></td>
+        </tr>
+        <tr>
+          <td><div align="right">备注留言：</div></td>
+          <td><input size="30" name="WIDbody" style="border:1px #CCCCCC solid; line-height:18px; font-size:14px; color:#999999; padding:5px;" class="w150 h20 b-r10" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+		    <input type="hidden" size="30" name="WIDsubject" value="在线充值" />
+			<input type="hidden" size="30" name="WIDout_trade_no" value="CZ_[.$smarty.now.]" />
+			<input type="hidden" size="30" name="type" value="wap" />
+			<button class="new-btn-login b-r10" type="submit" style="text-align:center;">确 认</button>
+		  </td>
+        </tr>
+		<tr>
+          <td>&nbsp;</td>
+          <td style="color:#FF0000;">
+		   <p>充值重要说明：银行页面付款成功后，请不要关闭浏览器。直到等待跳转回会员中心后才算充值成功。</p>
+		   <P>如果银行没有跳转，以农行为例，请点击页面上的按钮如：（然后直到等待跳转回会员中心）</P>
+		   <p><img src="../../function/api/alipay_webpay/images/sm.png" style="max-width:240px;" /></p>
+		  </td>
+        </tr>
+      </table>
+	  </form>
+	[./if.]
+	[.*在线支付表单结束*.]
+	  <div class="clear"></div>
+[.include file="cn/cn_foot.html".]
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+[.config_load file="../../config/ourphp.conf".]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员中心 - [.$ourphp_web.website.] </title>
+<link rel="stylesheet" href="[.$templatepath.]css/style.css" type="text/css" />
+[.#jq172#.]
+</head>
+
+<body>
+[.include file="cn_head.html".] 
+<div class="clear h40"></div>
+<div class="ourphp_login">
+
+	<div class="ourphp_user_left">
+		<div class="user_touxiang"><img src="[.$webpath.]skin/user.png" width="150" /></div>	
+		<div style="clear:both"></div>
+		[.include file="cn_leftnav.html".] 
+	</div>
+	<div class="ourphp_user_right">
+	[.*修改资料表单开始*.]
+	<form id="form1" name="form1" method="post" action="[.$webpath.]client/user/ourphp_play.class.php?ourphp_cms=edit" class="registerform">
+	<table width="100%" border="0" cellpadding="8">
+          <tr>
+            <td><div align="right">登录账号：</div></td>
+            <td>[.$user.email.]</td>
+          </tr>
+          <tr>
+            <td><div align="right">登录密码：</div></td>
+            <td><input type="password" name="OP_Userpass" class="input" /> 
+            <font color="#FF0000">*</font> 不修改保持为空！</td>
+          </tr>
+          <tr>
+            <td><div align="right">密码确认：</div></td>
+            <td><input type="password" name="OP_Userpass2" class="input" /> 
+            <font color="#FF0000">*</font> 不修改保持为空！</td>
+          </tr>
+          <tr>
+            <td><div align="right">姓名：</div></td>
+            <td><input type="text" name="OP_Username" class="input" datatype="*" value="[.$user.name.]" /> <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">电话：</div></td>
+            <td><input type="text" name="OP_Usertel" class="input" datatype="n" value="[.$user.tel.]" /> <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">QQ：</div></td>
+            <td><input type="text" name="OP_Userqq" class="input" value="[.$user.qq.]" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">SKYPE：</div></td>
+            <td><input type="text" name="OP_Userskype" class="input" value="[.$user.skype.]" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">旺旺：</div></td>
+            <td><input type="text" name="OP_Useraliww" class="input" value="[.$user.aliww.]" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">收货地址：</div></td>
+            <td><input type="text" name="OP_Useradd" class="input" value="[.$user.add.]" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">安全问题：</div></td>
+            <td>[.$user.problem.]</td>
+          </tr>
+          <tr>
+            <td><div align="right">问题答案：</div></td>
+            <td><input type="text" name="OP_Useranswer" class="input" datatype="*" value="[.$user.answer.]" /> <font color="#FF0000">*</font></td>
+          </tr>
+          <tr>
+            <td><div align="right">人生宣言：</div></td>
+            <td><input type="text" name="OP_Usertext" class="input2" value="[.$user.text.]" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">验证码：</div></td>
+            <td><input type="text" name="code" class="input3" datatype="*" /> <font color="#FF0000">*</font>&nbsp;<img title="点击刷新" src="[.$webpath.]function/ourphp_code.php" align="absbottom" onclick="this.src='[.$webpath.]function/ourphp_code.php?'+Math.random();" width="80" height="25"></img></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+			<input type="hidden" name="usercode" value="[.$user.code.]" />
+			<input type="hidden" name="lang" value="[.$ip.lang.]" />
+			<input type="hidden" name="password" value="[.$user.password.]" />
+            <input type="submit" name="Submit" value="提交" style="width:91px; height:27px; border:0px; background:url([.$webpath.]skin/anniu.gif) no-repeat; color:#FFFFFF;" />
+           &nbsp;&nbsp; <input type="reset" name="Submit2" value="重置" style="width:91px; height:27px; border:0px; background:url([.$webpath.]skin/anniu.gif) no-repeat; color:#FFFFFF;" /></td>
+          </tr>
+    </table>
+	</form>
+	<link rel="stylesheet" href="../../function/plugs/Validform/style.css" type="text/css" />
+	<script type="text/javascript" src="../../function/plugs/Validform/Validform_v5.3.2.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".registerform").Validform();  //就这一行代码！;
+	})
+	</script>
+	[.*修改资料表单结束*.]
+	</div>
+	
+</div>
+[.include file="cn_foot.html".] 
+</body>
+</html>

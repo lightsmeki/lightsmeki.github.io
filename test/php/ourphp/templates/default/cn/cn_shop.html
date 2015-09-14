@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>企业商城 - [.$ourphp_web.website.]</title>
+<meta name="keywords" content="[.$ourphp_web.webkeywords.]" />
+<meta name="description" content="[.$ourphp_web.webdescriptions.]"/>
+<meta name="Author" content="www.ourphp.net" />
+<LINK href="[.$templatepath.]shop/ourphp_shop.css" rel=stylesheet>
+<script language="JavaScript" type="text/javascript" src="[.$templatepath.]js/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="[.$webpath.]function/plugs/lazyload/jquery.lazyload.js"></script>
+<script type="text/javascript">
+$(document).ready(function() { 
+          $("img").lazyload({ 
+                 effect: "fadeIn"
+           });      
+});  
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var mod_menu=$(".mod-menu");//导航模块区
+	var menu=function(){
+		var menuItem=$(".menu-item li");//选择导航列表
+		menuItem.each(function(){
+			var _index=$(this).index();//获取当前选择菜单列表的索引
+			$(this).mouseenter(function(){
+				var y = $(this).position().top+1;//获取当前鼠标滑过的列表的顶部坐标
+				$(".menu-cont").show();
+				$(".menu-cont").css("top",y);//需要显示的对应索引内容
+				$(this).addClass("mouse-bg").siblings().removeClass("mouse-bg");
+				$(".menu-cont>div").eq(_index).show().siblings().hide();
+			});
+		});/*导航菜单菜单*/
+		$(".mod-menu").mouseleave(function(){
+			$(".menu-cont").hide();
+			menuItem.removeClass("mouse-bg");
+		})
+	}//展开二级菜单	
+	menu();//执行展开二级菜单函
+});
+function  showImg(){
+document.getElementById("wxImg").style.display='block';
+}
+function hideImg(){
+document.getElementById("wxImg").style.display='none';
+}
+</script>
+</head>
+<body>
+[.assign var="show" value="0".]
+[.include file="cn/cn_shoptop.html".]
+		
+		<div class="shopbanner">
+				<div class="i_box">
+				
+					<div class="i_imglist">
+						<ul id="J_imgList">
+						
+							
+					[.banner lang="cn" row="5" name="banner" id="0" type="0".]
+					<li><a href="[.$banner.url.]"><img src="[.$banner.img.]"></a></li>
+					[./banner.]
+						
+						</ul>
+					</div><!--切换大图-->
+					
+					<div class="i_nav">
+						<div class="i_navlist">
+							<ul id="J_navList">
+							[.banner lang="cn" row="5" name="banner" id="0" type="0".]
+								<li><a href="[.$banner.url.]">[.$banner.title.]</a></li>
+							[./banner.]
+							</ul>
+						
+						</div>
+					</div><!--图片导航-->
+					
+					<div class="i_prev" id="J_prev"><a href="javascript:void(0)">&lt;&nbsp;</a></div>
+					<div class="i_next" id="J_next"><a href="javascript:void(0)">&nbsp;&gt;</a></div>
+				
+				</div>
+				<script type="text/javascript" src="[.$templatepath.]js/script.js"></script>
+				
+
+		</div>
+		<Div class="shopnews">
+			<p><img src="[.$templatepath.]shop/right7t.jpg" /></p>
+			<div class="clear"></div>
+			<h1>商城公告</h1>
+			[.ourphp form="article" row="7" lang="cn" id="0" type="op" name="ourphp".]
+			<li><a href="[.$ourphp.url.]" title="[.$ourphp.title.]">[.$ourphp.title|truncate:15:"...".]</a></li>
+			[./ourphp.]
+		</Div>
+	</div>
+	<div class="clear h20"></div>
+	<div class="tj">
+		<h1>店长推荐<span>超值优惠·每日推荐</span></h1>
+		<ul>
+
+		[.ourphp form="product" row="3" lang="cn" id="0" type="3" name="ourphp".]
+		<li><a href="[.$ourphp.url.]" title="[.$ourphp.title.]"><img src="[.$ourphp.minimg.]" width="170" height="210" /></a>
+		<p><del>￥[.$ourphp.market.]</del>&nbsp;&nbsp;<span>￥[.$ourphp.webmarket.]</span></p>
+		<p><a href="[.$ourphp.url.]" title="[.$ourphp.title.]">[.$ourphp.title|truncate:10:"...".]</a></p>
+		<p class="description">[.$ourphp.description|truncate:20:"...".]</p>
+		</li>
+		[./ourphp.]
+
+		</ul>
+	</div>
+	<div class="pp">
+		<h1>品牌专区</h1>
+		<ul>
+			
+				[.foreach $brandclass as $op.]
+				[.if $op.i < 13.]
+				<li><a href="[.$op.url.]" title="[.$op.title.]"><img src="/skin/noimage.png" data-original="[.$op.minimg.]" border="0" width="130" height="80" /></a></li>
+				[./if.]
+				[./foreach.]
+
+		</ul>
+	</div>
+	<div class="clear h20"></div>
+	<div class="lou">
+		<h1>1F<span>手机数码</span> <i><a href="#">更多...</a></i></h1>
+		<div class="clear"></div>
+		<div class="louleftad">
+			<img src="[.$templatepath.]shop/ad1.jpg" width="200" height="483" />
+		</div>
+		<div class="louli">
+			[.ourphp form="product" row="10" lang="cn" id="0" type="op" name="ourphp".]
+			<li><a href="[.$ourphp.url.]" title="[.$ourphp.title.]"><img src="/skin/noimage.png" data-original="[.$ourphp.minimg.]" width="170" height="200" /></a>
+			<p><del>￥[.$ourphp.market.]</del>&nbsp;&nbsp;<span>￥[.$ourphp.webmarket.]</span></p>
+			<p><a href="[.$ourphp.url.]" title="[.$ourphp.title.]">[.$ourphp.title|truncate:10:"...".]</a></p>
+			</li>
+			[./ourphp.]
+		</div>
+	</div>
+	<div class="clear h20"></div>
+	<div class="lou">
+		<h1>2F<span>男装女装</span> <i><a href="#">更多...</a></i></h1>
+		<div class="clear"></div>
+		<div class="louleftad">
+			<img src="[.$templatepath.]shop/ad2.jpg" width="200" height="483" />
+		</div>
+		<div class="louli">
+			[.ourphp form="product" row="10" lang="cn" id="0" type="op" name="ourphp".]
+			<li><a href="[.$ourphp.url.]" title="[.$ourphp.title.]"><img src="/skin/noimage.png" data-original="[.$ourphp.minimg.]" width="170" height="200" /></a>
+			<p><del>￥[.$ourphp.market.]</del>&nbsp;&nbsp;<span>￥[.$ourphp.webmarket.]</span></p>
+			<p><a href="[.$ourphp.url.]" title="[.$ourphp.title.]">[.$ourphp.title|truncate:10:"...".]</a></p>
+			</li>
+			[./ourphp.]
+		</div>
+	</div>
+	<div class="clear h20"></div>
+	<div class="lou">
+		<h1>3F<span>鞋靴箱包</span> <i><a href="#">更多...</a></i></h1>
+		<div class="clear"></div>
+		<div class="louleftad">
+			<img src="[.$templatepath.]shop/ad3.jpg" width="200" height="483" />
+		</div>
+		<div class="louli">
+			[.ourphp form="product" row="10" lang="cn" id="0" type="op" name="ourphp".]
+			<li><a href="[.$ourphp.url.]" title="[.$ourphp.title.]"><img src="/skin/noimage.png" data-original="[.$ourphp.minimg.]" width="170" height="200" /></a>
+			<p><del>￥[.$ourphp.market.]</del>&nbsp;&nbsp;<span>￥[.$ourphp.webmarket.]</span></p>
+			<p><a href="[.$ourphp.url.]" title="[.$ourphp.title.]">[.$ourphp.title|truncate:10:"...".]</a></p>
+			</li>
+			[./ourphp.]
+		</div>
+	</div>
+	<div class="clear h20"></div>
+	<div class="lou">
+		<h1>4F<span>护外运动</span> <i><a href="#">更多...</a></i></h1>
+		<div class="clear"></div>
+		<div class="louleftad">
+			<img src="[.$templatepath.]shop/ad4.jpg" width="200" height="483" />
+		</div>
+		<div class="louli">
+			[.ourphp form="product" row="10" lang="cn" id="0" type="op" name="ourphp".]
+			<li><a href="[.$ourphp.url.]" title="[.$ourphp.title.]"><img src="/skin/noimage.png" data-original="[.$ourphp.minimg.]" width="170" height="200" /></a>
+			<p><del>￥[.$ourphp.market.]</del>&nbsp;&nbsp;<span>￥[.$ourphp.webmarket.]</span></p>
+			<p><a href="[.$ourphp.url.]" title="[.$ourphp.title.]">[.$ourphp.title|truncate:10:"...".]</a></p>
+			</li>
+			[./ourphp.]
+		</div>
+	</div>
+	<div class="clear h20"></div>
+	<div class="lou">
+		<h1>5F<span>珠宝配饰</span> <i><a href="#">更多...</a></i></h1>
+		<div class="clear"></div>
+		<div class="louleftad">
+			<img src="[.$templatepath.]shop/ad5.jpg" width="200" height="483" />
+		</div>
+		<div class="louli">
+			[.ourphp form="product" row="10" lang="cn" id="0" type="op" name="ourphp".]
+			<li><a href="[.$ourphp.url.]" title="[.$ourphp.title.]"><img src="/skin/noimage.png" data-original="[.$ourphp.minimg.]" width="170" height="200" /></a>
+			<p><del>￥[.$ourphp.market.]</del>&nbsp;&nbsp;<span>￥[.$ourphp.webmarket.]</span></p>
+			<p><a href="[.$ourphp.url.]" title="[.$ourphp.title.]">[.$ourphp.title|truncate:10:"...".]</a></p>
+			</li>
+			[./ourphp.]
+		</div>
+	</div>
+	<div class="clear h20"></div>
+	<div class="lou">
+		<h1>6F<span>护肤美妆</span> <i><a href="#">更多...</a></i></h1>
+		<div class="clear"></div>
+		<div class="louleftad">
+			<img src="[.$templatepath.]shop/ad6.jpg" width="200" height="483" />
+		</div>
+		<div class="louli">
+			[.ourphp form="product" row="10" lang="cn" id="0" type="op" name="ourphp".]
+			<li><a href="[.$ourphp.url.]" title="[.$ourphp.title.]"><img src="/skin/noimage.png" data-original="[.$ourphp.minimg.]" width="170" height="200" /></a>
+			<p><del>￥[.$ourphp.market.]</del>&nbsp;&nbsp;<span>￥[.$ourphp.webmarket.]</span></p>
+			<p><a href="[.$ourphp.url.]" title="[.$ourphp.title.]">[.$ourphp.title|truncate:10:"...".]</a></p>
+			</li>
+			[./ourphp.]
+		</div>
+	</div>
+	<div class="clear h20"></div>
+	
+</div>
+<div class="clear h20"></div>
+[.include file="cn/cn_shopfoot.html".]
+</body>
+</html>
