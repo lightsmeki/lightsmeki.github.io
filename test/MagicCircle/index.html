@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>魔法球</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+
+<div class="ball_container Absolute-Center">
+    <ul>
+        <li>
+            <div class="circle1 "></div>
+        </li>
+        <li>
+            <div class="circle2"></div>
+        </li>
+        <li>
+            <div class="circle3"></div>
+        </li>
+        <li>
+            <div class="circle4"></div>
+        </li>
+    </ul>
+    <!--<div class="circle1"></div>-->
+    <!--<div class="circle2"></div>-->
+    <!--<div class="circle3"></div>-->
+    <!--<div class="circle4"></div>-->
+</div>
+
+<script type="text/javascript" src="http://huhuapp.vsaker.com/webapp/js/jquery2.min.js"></script>
+<script type="text/javascript" src="./jquery.animate-colors-min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $(".circle1").click(function(){
+            $(".circle1").animate({backgroundColor: 'rgba(0,191,255,0.5)'},100);
+            $(".circle1").animate({backgroundColor: 'rgba(0,191,255,0.8)'},200);
+            $(".circle1").animate({borderColor: 'rgba(0,191,255,0.8)'},200);
+            $(".circle1").animate({backgroundColor: 'rgba(0,191,255,0.0)'},500);
+
+        });
+
+        $(".circle2").click(function(){
+            $(".circle2").animate({backgroundColor: 'rgba(245,245,220,0.5)'},100);
+            $(".circle2").animate({backgroundColor: 'rgba(245,245,220,0.8)'},200);
+            $(".circle2").animate({borderColor: 'rgba(245,245,220,0.8)'},200);
+            $(".circle2").animate({backgroundColor: 'rgba(245,245,220,0.0)'},500);
+
+        });
+        $(".circle3").click(function(){
+            $(".circle3").animate({backgroundColor: 'rgba(173,255,47,0.5)'},100);
+            $(".circle3").animate({backgroundColor: 'rgba(173,255,47,0.8)'},200);
+            $(".circle3").animate({borderColor: 'rgba(173,255,47,0.8)'},200);
+            $(".circle3").animate({backgroundColor: 'rgba(173,255,47,0.0)'},500);
+
+        });
+        $(".circle4").click(function(){
+            $(".circle4").animate({backgroundColor: 'rgba(255,0,0,0.5)'},100);
+            $(".circle4").animate({backgroundColor: 'rgba(255,0,0,0.8)'},200);
+            $(".circle4").animate({borderColor: 'rgba(255,0,0,0.8)'},200);
+            $(".circle4").animate({backgroundColor: 'rgba(255,0,0,0.0)'},500);
+
+        });
+
+    });
+</script>
+</body>
+</html>
