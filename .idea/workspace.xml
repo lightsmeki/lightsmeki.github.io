@@ -68,8 +68,8 @@
       <file leaf-file-name="geo.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/geography/geo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8628049" vertical-offset="172" max-vertical-offset="936">
-              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.64329267" vertical-offset="172" max-vertical-offset="936">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -652,7 +652,7 @@
       <workItem from="1442372856406" duration="6000" />
       <workItem from="1442385696974" duration="12000" />
       <workItem from="1444298606173" duration="2119000" />
-      <workItem from="1444380379431" duration="1267000" />
+      <workItem from="1444380379431" duration="1422000" />
     </task>
     <task id="LOCAL-00001" summary="201507314">
       <created>1438312007520</created>
@@ -858,11 +858,17 @@
       <option name="project" value="LOCAL" />
       <updated>1444381459741</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="201510093">
+      <created>1444381685534</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1444381685534</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121196000" />
+    <option name="totallyTimeSpent" value="121351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -914,7 +920,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="201509021" />
     <MESSAGE value="2015090212" />
     <MESSAGE value="201509023&#10;" />
     <MESSAGE value="201509024&#10;" />
@@ -939,7 +944,8 @@
     <MESSAGE value="201510091" />
     <MESSAGE value="201510082" />
     <MESSAGE value="201510092" />
-    <option name="LAST_COMMIT_MESSAGE" value="201510092" />
+    <MESSAGE value="201510093" />
+    <option name="LAST_COMMIT_MESSAGE" value="201510093" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1313,8 +1319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/geography/geo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8628049" vertical-offset="172" max-vertical-offset="936">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.64329267" vertical-offset="172" max-vertical-offset="936">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
