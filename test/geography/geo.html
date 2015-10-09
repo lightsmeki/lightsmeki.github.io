@@ -29,7 +29,9 @@
             map.addControl(new BMap.ScaleControl());
             map.addControl(new BMap.OverviewMapControl());
             map.centerAndZoom(point, 15);
-//            map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+
+
+//            map.addControl(new BMap.MapTypeControl());   //添加地图类型各种控件！卫星啥的
 //            map.addOverlay(new BMap.Marker(point))
 
 
@@ -42,6 +44,10 @@
     </script>
 </head>
 <body>
-<div id="map"></div>
+<div id="map">
+    <lbs-map width="100px" style="height:100%" >
+        <lbs-poi name="百度大厦" location="116.307852,40.057031" addr="北京市海淀区上地十街10号" ></lbs-poi>
+    </lbs-map>
+</div>
 </body>
 </html>

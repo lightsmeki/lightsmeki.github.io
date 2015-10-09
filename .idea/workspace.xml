@@ -15,6 +15,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/bootstrap-3.3.5/css/bootstrap.min.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/bootstrap-3.3.5/js/bootstrap.min.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/geography/golist.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/bootstrap-3.3.5/js/npm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/geography/geo.html" afterPath="$PROJECT_DIR$/test/geography/geo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -65,12 +66,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="geo.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="geo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/geography/geo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64329267" vertical-offset="280" max-vertical-offset="936">
-              <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
-              <folding />
+            <state vertical-scroll-proportion="-2.0481927" vertical-offset="46" max-vertical-offset="1044">
+              <caret line="12" column="102" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="102" />
+              <folding>
+                <element signature="n#style#0;n#lbs-map#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="golist.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/geography/golist.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30209792" vertical-offset="0" max-vertical-offset="715">
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#lbs-map#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,6 +170,7 @@
         <option value="$PROJECT_DIR$/test/MagicCircle/index.html" />
         <option value="$PROJECT_DIR$/test/geography/index.html" />
         <option value="$PROJECT_DIR$/test/geography/geo.html" />
+        <option value="$PROJECT_DIR$/test/geography/golist.html" />
       </list>
     </option>
   </component>
@@ -652,7 +668,7 @@
       <workItem from="1442372856406" duration="6000" />
       <workItem from="1442385696974" duration="12000" />
       <workItem from="1444298606173" duration="2119000" />
-      <workItem from="1444380379431" duration="2027000" />
+      <workItem from="1444380379431" duration="2640000" />
     </task>
     <task id="LOCAL-00001" summary="201507314">
       <created>1438312007520</created>
@@ -870,11 +886,17 @@
       <option name="project" value="LOCAL" />
       <updated>1444381848240</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="201510094">
+      <created>1444382447840</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1444382447840</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121956000" />
+    <option name="totallyTimeSpent" value="122569000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -926,7 +948,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="2015090212" />
     <MESSAGE value="201509023&#10;" />
     <MESSAGE value="201509024&#10;" />
     <MESSAGE value="20150907" />
@@ -951,7 +972,8 @@
     <MESSAGE value="201510082" />
     <MESSAGE value="201510092" />
     <MESSAGE value="201510093" />
-    <option name="LAST_COMMIT_MESSAGE" value="201510093" />
+    <MESSAGE value="201510094" />
+    <option name="LAST_COMMIT_MESSAGE" value="201510094" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -962,11 +984,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/iOS_LifeCycle.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1325,9 +1342,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/geography/geo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64329267" vertical-offset="280" max-vertical-offset="936">
-          <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
-          <folding />
+        <state vertical-scroll-proportion="-2.0481927" vertical-offset="46" max-vertical-offset="1044">
+          <caret line="12" column="102" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="102" />
+          <folding>
+            <element signature="n#style#0;n#lbs-map#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/geography/golist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30209792" vertical-offset="0" max-vertical-offset="715">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#lbs-map#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
