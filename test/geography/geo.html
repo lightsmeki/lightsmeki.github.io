@@ -10,8 +10,8 @@
         }
     </style>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="http://api.map.百度.com/api?v=2.0&ak=··············"></script>
-    <script type="text/javascript" src="http://developer.百度.com/map/jsdemo/demo/convertor.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=AaibcBmcdNFsXimwXsz30pRS"></script>
+    <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
     <script>
         $(function(){
             navigator.geolocation.getCurrentPosition(translatePoint); //定位
@@ -24,7 +24,7 @@
         }
         function initMap(point){
 //初始化舆图
-            map = new BMap.Map("map");
+            map = new BMap.Map("allmap");
             map.addControl(new BMap.NavigationControl());
             map.addControl(new BMap.ScaleControl());
             map.addControl(new BMap.OverviewMapControl());
