@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        *{
+            height: 100%; //设置高度，否则会显示不出来
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://api.map.百度.com/api?v=2.0&ak=··············"></script>
+    <script type="text/javascript" src="http://developer.百度.com/map/jsdemo/demo/convertor.js"></script>
+    <script>
+        $(function(){
+            navigator.geolocation.getCurrentPosition(translatePoint); //定位
+        });
+        function translatePoint(position){
+            var currentLat = position.coords.latitude;
+            var currentLon = position.coords.longitude;
+            var gpsPoint = new BMap.Point(currentLon, currentLat);
+            BMap.Convertor.translate(gpsPoint, 0, initMap); //转换坐标 (原文出处：吾吾织梦WwW.55zM.CoM)
+        }
+        function initMap(point){
+//初始化舆图
+            map = new BMap.Map("map");
+            map.addControl(new BMap.NavigationControl());
+            map.addControl(new BMap.ScaleControl());
+            map.addControl(new BMap.OverviewMapControl());
+            map.centerAndZoom(point, 15);
+            map.addOverlay(new BMap.Marker(point))
+        }
+    </script>
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>
