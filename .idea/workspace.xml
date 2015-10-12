@@ -59,8 +59,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resume/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33592534" vertical-offset="0" max-vertical-offset="9198">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.47589424" vertical-offset="0" max-vertical-offset="9198">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -107,8 +107,8 @@
       <file leaf-file-name="sss.min.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resume/Resume_files/sss.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.661017" vertical-offset="0" max-vertical-offset="666">
-              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+            <state vertical-scroll-proportion="-9.457627" vertical-offset="0" max-vertical-offset="666">
+              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -674,7 +674,7 @@
       <workItem from="1444298606173" duration="2119000" />
       <workItem from="1444380379431" duration="3535000" />
       <workItem from="1444446384060" duration="18937000" />
-      <workItem from="1444613885922" duration="17415000" />
+      <workItem from="1444613885922" duration="17583000" />
     </task>
     <task id="LOCAL-00001" summary="201507314">
       <created>1438312007520</created>
@@ -952,11 +952,17 @@
       <option name="project" value="LOCAL" />
       <updated>1444638164434</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="201510125">
+      <created>1444638296434</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1444638296434</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159816000" />
+    <option name="totallyTimeSpent" value="159984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
@@ -1038,7 +1044,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="201509074" />
     <MESSAGE value="201509101" />
     <MESSAGE value="201509102" />
     <MESSAGE value="201509103" />
@@ -1063,7 +1068,8 @@
     <MESSAGE value="201510082" />
     <MESSAGE value="201510122" />
     <MESSAGE value="201510103" />
-    <option name="LAST_COMMIT_MESSAGE" value="201510103" />
+    <MESSAGE value="201510125" />
+    <option name="LAST_COMMIT_MESSAGE" value="201510125" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1397,8 +1403,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resume/Resume_files/sss.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.661017" vertical-offset="0" max-vertical-offset="666">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        <state vertical-scroll-proportion="-9.457627" vertical-offset="0" max-vertical-offset="666">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1420,8 +1426,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resume/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33592534" vertical-offset="0" max-vertical-offset="9198">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.47589424" vertical-offset="0" max-vertical-offset="9198">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
