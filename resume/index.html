@@ -6,32 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Burin's Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Resume_files/style.css?ver10104">
+    <link rel="stylesheet" href="./Resume_files/style.css?ver10105">
     <link rel="shortcut icon" href="./Resume_files/icon.png">
 
     <link rel="stylesheet" href="./Resume_files/sss.min.css?ver10106">
+
+    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.js"></script>
 </head>
 
 
 <body style="overflow: hidden; height: 100%;">
 <div id="resume" class="fullpage-wrapper" style="height: 100%; position: relative; top: 0px;">
 
-
-
-    <section id="block-nav">
+    <section id="nav" style="position: fixed;">
         <header class="headcontainer">
-            <a class="fl" href="http://www.godiscoding.com/resume/" id="logo" hideFocus="true">简历</a>
+            <a class="fl" href="#section1" id="logo" hidefocus="true">返回</a>
             <nav class="fr">
-                <ul>
-                    <li><a href="http://www.godiscoding.com/resume/#section1" id="nav-intro" hideFocus="true">个人简介</a></li>
-                    <li><a href="http://www.godiscoding.com/resume/#section2" id="nav-workEXP" hideFocus="true">工作经历</a></li>
-                    <li><a href="http://www.godiscoding.com/resume/#section3" id="nav-prjEXP" hideFocus="true">项目经验</a></li>
-                    <li><a href="http://www.godiscoding.com/resume/#section4" id="nav-skill" hideFocus="true">专业技能</a></li>
-                    <li><a href="http://www.godiscoding.com/resume/#section5" id="nav-wantMore" hideFocus="true">联系方式</a></li>
-                </ul>
+                <a href="#section1" id="nav-intro" hidefocus="true">个人简介</a>
+                <a href="#section2" id="nav-workEXP" hidefocus="true">工作经历</a>
+                <a href="#section3" id="nav-prjEXP" hidefocus="true">项目经历</a>
+                <a href="#section4" id="nav-skill" hidefocus="true">专业技能</a>
+                <a href="#section5" id="nav-wantMore" hidefocus="true">联系方式</a>
             </nav>
         </header>
     </section>
+
+    <!--<section id="block-nav">-->
+        <!--<header class="headcontainer">-->
+            <!--<a class="fl" href="http://www.godiscoding.com/resume/" id="logo" hideFocus="true">简历</a>-->
+            <!--<nav class="fr">-->
+                <!--<ul>-->
+                    <!--<li><a href="http://www.godiscoding.com/resume/#section1" id="nav-intro" hideFocus="true">个人简介</a></li>-->
+                    <!--<li><a href="http://www.godiscoding.com/resume/#section2" id="nav-workEXP" hideFocus="true">工作经历</a></li>-->
+                    <!--<li><a href="http://www.godiscoding.com/resume/#section3" id="nav-prjEXP" hideFocus="true">项目经验</a></li>-->
+                    <!--<li><a href="http://www.godiscoding.com/resume/#section4" id="nav-skill" hideFocus="true">专业技能</a></li>-->
+                    <!--<li><a href="http://www.godiscoding.com/resume/#section5" id="nav-wantMore" hideFocus="true">联系方式</a></li>-->
+                <!--</ul>-->
+            <!--</nav>-->
+        <!--</header>-->
+    <!--</section>-->
 
     <!--封面-->
     <!--<div id="section section0 fp-section fp-table "id="section0" style="height: 775px; background-color: #901347;">-->
@@ -63,7 +76,7 @@
                 <h1>个人简介</h1>
                 <p>周烨</p>
                 <p>23岁 杭州人</p>
-                <p>2010年本科毕业于宁波诺丁汉大学,电气工程自动化专业</p>
+                <p>2010年本科毕业于宁波诺丁汉大学, 电气工程自动化专业</p>
                 <p>目前从事Web前端开发</p>
                 <p>状态：在职 </p>
                 <p>期待好的合作机会</p>
@@ -352,7 +365,7 @@
                 <div class="fp-tableCell" style="height:775px;">
                     <h1 class="head">感谢您的阅读</h1>
                 <h3>期待有机会能与您共事<span class="mobile-br"><br></span></h3>
-                <h1><a href="javascript:" id="contactMe">Contact me!</a></h1>
+                <h1><a href="javascript:" id="contactMe"style="text-decoration: underline;">Contact me!</a></h1>
                 </div>
             </div>
             <div class="slide fp-slide fp-table"id="section5" style="width: 50%;">
@@ -369,7 +382,7 @@
         </div>
         <div class="fp-controlArrow fp-prev"></div>
         <div class="fp-controlArrow fp-next"></div>
-        
+
     </div>
 </div>
 <!--PC端操作提示-->
@@ -501,6 +514,18 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
+</script>
+
+<script type="text/javascript" src="./Resume_files/navFixed.min.js"></script>
+<script>
+    $(window).resize();
+    $("#nav").navFixed();
+    $('#fstPage-down a, nav a, #logo').bind('click',function(event){
+        var $anchor = $(this);
+        $('html, body').stop().animate({scrollTop: $($anchor.attr('href')).offset().top-40}, 600);
+        event.preventDefault();
+    });
+
 </script>
 
 </body></html>
