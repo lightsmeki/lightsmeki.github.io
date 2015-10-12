@@ -58,8 +58,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resume/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58942455" vertical-offset="233" max-vertical-offset="9180">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.58942455" vertical-offset="5255" max-vertical-offset="9180">
+              <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -671,13 +671,7 @@
       <workItem from="1444298606173" duration="2119000" />
       <workItem from="1444380379431" duration="3535000" />
       <workItem from="1444446384060" duration="18937000" />
-      <workItem from="1444613885922" duration="17904000" />
-    </task>
-    <task id="LOCAL-00001" summary="201507314">
-      <created>1438312007520</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1438312007520</updated>
+      <workItem from="1444613885922" duration="18071000" />
     </task>
     <task id="LOCAL-00002" summary="201507315">
       <created>1438312756074</created>
@@ -967,11 +961,17 @@
       <option name="project" value="LOCAL" />
       <updated>1444638647746</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="2015101210">
+      <created>1444638790212</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1444638790245</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160305000" />
+    <option name="totallyTimeSpent" value="160472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
@@ -1053,7 +1053,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="201509103" />
     <MESSAGE value="201509103&#10;&#10;" />
     <MESSAGE value="201509104&#10;&#10;" />
     <MESSAGE value="201509105&#10;&#10;" />
@@ -1078,7 +1077,8 @@
     <MESSAGE value="201510125" />
     <MESSAGE value="201510128" />
     <MESSAGE value="201510129" />
-    <option name="LAST_COMMIT_MESSAGE" value="201510129" />
+    <MESSAGE value="2015101210" />
+    <option name="LAST_COMMIT_MESSAGE" value="2015101210" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1435,8 +1435,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resume/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58942455" vertical-offset="233" max-vertical-offset="9180">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.58942455" vertical-offset="5255" max-vertical-offset="9180">
+          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
