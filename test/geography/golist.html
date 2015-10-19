@@ -6,7 +6,7 @@
     <style type="text/css">
         body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
     </style>
-    <title>添加动画标注点</title>
+    <title>golist地理定位</title>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TlXEksq4GWZw5jpuyMmlFkCc"></script>
     <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
@@ -27,7 +27,7 @@
             map.addControl(new BMap.NavigationControl());
             map.addControl(new BMap.ScaleControl());
             map.addControl(new BMap.OverviewMapControl());
-            map.centerAndZoom(point, 15);
+            map.centerAndZoom(point, 0);
 
 
 //            map.addControl(new BMap.MapTypeControl());   //添加地图类型各种控件！卫星啥的
@@ -44,6 +44,9 @@
             var marker = new BMap.Marker(point);  // 创建标注
             map.addOverlay(marker);               // 将标注添加到地图中
             marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+            var label = new BMap.Label("你在这里~",{offset:new BMap.Size(20,-10)});
+            marker.setLabel(label);
         }
     </script>
 </head>
