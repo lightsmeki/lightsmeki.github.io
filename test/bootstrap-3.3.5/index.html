@@ -6,9 +6,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style type="text/css">
+        .form-signin{
+            max-width: 330px;
+            padding:15px;
+            margin:0 auto;
+        }
+        input{
+            margin-bottom: 3px;
+        }
+    </style>
 </head>
 <body>
-<h1>Hello world!</h1>
+
+<form class="form-signin" role="form">
+
+    <h2 class="form-signin-heading">欢迎登录</h2>
+    <input type="email" placeholder="Email address" class="form-control" required="required" autofocus="autofocus">
+    <input type="password" placeholder="Password" class="form-control" required="">
+    <label class="checkbox">
+        <input type="checkbox" class="" value="remember-me">阅读用户协议
+    </label>
+    <input type="submit" class="btn btn-lg btn-primary btn-block " value="登录">
+</form>
+
+
 
 <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>

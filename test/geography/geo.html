@@ -3,14 +3,14 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>geo地图标注点</title>
     <style type="text/css">
         *{
-            height: 100%; //设置高度，否则会显示不出来
+            height: 90%; //设置高度，否则会显示不出来
         }
     </style>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=AaibcBmcdNFsXimwXsz30pRS"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TlXEksq4GWZw5jpuyMmlFkCc"></script>
     <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
     <script>
         $(function(){
@@ -24,7 +24,8 @@
         }
         function initMap(point){
 //初始化舆图
-            map = new BMap.Map("map");
+            map = new BMap.Map("allmap");
+//            map.setCurrentCity("杭州");
             map.addControl(new BMap.NavigationControl());
             map.addControl(new BMap.ScaleControl());
             map.addControl(new BMap.OverviewMapControl());
@@ -44,9 +45,9 @@
     </script>
 </head>
 <body>
-<div id="map">
+<div id="allmap">
     <lbs-map width="100px" style="height:100%" center="116.307852,90">
-        <lbs-poi name="你在这儿" location="116.307852,12" ></lbs-poi>
+        <lbs-poi name="你在这儿" location="116.307852,12"addr="xxxxx" ></lbs-poi>
     </lbs-map>
 </div>
 </body>
