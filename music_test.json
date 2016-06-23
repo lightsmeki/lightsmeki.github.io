@@ -8,7 +8,7 @@
 	  "trackNumber" : 1,
 	  "totalTrackCount" : 6,
 	  "duration" : 103,
-	  "site" : "http://audio.vsaker.com/T2/org"
+	  "site" : "http://audio.vsaker.com/T2/org/T2-89.mp3"
 	},
 	{ "title" : "T2-90",
 	  "album" : "huhu",
@@ -19,7 +19,7 @@
 	  "trackNumber" : 2,
 	  "totalTrackCount" : 6,
 	  "duration" : 132,
-	  "site" : "http://audio.vsaker.com/T2/org"
+	  "site" : "http://audio.vsaker.com/T2/org/T2-90.mp3"
 	},
 	{ "title" : "T2-91",
 	  "album" : "huhu",
@@ -30,6 +30,6 @@
 	  "trackNumber" : 3,
 	  "totalTrackCount" : 6,
 	  "duration" : 162,
-	  "site" : "http://audio.vsaker.com/T2/org"
+	  "site" : "http://audio.vsaker.com/T2/org/T2-91.mp3"
 	}
 ]}
