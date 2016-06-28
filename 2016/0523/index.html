@@ -5,7 +5,7 @@
   <meta name="不林的博客" content="不林的博客" />
   <meta name="burin's blog" content="burin's blog" />
   
-    <title>2015.11.12阶段总结 | Burin&#39;s blog</title>
+    <title>事件分发机制 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -35,7 +35,7 @@
 
             <div id="textlogo">
               <h1 class="site-name"><a href="./" title="Burin&#39;s blog">Burin&#39;s blog</a></h1>
-              <h2 class="blog-motto">不林的博客( ﾟ∀ﾟ)</h2>
+              <h2 class="blog-motto">不林的博客 <br/>( ﾟ∀ﾟ)よろしく❤</h2>
             </div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -70,14 +70,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/1112/" title="2015.11.12阶段总结" itemprop="url">2015.11.12阶段总结</a>
+      <a href="/2016/0523/" title="事件分发机制" itemprop="url">事件分发机制</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-12T11:29:00.000Z" itemprop="datePublished"> 发表于 11月 12 2015</time>
+    <time datetime="2016-05-23T09:17:00.000Z" itemprop="datePublished"> 发表于 05月 23 2016</time>
     
   </p>
 </header>
@@ -89,35 +89,81 @@
 
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">阶段总结</span>
+                        <span class="toc-number">1.</span> <span class="toc-text">为何要理解事件分发机制</span>
                     </a>
                 </li>
 
             </ol>
 		
 		</div>
-		
+
 		<p><a id="more"></a></p>
-        <h2 id="标题1">阶段总结</h2>
-        <p>从10.25到11.12，呼呼收音机android新版app开发告一段落了<s>（屎终于拉完了）</s>，真是可喜可贺，可口可乐。</p>
+        <h2 id="标题1">为何要理解事件分发机制</h2>
+        <p>首先思考一个问题：当一个按钮同时注册了onClick和onTouch事件，它会怎样执行？</p>
+        <br/>写一个简单的demo，我们很容易得到答案，先执行onTouch事件，再执行onClick事件。如果将修改onTouch的返回值修改为true，onClick事件可能会被拦截。
+        <br/>Σ（ﾟДﾟ ）为啥会这样哦.....
+        <br/>理解了View的事件分发机制，问题自然有了答案。
 
-        <br/>在项目开发过程中，我主要负责app引导页、主题和分类列表、个人中心（包括最近收听、收藏、下载、资料修改，积分，本地设置，分享，推荐，帮助等模块）、搜索模块，以及所有测试以及界面优化整改工作。项目按功能点进行分配，比较清晰，也能很好的把人和事关联起来。
         <p>
-            <br/>我学习了遇到bug该如何排查，如何向经♂验♂丰♂富的前辈请教问题<s>（论如何顶住高冷冰山）</s>，如何与后台人员联合调试<s>（哪怕错在别人，也要先自己背锅）</s>，如何与<s>火烧屁股吱哇乱叫的</s>领导进行沟通（只说做成的事，不要做其它多余的沟通，更不要因为领导苛责而生气而内疚，因为领导只是顺势将无处发泄的情绪倒给你，其实和你本身没什么关系）。
+            <br/>在事件分发的处理方法中，其中最主要的就是这三个方法：dispatchTouchEvent(),onInterceptTouchEvent(),onTouchEvent()。
+            <br/>dispatchTouchEvent中包含onInterceptTouchEvent和onTouchEvent方法。
+            <br/>源码简化后如下。
+            <br/>
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line"><span class="keyword">public boolean </span><span class="title">dispatchTouchEvent</span>(<span class="keyword">Motion</span> e) {</div>
+                    <div class="line"><span class="keyword">boolean</span> result = <span class="keyword">false</span>;</div>
+                    <div class="line">    <span class="keyword">if</span> (onInterceptTouchEvent(e)) {</div>
+                    <div class="line">        //如果当前View截获事件，那么事件就会由当前View处理，即调用onTouchEvent()</div>
+                    <div class="line">        result = onTouchEvent(e);</div>
+                    <div class="line">    } <span class="keyword">else</span> {</div>
+                    <div class="line">        //如果不截获那么交给其子View来分发</div>
+                    <div class="line">        result = child.dispatchTouchEvent(e);</div>
+                    <div class="line">    }</div>
+                    <div class="line">    <span class="keyword">return</span> result;</div>
+                    <div class="line">}</div>
+                </pre></td></tr></table></figure>
+            <br/>
+
+
+            <br/>
+
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line"><span class="keyword">public boolean </span><span class="title">dispatchTouchEvent</span>(<span class="keyword">Motion</span> e) {</div>
+                    <div class="line">       <span class="keyword">if</span> (onFilterTouchEventForSecurity(e)) {//检测安全性的方法，可忽略</div>
+                    <div class="line">          <span class="keyword">if</span> (mOnTouchListener != <span class="keyword">null</span> && (mViewFlags & ENABLED_MASK) == ENABLED && mOnTouchListener.onTouch(<span class="keyword">this</span>, event)) {</div>
+                    <div class="line">              return <span class="keyword">true</span>;</div>
+                    <div class="line">          } </div>
+                    <div class="line">      <span class="keyword">if</span> (onTouchEvent(e))</div>
+                    <div class="line">          return <span class="keyword">true</span>;</div>
+                    <div class="line">      }</div>
+                    <div class="line">  }</div>
+                    <div class="line">  return <span class="keyword">false</span>;</div>
+                    <div class="line">}</div>
+                </pre></td></tr></table></figure>
+            <!--public boolean dispatchTouchEvent(MotionEvent event) {-->
+                <!--if (onFilterTouchEventForSecurity(event)) {-->
+                    <!--if (mOnTouchListener != null && (mViewFlags & ENABLED_MASK) == ENABLED && mOnTouchListener.onTouch(this, event)) {-->
+                        <!--return true;-->
+                    <!--}-->
+                    <!--if (onTouchEvent(event)) {-->
+                        <!--return true;-->
+                    <!--}-->
+                <!--}-->
+                <!--return false;-->
+            <!--}-->
+            <br/>当一个button同时注册了onClick和onTouch，当onTouch中的返回值为true时，相当于mOnTouchListener.onTouch(this, event)返回true，因此dispatchTouchEvent直接return true。
+
         </p>
         <p>
-            <br/>这阶段最大的收获是明白了要有条有理的做事，不卑不亢的做人。
-            <br/>不要为领导着急，安心搞好分内事就可以了，做一颗美美的螺丝钉。
-            <br/>越是压力大，越是应该心态平衡，顺着自己的步调走，谋事在人，成事在天。
-            <br/>把任务留给自己，把成果<s>（烂摊子）</s>留给领导。
-            <br/>be happy，早睡。
+            <br/>
+
         </p>
         <p>
-            <br/>接下来一个阶段，打算继续做安卓开发，撇开公事，主要想做电商类的app，主要卖电子类产品，包括二手。
-            <br/>目前正在构思和策划阶段，打算先做一个demo出来再继续深入。欢迎任何有想法的朋友给点建议，交流交流<s>（打的一手烂广告）</s>。
-            <br/><br/>qq371200212
+            <br/>
 
-            <br/><br/><br/>2015/11/12
+            <br/><br/><br/>2016/05/23
 
 	</div>
 
@@ -130,7 +176,7 @@
     </div>
 
     <div class="article-tags">
-        <span></span> <a href="../../../tags/开篇暖场"></a>
+        <span>android</span><span>事件分发</span>
     </div>
 
 </div>
@@ -138,7 +184,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2015/1112/" data-title="2015.11.12阶段总结 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2015/1112/" data-title="事件分发机制 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -148,9 +194,9 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
-     <a href="../0626/" title="浅谈对前端的理解">
+     <a href="../../2015/1112/" title="2015.11.12阶段总结">
       <strong>上一篇：</strong><br/>
-      <span>浅谈对前端的理解</span>
+      <span>2015.11.12阶段总结</span>
      </a>
 </div>
 
