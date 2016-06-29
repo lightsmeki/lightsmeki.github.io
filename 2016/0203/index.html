@@ -5,7 +5,7 @@
   <meta name="不林的博客" content="不林的博客" />
   <meta name="burin's blog" content="burin's blog" />
   
-    <title>android网络音视频播放解决方案探讨 | Burin&#39;s blog</title>
+    <title>android在线音视频播放方案探讨 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -70,7 +70,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/0203/" title="android网络音视频播放解决方案探讨" itemprop="url">android网络音视频播放解决方案探讨</a>
+      <a href="/2016/0203/" title="android在线音视频播放方案探讨" itemprop="url">android在线音视频播放方案探讨</a>
   </h1>
   <p class="article-author">By
        
@@ -100,14 +100,16 @@
 		<p><a id="more"></a></p>
         <h2 id="标题1">Intro</h2>
         <p>由于项目需要，我开始研究在线音视频播放器。</p>
-        <br/>目前我组用的音频播放方案是：<code>MediaPlayer + 自定义View + Service</code>，通过广播切换播放状态
+        <br/>过去我组用的音频播放方案是：<code>MediaPlayer + 自定义View + Service</code>，通过广播切换播放状态
         <br/>视频播放方案是：<code>MediaPlayer + SurfaceView + VideoControllerView</code>
         <br/>然而不久，就发现了性能上的问题。网络音频/视频加载缓慢，加载一个5M左右音频，平均用户等待时间为5s。但通过浏览器访问该资源文件时，却可以马上播放。例如：http://audio.vsaker.com/T2/org/T2-90.mp3
         <br/>我也查了不少资料，下了不少开源项目参考，但大部分是介绍本地播放器的，很少有写在线播放器相关。
         <br/>同时我也从网上下载了不少同类型产品的app作比较，例如喜马拉雅、多听、qq音乐、网易云音乐，这些都做的很好，本想反编译以后学习一下，但难以理解。
 
         <p>
-            <br/>
+            <br/>android5.0提供了android.service.media，其中包括<code><a href="https://developer.android.com/reference/android/service/media/MediaBrowserService.html">MediaBrowserService</a></code>。
+            <blockquote><p>Media browse services enable applications to browse media content provided by an application and ask the application to start playing it. They may also be used to control content that is already playing by way of a MediaSession.</p>
+            <br/>官方指出，配合MediaSession使用，风味更佳。
             <br/>
             <br/>
             <br/>
