@@ -2083,7 +2083,7 @@ footer {
   float: right;
 }
 .article-content .highlight .gutter pre {
-  text-align: right;
+  text-align: left;
   padding-right: 1.5em;
 }
 .article-content .gist {
