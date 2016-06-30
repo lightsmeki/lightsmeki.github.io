@@ -5,7 +5,7 @@
   <meta name="不林的博客" content="不林的博客" />
   <meta name="burin's blog" content="burin's blog" />
   
-    <title>事件分发机制 | Burin&#39;s blog</title>
+    <title>《Android源码设计模式解析》读书笔记 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -71,14 +71,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/0523/" title="事件分发机制" itemprop="url">事件分发机制</a>
+      <a href="/2016/0425/" title="《Android源码设计模式解析》读书笔记" itemprop="url">《Android源码设计模式解析》读书笔记</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-23T09:17:00.000Z" itemprop="datePublished"> 发表于 05月 23 2016</time>
+    <time datetime="2016-04-25T15:01:00.000Z" itemprop="datePublished"> 发表于 04月 25 2016</time>
     
   </p>
 </header>
@@ -90,7 +90,7 @@
 
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">为何要理解事件分发机制</span>
+                        <span class="toc-number">1.</span> <span class="toc-text">面向对象六大原则</span>
                     </a>
                 </li>
 
@@ -99,79 +99,19 @@
 		</div>
 
 		<p><a id="more"></a></p>
-        <h2 id="标题1">为何要理解事件分发机制</h2>
-        <p>首先思考一个问题：</p>
-            <blockquote><p>当一个按钮同时添加了onClick和onTouch事件，它会怎样执行？</p></blockquote>
-        <br/>通过一个简单的demo，我们很容易得到答案，先执行onTouch事件，再执行onClick事件。如果将修改onTouch的返回值修改为true，onClick事件可能会被拦截。
-        <br/>Σ（ﾟДﾟ ）为啥会这样哦.....
-        <br/>理解了View的事件分发机制，问题自然有了答案。
+        <h2 id="标题1">面向对象六大原则</h2>
 
         <p>
-            <br/>在事件分发的处理方法中，其中最主要的就是这三个方法：<code>dispatchTouchEvent()</code>,<code>onInterceptTouchEvent()</code>,<code>onTouchEvent()</code>。
-            <br/>其中dispatchTouchEvent中包含onInterceptTouchEvent和onTouchEvent方法。
-            <br/><br/>源码简化后如下。
-            <br/>
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td>
-                <td class="code"><pre>
-                    <div class="line"><span class="keyword">public boolean </span><span class="title">dispatchTouchEvent</span>(<span class="keyword">Motion</span> e) {</div>
-                    <div class="line"><span class="keyword">boolean</span> result = <span class="keyword">false</span>;</div>
-                    <div class="line">    <span class="keyword">if</span> (onInterceptTouchEvent(e)) {</div>
-                    <div class="line">        //如果当前View截获事件，那么事件就会由当前View处理，即调用onTouchEvent()</div>
-                    <div class="line">        result = onTouchEvent(e);</div>
-                    <div class="line">    } <span class="keyword">else</span> {</div>
-                    <div class="line">        //如果不截获那么交给其子View来分发</div>
-                    <div class="line">        result = child.dispatchTouchEvent(e);</div>
-                    <div class="line">    }</div>
-                    <div class="line">    <span class="keyword">return</span> result;</div>
-                    <div class="line">}</div>
-                </pre></td></tr></table></figure>
+            单一职责原则 SRP 一个类应该仅有一个引起它变化的原因。
+            <br/>开闭原则 OCP 一个类应该对外扩展开放，对修改关闭。
+            <br/>里氏替换原则 LSP 子类型能够替换掉它们的父类。
+            <br/>依赖倒置原则 DIP 要依赖于抽象，不要依赖于具体类。方法是：高层模块不应该依赖底层模块，二者都应该依赖于抽象；抽象不应该依赖于具体实现，具体实现应该依赖于抽象。
+            <br/>接口隔离原则 ISP 不应该强迫客户依赖于他们不用的方法。
+            <br/>迪米特原则 LKP 只和你的朋友谈话。
+
         </p>
 
-        <p>
-            <figure class="highlight java"><table><tr><td class="gutter">
-                <pre><div class="line">1</div><div class="line">2</div>
-                    <div class="line">3</div><div class="line">4</div>
-                    <div class="line">5</div><div class="line">6</div>
-                    <div class="line">7</div><div class="line">8</div>
-                    <div class="line">9</div><div class="line">10</div>
-                    <div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td>
-                <td class="code"><pre>
-                    <div class="line"><span class="keyword">public boolean </span><span class="title">dispatchTouchEvent</span>(<span class="keyword">Motion</span> e) {</div>
-                    <div class="line">      <span class="keyword">if</span> (onFilterTouchEventForSecurity(e)) {//检测安全性的方法，可忽略</div>
-                    <div class="line">          <span class="keyword">if</span> (mOnTouchListener != <span class="keyword">null</span></div>
-                    <div class="line">              && (mViewFlags & ENABLED_MASK) == ENABLED</div>
-                    <div class="line">              && mOnTouchListener.onTouch(<span class="keyword">this</span>, event)) {</div>
-                    <div class="line">              return <span class="keyword">true</span>;</div>
-                    <div class="line">          } </div>
-                    <div class="line">      <span class="keyword">if</span> (onTouchEvent(e))</div>
-                    <div class="line">          return <span class="keyword">true</span>;</div>
-                    <div class="line">      }</div>
-                    <div class="line">  }</div>
-                    <div class="line">  return <span class="keyword">false</span>;</div>
-                    <div class="line">}</div>
-                </pre></td></tr></table></figure>
-            <!--public boolean dispatchTouchEvent(MotionEvent event) {-->
-                <!--if (onFilterTouchEventForSecurity(event)) {-->
-                    <!--if (mOnTouchListener != null && (mViewFlags & ENABLED_MASK) == ENABLED && mOnTouchListener.onTouch(this, event)) {-->
-                        <!--return true;-->
-                    <!--}-->
-                    <!--if (onTouchEvent(event)) {-->
-                        <!--return true;-->
-                    <!--}-->
-                <!--}-->
-                <!--return false;-->
-            <!--}-->
-            <br/>当一个button同时注册了onClick和onTouch，当onTouch中的返回值为true时，相当于mOnTouchListener.onTouch(this, event)返回true，因此dispatchTouchEvent直接return true。
-
-        </p>
-        <p>
-            <br/>
-
-        </p>
-        <p>
-            <br/>
-
-            <br/><br/><br/>2016/05/23
+            <br/><br/><br/>2016/04/25
 
 	</div>
 
@@ -180,11 +120,12 @@
 
     <div class="article-categories">
       <span></span>
-      <a class="article-category-link" href="./categories/Android/">Android</a>
+      <a class="article-category-link" href="../../categories/Android/">Android</a>
+
     </div>
 
     <div class="article-tags">
-        <span></span><a href="/tags/android/">android</a><a href="/tags/事件分发/">事件分发</a>
+        <span></span><a href="../../tags/android/">android</a><a href="../../tags/读书笔记/">读书笔记</a>
     </div>
 
 </div>
@@ -192,7 +133,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2015/1112/" data-title="事件分发机制 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2016/0425/" data-title="《Android源码设计模式解析》读书笔记 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
