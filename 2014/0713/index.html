@@ -1,11 +1,21 @@
-<!DOCTYPE HTML>
+
+ <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="不林的博客" content="不林的博客" />
-  <meta name="burin's blog" content="burin's blog" />
-  
-    <title>Service保活 | Burin&#39;s blog</title>
+    <meta charset="UTF-8">
+    <meta name="不林的博客" content="不林的博客" />
+    <meta name="burin's blog" content="burin's blog" />
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c45e8a2364e5b52024729010efa4e9cf";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <title>linux指令 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -21,8 +31,7 @@
 
     <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-
-        </head>
+</head>
 
   <body>
     <header>
@@ -69,72 +78,73 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/0206/" title="Service保活" itemprop="url">Service保活</a>
+      <a href="/2015/1014/" title="浅谈对前端的理解" itemprop="url">浅谈对前端的理解</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2016-02-06T019:07:00.000Z" itemprop="datePublished"> 发表于 02月 06 2016</time>
+    <time datetime="2015-10-14T14:48:00.000Z" itemprop="datePublished"> 发表于 10月 14 2015</time>
     
   </p>
 </header>
 	<div class="article-content">
-		
-		
+
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">比喻</span>
+                        <span class="toc-number">1.</span> <span class="toc-text">最初</span>
                     </a>
                 </li>
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题2">
-                        <span class="toc-number">2.</span><span class="toc-text">方法整理</span>
+                        <span class="toc-number">2.</span><span class="toc-text">发现</span>
                     </a>
                 </li>
-            <li class="toc-item toc-level-2">
-                <a class="toc-link" href="#标题3">
-                    <span class="toc-number">3.</span><span class="toc-text">总结</span>
-                </a>
-            </li>
+                <li class="toc-item toc-level-2">
+                    <a class="toc-link" href="#标题3">
+                        <span class="toc-number">3.</span> <span class="toc-text">前景</span>
+                    </a>
+                </li>
+                <li class="toc-item toc-level-2">
+                    <a class="toc-link" href="#标题4">
+                        <span class="toc-number">4.</span> <span class="toc-text">结尾</span>
+                    </a>
+                </li>
             </ol>
 		
 		</div>
-
+		
 		<p><a id="more"></a></p>
-        <h2 id="标题1">比喻</h2>
-        <p>永生，是人类从古至今不断探寻的课题。不少人突然有了巨款，或是临近死亡，想做的事都是环球旅行，体验整个世界，似乎只有这么做才不枉此生。
-            毕竟生命稍纵即逝，人一辈子能体验的东西太少了，总想将美好的事物从有限变到无穷，殊不知正是因为有限，才格外美好。</p>
-        <p>在android系统中，生命周期的概念更是一个颇有禅意的比喻，仿佛这些死物都是有生命的。
-            一个个活蹦乱跳的activity、service可以随着上帝(用户)的指尖，从创造到毁灭，从毁灭到重生，在有限的内存中贪婪的汲取养分，不断进行轮回。
-            App一旦不小心Out Of Memory，小命就GG。当系统关闭，大家各自尘归尘土归土，尘土归尘土。</p>
-        <h2 id="标题2">方法整理</h2>
-        <br/>出于兴趣，我也从网上整理了一部分方法。若有不妥，请告知。
-        <ul>
-            <li>Service设置成START_STICKY，kill 后会被重启（等待5秒左右），重传Intent，保持与重启前一样。</li>
-            <li>覆写Service的onDestroy方法</li>
-            <li>通过startForeground将进程设置为前台进程，做前台服务，优先级和前台应用一个级别​，除非在系统内存非常缺，否则此进程不会被 kill。</li>
-            <li>双进程守护：让2个进程互相保护，其中一个Service被清理后，另外没被清理的进程可以立即重启进程。</li>
-            <li>多进程守护：用C编写守护进程(即子进程)，循环检查目标进程是否存在，不存在则启动它。
-            在NDK环境中将1中编写的C代码编译打包成可执行文件(BUILD_EXECUTABLE)。
-            主进程启动时将守护进程放入私有目录下，赋予可执行权限，启动它即可。</li>
-            <li>多app互相唤醒</li>
-            <li>设置闹钟，定时唤醒</li>
-            <li>前台Service保活：在应用退到后台后，另起一个肉眼难辨的 1 像素页面停留在桌面或通知栏上，让自己保持前台状态，保护自己不被后台清理工具杀死。</li>
-            <li>系统漏洞流：在已经root的设备下，修改相应的权限文件，将App伪装成系统级的应用（Android4.0系列的一个漏洞，已经确认可行）</li>
-            <li>联系厂商，加入白名单。</li>
-
-        </ul>
-        <h2 id="标题3">总结</h2>
-        <p>对于生态来说，这种行为是不提倡的。因为一旦被用户发现，他们就会生气的吵着要弄死这个app。
-            <br/>不过随着android5.0之后的版本的推出，谷歌对android系统的权限管理方式，应用许可，内存管理等方面都进行了很大的修改，引入了多项安全增强措施，root将变得困难。
-            <br/>双手举高高，明天会更好。
+        <h2 id="标题1">最初</h2>
+        <p>最初开始工作的时候，我浅薄的认为前端就是做web界面的，和美术差不多，负责实现UI的设计。
+            <br/><br/> 接着，我发现前端和美术设计并不重合。随着技术的发展，CSS的玩法也越来越多样，配合js能做出更多有趣的效果。好的创意与实现必然是相辅相成的，这说明前端也可以是通往设计的一条路，不仅可以实现创意，也可以激发创意。同时前端可以掌握设计实现的难易程度以及工期长短，能够将创意落地。
         </p>
 
+        <h2 id="标题2">发现</h2>
+        <p>
+            <br/>再后来，我发觉前端也可以是一种解决问题的思维方式，同一个问题可以由运营、设计、后端解决，也可以由前端解决。
+            <br/><br/>从纵向深入考虑，里面也蕴藏不少与美术不同层面的东西。由于它从属于技术领域，就不得不面对更为复杂的一系列问题，例如浏览器兼容性适配，性能优化，数据可视化，前端工程化，前端安全，SEO，数据统计，如何减少项目架构的复杂度，如何更为便捷的进行项目迭代管理etc。
+            <br/><br/>从横向进行分析，前端除了PC web以外，还可以做移动端，同时可结合ios或android做hybrid开发，还可做各种浏览器的web应用中间件、插件等。
+        </p>
+
+        <h2 id="标题3">再度发现</h2>
+        <p> <br/>前端远看像是技术方向一个狭小的点，但近处细细看过去，更像一张密密麻麻的网，各种节点之间隐隐约约的相互连接着。
+            <br/>less、ExtJS、bootstrap、zepto.js、angular1.0 2.0、nodejs，随着这些新的流行框架以及更成熟的解决方案的出现，技术人员为了不被时代的潮水拍死沙滩，将以更加质朴方式迎面应对，敦促自己不断前进——或是看文档学习，快速将最新的流行技术应用于自己的产品中，或是重新熟读ES6规则，反复思考，如何通过最原始而经典的js方法来解决目前的各种问题，避免被不成熟的技术带入更深的坑中。
+            <br/><br/>有种说法是，不想成为全栈不是好coder。原地踏步而不自知着实令人恐慌，有野心总是好的。
+            <br/>学习的确不应满足于一个点。不仅是某种实现方法，还可以熟悉原理，掌握框架；不仅是软件，还可以了解硬件，不仅是技术，还应该更好的了解运营、管理、美术等其他方向，从而延伸出去。除了赚钱谋生，还有自我价值实现。就像我很喜欢的美剧《硅谷黑历史》里面Hooli公司总裁Gavin总是提到的那句，make the world a better place。尽管他讲这句原话是讽刺，但依然让我相信，技术能够让生活迅速变得更美好。
+        </p>
+
+
+        <h2 id="标题4">结尾</h2>
+        <p> <br/>目前我依然经验尚浅，只能边走边挖坑，灌下一点似有似无的鸡汤。但前方一定有许多还未勘测到的坑等待挖掘。
+            <br/>不过这正好，人最怕的就是没有希望。所幸还年轻，平日也还注意锻炼身体，一旦有了能力和机会，就获得了达到更高的境界的可能。
+
+            <br/><br/><br/><br/>2015/10/14</p>
+        </p>
 
 
 
@@ -145,11 +155,11 @@
 
     <div class="article-categories">
       <span></span>
-      <a class="article-category-link" href="../../categories/Android/">Android</a>
+      <a class="article-category-link" href="./categories/Android/">Android</a>
     </div>
 
     <div class="article-tags">
-        <span></span><a href="../../tags/android/">android</a><a href="../../tags/事件分发/">事件分发</a>
+        <span></span> <a href="../../../tags/开篇暖场/"></a>
     </div>
 
 </div>
@@ -157,7 +167,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2015/1112/" data-title="事件分发机制 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2015/1014/" data-title="浅谈对前端的理解 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -167,17 +177,17 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
-     <a href="../../2015/1112/" title="2015.11.12阶段总结">
+     <a href="#" title="">
       <strong>上一篇：</strong><br/>
-      <span>2015.11.12阶段总结</span>
+      <span></span>
      </a>
 </div>
 
 
 <div class="next">
-    <a href="#" title="#">
+    <a href="../0523/" title="2015.11.12阶段总结">
      <strong>下一篇：</strong><br/>
-     <span></span>
+     <span>2015.11.12阶段总结</span>
     </a>
 </div>
 
@@ -236,7 +246,6 @@
         <p class="asidetitle">标签云</p>
         <div class="tagcloudlist clearfix">
             <a href="#" style="font-size: 10.00px;">萌萌哒</a>
-
         </div>
     </div>
     <div class="archiveslist">
@@ -255,11 +264,7 @@
     <div class="linkslist">
         <p class="asidetitle">友情链接</p>
         <ul>
-            <!--<li><a href="http://imid.me/" target="_blank" title="iMID">iMID's Blog</a></li>-->
-            <!--<li><a href="http://www.trinea.cn/" target="_blank" title="trinea">Trinea's Blog</a></li>-->
-            <!--<li><a href="http://stormzhang.github.io/" target="_blank" title="stormzhang">StormZhang's Blog</a></li>-->
-            <!--<li><a href="http://daimajia.com/" target="_blank" title="daimajia">DaiMaJia.Blog</a></li>-->
-            <!--<li><a href="http://macrotea.com/welcome/" target="_blank" title="daimajia">Macrotea.Blog</a></li>-->
+
         </ul>
     </div>
 
@@ -454,7 +459,6 @@ $(document).ready(function(){
 
 
 
-
 <div id="totop">
 <a title="返回顶部"><img src="../../../img/scrollup.png"/></a>
 </div>
@@ -467,4 +471,5 @@ $(document).ready(function(){
   </body>
 </html>
 
-<a href="https://github.com/lightsmeki"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<a href="https://github.com/lightsmeki">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
