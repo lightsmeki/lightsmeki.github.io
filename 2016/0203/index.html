@@ -5,7 +5,7 @@
   <meta name="不林的博客" content="不林的博客" />
   <meta name="burin's blog" content="burin's blog" />
   
-    <title>android在线音视频播放方案探讨 | Burin&#39;s blog</title>
+    <title>android音视频在线播放方案探讨 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -69,7 +69,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/0203/" title="android在线音视频播放方案探讨" itemprop="url">android在线音视频播放方案探讨</a>
+      <a href="/2016/0203/" title="android音视频在线播放方案探讨" itemprop="url">android音视频在线播放方案探讨</a>
   </h1>
   <p class="article-author">By
        
@@ -107,7 +107,7 @@
 
         <p>
             <br/>android5.0提供了android.service.media，其中包括<code><a href="https://developer.android.com/reference/android/service/media/MediaBrowserService.html">MediaBrowserService</a></code>。
-            <blockquote><p>Media browse services enable applications to browse media content provided by an application and ask the application to start playing it. They may also be used to control content that is already playing by way of a MediaSession.</p>
+            <blockquote><p>Media browse services enable applications to browse media content provided by an application and ask the application to start playing it. They may also be used to control content that is already playing by way of a MediaSession.</p></blockquote>
             <br/>官方指出，配合MediaSession使用，风味更佳。
             <br/>
             <br/>
@@ -116,50 +116,9 @@
             <br/><img src="../../img/messiondescription.png" alt="">
 
         </p>
-
+        <br/><br/>
         <p>看完这两张图，我瞬间感觉无比清晰。总的来说，就是MediaController为控制端，MediaSession为受控端。
-            <figure class="highlight java"><table><tr><td class="gutter">
-                <pre><div class="line">1</div><div class="line">2</div>
-                    <div class="line">3</div><div class="line">4</div>
-                    <div class="line">5</div><div class="line">6</div>
-                    <div class="line">7</div><div class="line">8</div>
-                    <div class="line">9</div><div class="line">10</div>
-                    <div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td>
-                <td class="code"><pre>
-                    <div class="line"><span class="keyword">public boolean </span><span class="title">dispatchTouchEvent</span>(<span class="keyword">Motion</span> e) {</div>
-                    <div class="line">      <span class="keyword">if</span> (onFilterTouchEventForSecurity(e)) {//检测安全性的方法，可忽略</div>
-                    <div class="line">          <span class="keyword">if</span> (mOnTouchListener != <span class="keyword">null</span></div>
-                    <div class="line">              && (mViewFlags & ENABLED_MASK) == ENABLED</div>
-                    <div class="line">              && mOnTouchListener.onTouch(<span class="keyword">this</span>, event)) {</div>
-                    <div class="line">              return <span class="keyword">true</span>;</div>
-                    <div class="line">          } </div>
-                    <div class="line">      <span class="keyword">if</span> (onTouchEvent(e))</div>
-                    <div class="line">          return <span class="keyword">true</span>;</div>
-                    <div class="line">      }</div>
-                    <div class="line">  }</div>
-                    <div class="line">  return <span class="keyword">false</span>;</div>
-                    <div class="line">}</div>
-                </pre></td></tr></table></figure>
-            <!--public boolean dispatchTouchEvent(MotionEvent event) {-->
-                <!--if (onFilterTouchEventForSecurity(event)) {-->
-                    <!--if (mOnTouchListener != null && (mViewFlags & ENABLED_MASK) == ENABLED && mOnTouchListener.onTouch(this, event)) {-->
-                        <!--return true;-->
-                    <!--}-->
-                    <!--if (onTouchEvent(event)) {-->
-                        <!--return true;-->
-                    <!--}-->
-                <!--}-->
-                <!--return false;-->
-            <!--}-->
-            <br/>当一个button同时注册了onClick和onTouch，当onTouch中的返回值为true时，相当于mOnTouchListener.onTouch(this, event)返回true，因此dispatchTouchEvent直接return true。
 
-        </p>
-        <p>
-            <br/>
-
-        </p>
-        <p>
-            <br/>
 
 
 	</div>
@@ -173,7 +132,7 @@
     </div>
 
     <div class="article-tags">
-        <span></span><a href="../../tags/android/">android</a><a href="../../tags/事件分发/">事件分发</a>
+        <span></span><a href="../../tags/android/">android</a><a href="../../tags/Media/">Media</a>
     </div>
 
 </div>
