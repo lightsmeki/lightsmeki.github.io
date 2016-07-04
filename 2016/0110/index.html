@@ -206,10 +206,11 @@
         </p>
 
 
-        <p>关于生成动态代理，也是一个有趣的点。
-            <br/>1. 代理模式的作用是：为其他对象提供一种代理以控制对这个对象的访问。在某些情况下，一个客户不想或者不能直接引用另一个对象，而代理对象可以在客户端和目标对象之间起到中介的作用
+        <p>关于生成动态代理，也是一个有趣的点，只不过有些不容易搞懂。
+            <br/>代理模式的作用是：为其他对象提供一种代理以控制对这个对象的访问。在某些情况下，
+            一个客户不想或者不能直接引用另一个对象，而代理对象可以在客户端和目标对象之间起到中介的作用。
 
-            2. 代理模式一般涉及到的角色
+            代理模式一般涉及到的角色
 
             （1）抽象角色：声明真实对象和代理对象的共同接口
 
@@ -217,7 +218,122 @@
 
             （3）真实角色：代理角色所代表的真实对象，是我们最终要引用的对象
 
-            http://my.oschina.net/lyp3314/blog/136589#OSC_h3_4
+            实例】
+            Subject  抽象类  抽象角色 定义一个抽象方法request
+
+            RealSubject  真实角色  继承了抽象类Subject 实现抽象方法request
+
+            ProxySubject  代理角色  同样继承抽象类Subject实现抽象方法request
+
+            Client  客户端
+
+            <figure class="highlight java"><table><tr><td class="gutter">
+                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line"><span class="keyword">package </span>com.test.reflectdemo;</div>
+                    <div class="line"></div>
+                    <div class="line"><span class="keyword">import</span> java.lang.reflect.Field;</div>
+                    <div class="line"><span class="keyword">import</span> java.lang.reflect.Method;</div>
+                    <div class="line"></div>
+                    <div class="line"><span class="keyword">public class</span><span class="title">FruitModel</span> {</div>
+                    <div class="line"></div>
+                    <div class="line">      <span class="keyword">private int</span> apple = 2;</div>
+                    <div class="line">      <span class="keyword">private int</span> orange = 8;</div>
+                    <div class="line">      <span class="keyword">private int</span> add(<span class="keyword">int</span> x, <span class="keyword">int</span> y) {</div>
+                    <div class="line">              <span class="keyword">return</span> x + y;</div>
+                    <div class="line">      }</div>
+                    <div class="line">      <span class="keyword">public int</span> getApple(){</div>
+                    <div class="line">              <span class="keyword">return</span> apple;</div>
+                    <div class="line">      }</div>
+                    <div class="line">      <span class="keyword">public int</span> getOrange(){</div>
+                    <div class="line">              <span class="keyword">return</span> orange;</div>
+                    <div class="line">      }</div>
+                    <div class="line">}</div>
+                </pre></td></tr></table></figure>
+            <figure class="highlight java"><table><tr><td class="gutter">
+                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line">//抽象角色</div>
+                    <div class="line"><span class="keyword">abstract public class </span>Subject {</div>
+                    <div class="line">      <span class="keyword">abstract public void </span> request();</div>
+                    <div class="line">}</div>
+                </pre></td></tr></table></figure>
+
+            <figure class="highlight java"><table><tr><td class="gutter">
+                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line">//真实角色：实现了Subject的request()方法</div>
+                    <div class="line"><span class="keyword">public class </span>RealSubject <span class="keyword">extends </span>Subject {</div>
+                    <div class="line">      <span class="keyword">public </span> RealSubject(){}</div>
+                    <div class="line">      <span class="keyword">public void </span>request(){</div>
+                    <div class="line">          System.<span class="keyword">out</span>.println("局长办事了！");</div>
+                    <div class="line">      }</div>
+                    <div class="line">}</div>
+                </pre></td></tr></table></figure>
+
+            <figure class="highlight java"><table><tr><td class="gutter">
+                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line">//代理角色</div>
+                    <div class="line"><span class="keyword">public class </span>ProxySubject <span class="keyword">extends </span>Subject {</div>
+                    <div class="line">      <span class="keyword">private </span> RealSubject realSubject;// 以真实角色作为代理角色的属性</div>
+                    <div class="line">      <span class="keyword">public </span>ProxySubject(){}</div>
+                    <div class="line">      // 该方法封装了真实对象的request方法</div>
+                    <div class="line">      <span class="keyword">public void </span>request(){</div>
+                    <div class="line">          preRequest();</div>
+                    <div class="line">          if (realSubject == <span class="keyword">null</span>){</div>
+                    <div class="line">          preRequest();</div>
+                    <div class="line">          preRequest();</div>
+                    <div class="line">      }</div>
+                    <div class="line">}</div>
+                </pre></td></tr></table></figure>
+
+            <figure class="highlight java"><table><tr><td class="gutter">
+                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line">//代理角色</div>
+                    <div class="line"><span class="keyword">public class </span>ProxySubject <span class="keyword">extends </span>Subject {</div>
+                    <div class="line">      <span class="keyword">private </span> RealSubject realSubject;// 以真实角色作为代理角色的属性</div>
+                    <div class="line">      <span class="keyword">public </span>ProxySubject(){}</div>
+                    <div class="line">      // 该方法封装了真实对象的request方法</div>
+                    <div class="line">      <span class="keyword">public void </span>request(){</div>
+                    <div class="line">          preRequest();</div>
+                    <div class="line">          if (realSubject == <span class="keyword">null</span>){</div>
+                    <div class="line">          preRequest();</div>
+                    <div class="line">          preRequest();</div>
+                    <div class="line">      }</div>
+                    <div class="line">}</div>
+                </pre></td></tr></table></figure>
+
+            //代理角色
+            public class ProxySubject extends Subject{
+            private RealSubject realSubject; // 以真实角色作为代理角色的属性
+            public ProxySubject(){
+            }
+            　// 该方法封装了真实对象的request方法
+            public void request(){
+            preRequest();
+            if (realSubject == null){
+            realSubject = new RealSubject();
+            }
+            realSubject.request(); // 此处执行真实对象的request方法
+            postRequest();
+            }
+            private void preRequest(){
+            System.out.println("秘书去找局长");
+            }
+            private void postRequest(){
+            System.out.println("秘书回来了");
+            }
+            }
+            //客户端调用
+            public class Client{
+            public static void main(String[] args){
+            Subject sub = new ProxySubject();
+            sub.request();
+            }
+            }
+
 
             <br/>
         </p>
