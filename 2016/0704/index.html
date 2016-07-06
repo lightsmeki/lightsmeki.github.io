@@ -91,18 +91,11 @@
 </header>
 	<div class="article-content">
 
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
 
-            </ol>
-		
-		</div>
-		
-		<p><a id="more"></a></p>
         <p>
         <blockquote>如何动态设置一个fragment控件宽高？</blockquote>
-            <br/><br/>一个简单方便的做法是，在fragment外部套一层RelativeLayout或者LinearLayout，将fragment控件宽高都写成fill_parent，即可通过LayoutParams修改RelativeLayout宽高，间接限制fragment宽高。
-            <br/>
+            <br/>一个简单方便的做法是，在fragment外部套一层RelativeLayout或者LinearLayout，将fragment控件宽高都写成fill_parent，即可通过LayoutParams修改RelativeLayout宽高，间接限制fragment宽高。
+            <br/><br/>
 
             <figure class="highlight java"><table><tr><td class="gutter">
                 <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td>
@@ -122,7 +115,7 @@
 
         <p>
             fragment_rl就是某个fragment的外层layout。目的是通过调整fragment_rl的宽高，来限制fragment大小，使其宽度和屏幕一致，高度根据比例进行计算。
-            <br/>
+            <br/><br/><br/>
         </p>
 
 

@@ -5,7 +5,7 @@
   <meta name="不林的博客" content="不林的博客" />
   <meta name="burin's blog" content="burin's blog" />
   
-    <title>android音视频在线播放方案探讨 | Burin&#39;s blog</title>
+    <title>登录探究——userId,ssoId,uuid差别与理解 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -69,64 +69,33 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/0203/" title="android音视频在线播放方案探讨" itemprop="url">android音视频在线播放方案探讨</a>
+      <a href="/2016/0226/" title="登录探究——userId,ssoId,uuid差别与理解" itemprop="url">登录探究——userId,ssoId,uuid差别与理解</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2016-02-03T16:31:00.000Z" itemprop="datePublished"> 发表于 02月 03 2016</time>
+    <time datetime="2016-02-26T10:43:00.000Z" itemprop="datePublished"> 发表于 02月 26 2016</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
 
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">Intro</span>
-                    </a>
-                </li>
+        　　<p>
+                uuid是通用唯一识别码 (Universally Unique Identifier)，32个字符构成的一个唯一字符串。由当前日期及时间、时钟序列、全局唯一的IEEE机器识别号三者构成。
+        Java中提供了java.util.UUID方便生成uuid，并支持随机生成。
+        <br/>即是说uuid只与设备相关，并且一个设备对应唯一一个uuid，与用户无关。
+        <br/><br/>userId是服务端返回的，一个手机一个userId。用途在于，如果用户没有进行登录，也能通过userId进行识别和管理，相当于mid。
+        <br/><br/>sso是一种授权方式，全称Single Sign On，就是利用第三方平台(qq,wechat,etc)完成授权，不同的登录方式获得的ssoId不同。
+        <br/>一旦用户登录成功，就由服务端返回一个ssoid，可用于判断用户是否登录。
 
-            </ol>
-		
-		</div>
+            </p>
 
-		<p><a id="more"></a></p>
-        <h2 id="标题1">Intro</h2>
-        <p>由于项目需要，我开始研究在线音视频播放器。</p>
-        <br/>过去我组用的音频播放方案是：<code>MediaPlayer + 自定义View + Service</code>，通过广播切换播放状态
-        <br/>视频播放方案是：<code>MediaPlayer + SurfaceView + VideoControllerView</code>
-        <br/>然而不久，就发现了性能上的问题。网络音频/视频加载缓慢，加载一个5M左右音频，平均用户等待时间为5s。但通过浏览器访问该资源文件时，却可以马上播放。例如：http://audio.vsaker.com/T2/org/T2-90.mp3
-        <br/>我也查了不少资料，下了不少开源项目参考，但大部分是介绍本地播放器的，很少有写在线播放器相关。
-        <br/>同时我也从网上下载了不少同类型产品的app作比较，例如喜马拉雅、多听、qq音乐、网易云音乐，这些都做的很好，本想反编译以后学习一下，但难以理解。
 
-        <p>
-            <br/>android5.0提供了android.service.media，其中包括<code><a href="https://developer.android.com/reference/android/service/media/MediaBrowserService.html">MediaBrowserService</a></code>。
-            <blockquote><p>Media browse services enable applications to browse media content provided by an application and ask the application to start playing it. They may also be used to control content that is already playing by way of a MediaSession.</p></blockquote>
-            <br/>官方指出，配合MediaSession使用，风味更佳。
             <br/>
-            <br/>
-            <br/><img src="../../img/mediamession.png" alt="">
-            <br/><br/>关于token的知识：当客户端请求页面时，服务器会通过token标签生成一个随机数，并放置到session当中，然后将随机数发向客户端；
-            如果客户第一次提交，那么浏览器会将该随机数发往服务器，服务器端会接收到该随机数并且与session中所保存的随机数进行比较，
-            这时两者的值是相同的，服务器认为是第一次提交,并且将更新服务器端的这个随机数值；如果此时再次重复提交，
-            那么客户端向服务器端的随机数还是之前的那个，而服务器端的随机数则已经发生了变化，两者不同，服务器就认为这事重复提交，
-            进而转向invalid.token所指向的结果页面。
-
-            <br/><br/><img src="../../img/messiondescription.png" alt="">
-
         </p>
-        <br/><br/>
-
-        <p>看完这两张图，我瞬间感觉无比清晰。总的来说，就是MediaController为控制端，MediaSession为受控端。
-        </p>
-
-
 
 	</div>
 
@@ -139,7 +108,7 @@
     </div>
 
     <div class="article-tags">
-        <span></span><a href="../../tags/android/">android</a><a href="../../tags/Media/">Media</a>
+        <span></span><a href="../../tags/android/">android</a><a href="../../tags/Login/">Login</a>
     </div>
 
 </div>
@@ -147,7 +116,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2016/0203/" data-title="事件分发机制 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2016/0226/" data-title="登录探究——userId,ssoId,uuid差别与理解 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -157,9 +126,9 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
-     <a href="../0110/" title="事件分发机制">
+     <a href="../../2016/0203/" title="android音视频在线播放方案探讨">
       <strong>上一篇：</strong><br/>
-      <span>事件分发机制</span>
+      <span>2015.11.12阶段总结</span>
      </a>
 </div>
 

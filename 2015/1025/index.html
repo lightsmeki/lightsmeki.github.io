@@ -1,11 +1,21 @@
-<!DOCTYPE HTML>
+
+ <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="不林的博客" content="不林的博客" />
-  <meta name="burin's blog" content="burin's blog" />
-  
-    <title>android音视频在线播放方案探讨 | Burin&#39;s blog</title>
+    <meta charset="UTF-8">
+    <meta name="不林的博客" content="不林的博客" />
+    <meta name="burin's blog" content="burin's blog" />
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c45e8a2364e5b52024729010efa4e9cf";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <title>android中消息传递机制 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -18,11 +28,10 @@
     
     <link rel="icon" href="../../img/favicon.ico">
     
-    
 
     <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-        </head>
+</head>
 
   <body>
     <header>
@@ -69,62 +78,23 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/0203/" title="android音视频在线播放方案探讨" itemprop="url">android音视频在线播放方案探讨</a>
+      <a href="/2015/1025/" title="android中消息传递机制" itemprop="url">android中消息传递机制</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2016-02-03T16:31:00.000Z" itemprop="datePublished"> 发表于 02月 03 2016</time>
+    <time datetime="2015-10-25T11:24:00.000Z" itemprop="datePublished"> 发表于 10月 25 2015</time>
     
   </p>
 </header>
 	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
 
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">Intro</span>
-                    </a>
-                </li>
 
-            </ol>
-		
-		</div>
-
-		<p><a id="more"></a></p>
-        <h2 id="标题1">Intro</h2>
-        <p>由于项目需要，我开始研究在线音视频播放器。</p>
-        <br/>过去我组用的音频播放方案是：<code>MediaPlayer + 自定义View + Service</code>，通过广播切换播放状态
-        <br/>视频播放方案是：<code>MediaPlayer + SurfaceView + VideoControllerView</code>
-        <br/>然而不久，就发现了性能上的问题。网络音频/视频加载缓慢，加载一个5M左右音频，平均用户等待时间为5s。但通过浏览器访问该资源文件时，却可以马上播放。例如：http://audio.vsaker.com/T2/org/T2-90.mp3
-        <br/>我也查了不少资料，下了不少开源项目参考，但大部分是介绍本地播放器的，很少有写在线播放器相关。
-        <br/>同时我也从网上下载了不少同类型产品的app作比较，例如喜马拉雅、多听、qq音乐、网易云音乐，这些都做的很好，本想反编译以后学习一下，但难以理解。
-
-        <p>
-            <br/>android5.0提供了android.service.media，其中包括<code><a href="https://developer.android.com/reference/android/service/media/MediaBrowserService.html">MediaBrowserService</a></code>。
-            <blockquote><p>Media browse services enable applications to browse media content provided by an application and ask the application to start playing it. They may also be used to control content that is already playing by way of a MediaSession.</p></blockquote>
-            <br/>官方指出，配合MediaSession使用，风味更佳。
-            <br/>
-            <br/>
-            <br/><img src="../../img/mediamession.png" alt="">
-            <br/><br/>关于token的知识：当客户端请求页面时，服务器会通过token标签生成一个随机数，并放置到session当中，然后将随机数发向客户端；
-            如果客户第一次提交，那么浏览器会将该随机数发往服务器，服务器端会接收到该随机数并且与session中所保存的随机数进行比较，
-            这时两者的值是相同的，服务器认为是第一次提交,并且将更新服务器端的这个随机数值；如果此时再次重复提交，
-            那么客户端向服务器端的随机数还是之前的那个，而服务器端的随机数则已经发生了变化，两者不同，服务器就认为这事重复提交，
-            进而转向invalid.token所指向的结果页面。
-
-            <br/><br/><img src="../../img/messiondescription.png" alt="">
-
-        </p>
-        <br/><br/>
-
-        <p>看完这两张图，我瞬间感觉无比清晰。总的来说，就是MediaController为控制端，MediaSession为受控端。
-        </p>
+        <code>通知</code>  发送后会在系统通知栏收到展现，同时响铃或振动提醒用户。
+        <br/><br/><code>消息</code>  以透传*的形式传递给客户端，无显示，发送后不会在系统通知栏展现，第三方应用后需要开发者写代码才能看到。
+        <br/><br/>*<code>透传</code> 即是透明传送，即传送网络无论传输业务如何，只负责将需要传送的业务传送到目的节点，同时保证传输的质量即可，而不对传输的业务进行处理。透传消息，就是消息体格式及内容，对于传递的通道来说是不去过问的，通道只负责消息的传递，对消息不做任何处理，当客户端接收到透传消息后，由客户端自己来决定如何处理消息。正是因为透传消息可以自定义消息体，也可以自定义消息的展示方式及后续动作处理，所以弥补了通知栏消息的一些不足之处(通知栏消息是直接展示出来，相关的动作客户端无法捕获到)。
 
 
 
@@ -135,11 +105,11 @@
 
     <div class="article-categories">
       <span></span>
-      <a class="article-category-link" href="../../categories/Android/">Android</a>
+      <a class="article-category-link" href="./categories/Android/">Android</a>
     </div>
 
     <div class="article-tags">
-        <span></span><a href="../../tags/android/">android</a><a href="../../tags/Media/">Media</a>
+        <span></span> <a href="../../../tags/开篇暖场/"></a>
     </div>
 
 </div>
@@ -147,7 +117,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2016/0203/" data-title="事件分发机制 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2015/1025/" data-title="android中消息传递机制 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -157,17 +127,17 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
-     <a href="../0110/" title="事件分发机制">
+     <a href="#" title="">
       <strong>上一篇：</strong><br/>
-      <span>事件分发机制</span>
+      <span></span>
      </a>
 </div>
 
 
 <div class="next">
-    <a href="../0206/" title="Service保活">
+    <a href="../0523/" title="2015.11.12阶段总结">
      <strong>下一篇：</strong><br/>
-     <span>Service保活</span>
+     <span>2015.11.12阶段总结</span>
     </a>
 </div>
 
@@ -226,7 +196,6 @@
         <p class="asidetitle">标签云</p>
         <div class="tagcloudlist clearfix">
             <a href="#" style="font-size: 10.00px;">萌萌哒</a>
-
         </div>
     </div>
     <div class="archiveslist">
@@ -250,11 +219,7 @@
     <div class="linkslist">
         <p class="asidetitle">友情链接</p>
         <ul>
-            <!--<li><a href="http://imid.me/" target="_blank" title="iMID">iMID's Blog</a></li>-->
-            <!--<li><a href="http://www.trinea.cn/" target="_blank" title="trinea">Trinea's Blog</a></li>-->
-            <!--<li><a href="http://stormzhang.github.io/" target="_blank" title="stormzhang">StormZhang's Blog</a></li>-->
-            <!--<li><a href="http://daimajia.com/" target="_blank" title="daimajia">DaiMaJia.Blog</a></li>-->
-            <!--<li><a href="http://macrotea.com/welcome/" target="_blank" title="daimajia">Macrotea.Blog</a></li>-->
+
         </ul>
     </div>
 
@@ -449,7 +414,6 @@ $(document).ready(function(){
 
 
 
-
 <div id="totop">
 <a title="返回顶部"><img src="../../../img/scrollup.png"/></a>
 </div>
@@ -462,4 +426,5 @@ $(document).ready(function(){
   </body>
 </html>
 
-<a href="https://github.com/lightsmeki"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<a href="https://github.com/lightsmeki">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>

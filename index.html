@@ -28,17 +28,17 @@
     <link rel="icon" href="./img/favicon.ico">
     
     <link rel="stylesheet" href="./css/style.css?1" type="text/css">
-
+    <script type="text/javascript" src="js/header_footer.js"></script>
 </head>
 
   <body>
-    <header>
+    <header id="header">
       <div>
-		
+
 			<div id="imglogo">
 				<a href="/"><img src="./img/logo.png" alt="Burin&#39;s blog" title="Burin&#39;s blog"/></a>
 			</div>
-			
+
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="Burin&#39;s blog">Burin&#39;s blog</a></h1>
 				<h2 class="blog-motto">不林的博客  ( ﾟ∀ﾟ)よろしく❤</h2>
@@ -48,23 +48,23 @@
 			<nav class="animated">
 				<ul>
 					<ul>
-					 
+
 						<li><a href="./">首页</a></li>
 						<li><a href="./archives">归档</a></li>
 						<li><a href="./about">关于</a></li>
-					
+
 					<li>
- 					
+
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:lightsmeki.github.io">
 					</form>
-					
+
 					</li>
 				    </ul>
                 </ul>
-			</nav>			
+			</nav>
 </div>
     </header>
     <div id="container">
@@ -102,11 +102,25 @@
             <time datetime="2016-05-23T09:17:00.000Z" itemprop="datePublished">05月 23 2016</time>
           </a>
         </section>
+        <section class="post" itemscope itemprop="blogPost">
+
+          <a href="./2016/0425/" title="《Android源码设计模式解析》读书笔记" itemprop="url">
+            <h1 itemprop="name">《Android源码设计模式解析》读书笔记(坑</h1>
+
+            <p itemprop="description">面向对象六大原则
+              单一职责原则 SRP 一个类应该仅有一个引起它变化的原因。开闭原则 OCP 一个类应该对外扩展开放，对修改关闭。里氏替换原则 LSP 子类型能够替换掉它们的父类。
+              依赖倒置原则 DIP 要依赖于抽象，不要依赖于具体类。方法是：高层模块不应该依赖底层模块，二者都应该依赖于抽象；抽象不应该依赖于具体实现，具体实现应该依赖于抽象。
+              接口隔离原则 ISP 不应该强迫客户依赖于他们不用的方法。
+              迪米特原则 LKP 只和你的朋友谈话。</p>
+
+            <time datetime="2016-04-25T15:01:00.000Z" itemprop="datePublished">04月 25 2016</time>
+          </a>
+        </section>
 
         <section class="post" itemscope itemprop="blogPost">
 
           <a href="./2016/0326/" title="播放模块的重构实践" itemprop="url">
-            <h1 itemprop="name">播放模块的重构实践</h1>
+            <h1 itemprop="name">播放模块的重构实践(坑</h1>
 
             <p itemprop="description">记录下重构的过程</p>
 
@@ -117,11 +131,22 @@
         <section class="post" itemscope itemprop="blogPost">
 
           <a href="./2016/0312/" title="Dagger2、RxJava和Retrofit" itemprop="url">
-            <h1 itemprop="name">Dagger2、RxJava和Retrofit</h1>
+            <h1 itemprop="name">Dagger2、RxJava和Retrofit(坑</h1>
 
             <p itemprop="description">Dagger2是啥？依赖注入框架。RxJava是啥？异步操作库。Retrofit是啥？网络访问框架。这三者组成了近来收到热捧的MVP开发模式，换汤又换药。</p>
 
             <time datetime="2016-03-12T11:20:00.000Z" itemprop="datePublished">03月 12 2016</time>
+          </a>
+        </section>
+
+        <section class="post" itemscope itemprop="blogPost">
+
+          <a href="./2016/0226/" title="登录探究——userId,ssoId,uuid差别与理解" itemprop="url">
+            <h1 itemprop="name">登录探究——userId,ssoId,uuid差别与理解</h1>
+
+            <p itemprop="description">登录中常用的id的区别</p>
+
+            <time datetime="2016-02-26T19:07:00.000Z" itemprop="datePublished">02月 26 2016</time>
           </a>
         </section>
 
@@ -139,27 +164,23 @@
 
         <section class="post" itemscope itemprop="blogPost">
 
-          <a href="./2016/0425/" title="《Android源码设计模式解析》读书笔记" itemprop="url">
-            <h1 itemprop="name">《Android源码设计模式解析》读书笔记</h1>
+          <a href="./2016/0203/" title="android在线音视频播放方案探讨" itemprop="url">
+            <h1 itemprop="name">android音视频在线播放方案探讨(坑</h1>
 
-            <p itemprop="description">面向对象六大原则
-              单一职责原则 SRP 一个类应该仅有一个引起它变化的原因。开闭原则 OCP 一个类应该对外扩展开放，对修改关闭。里氏替换原则 LSP 子类型能够替换掉它们的父类。
-              依赖倒置原则 DIP 要依赖于抽象，不要依赖于具体类。方法是：高层模块不应该依赖底层模块，二者都应该依赖于抽象；抽象不应该依赖于具体实现，具体实现应该依赖于抽象。
-              接口隔离原则 ISP 不应该强迫客户依赖于他们不用的方法。
-              迪米特原则 LKP 只和你的朋友谈话。</p>
+            <p itemprop="description">音视频在线播放方案设计学习与探讨。主要采用android5.0提供的MediaBrowserService以及MediaSession，确保播放和UI同步，减少卡顿，增强性能，改善体验。</p>
 
-            <time datetime="2016-04-25T15:01:00.000Z" itemprop="datePublished">04月 25 2016</time>
+            <time datetime="2016-02-03T16:31:00.000Z" itemprop="datePublished">02月 03 2016</time>
           </a>
         </section>
 
         <section class="post" itemscope itemprop="blogPost">
 
-          <a href="./2016/0203/" title="android在线音视频播放方案探讨" itemprop="url">
-            <h1 itemprop="name">android音视频在线播放方案探讨</h1>
+          <a href="./2016/0110/" title="Java反射+测试例子" itemprop="url">
+            <h1 itemprop="name">Java反射+测试例子</h1>
 
-            <p itemprop="description">音视频在线播放方案设计学习与探讨。主要采用android5.0提供的MediaBrowserService以及MediaSession，确保播放和UI同步，减少卡顿，增强性能，改善体验。</p>
+            <p itemprop="description">探究反射机制</p>
 
-            <time datetime="2016-02-03T16:31:00.000Z" itemprop="datePublished">02月 03 2016</time>
+            <time datetime="2016-01-10T10:43:00.000Z" itemprop="datePublished">01月 10 2016</time>
           </a>
         </section>
 
@@ -174,7 +195,7 @@
             <time datetime="2015-11-12T11:29:00.000Z" itemprop="datePublished">11月 12 2015</time>
           </a>
         </section>
-        <section class="post" itemscope itemprop="blogPost">
+
           <section class="post" itemscope itemprop="blogPost">
 
             <a href="./2015/1030/" title="通知和消息的区别" itemprop="url">
@@ -187,9 +208,21 @@
               <time datetime="2015-10-30T12:51:00.000Z" itemprop="datePublished">10月 30 2015</time>
             </a>
           </section>
+
           <section class="post" itemscope itemprop="blogPost">
+          <a href="./2015/1025/" title="android中消息传递机制" itemprop="url">
+            <h1 itemprop="name">android中消息传递机制（坑</h1>
+
+            <p itemprop="description" >
+            </p>
+
+            <time datetime="2015-10-25T11:24:00.000Z" itemprop="datePublished">10月 25 2015</time>
+          </a>
+        </section>
+
+        <section class="post" itemscope itemprop="blogPost">
           <a href="./2015/1022/" title="Activity四种启动模式" itemprop="url">
-            <h1 itemprop="name">Activity四种启动模式</h1>
+            <h1 itemprop="name">Activity四种启动模式(坑</h1>
 
             <p itemprop="description" >
             </p>
@@ -197,6 +230,7 @@
             <time datetime="2015-10-22T10:41:00.000Z" itemprop="datePublished">10月 22 2015</time>
           </a>
         </section>
+
         <section class="post" itemscope itemprop="blogPost">
 
           <a href="./2015/1014/" title="浅谈对前端的理解" itemprop="url">

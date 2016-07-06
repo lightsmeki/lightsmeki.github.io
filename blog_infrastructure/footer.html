@@ -1,11 +1,21 @@
-<!DOCTYPE HTML>
+
+ <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="不林的博客" content="不林的博客" />
-  <meta name="burin's blog" content="burin's blog" />
-  
-    <title>android音视频在线播放方案探讨 | Burin&#39;s blog</title>
+    <meta charset="UTF-8">
+    <meta name="不林的博客" content="不林的博客" />
+    <meta name="burin's blog" content="burin's blog" />
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c45e8a2364e5b52024729010efa4e9cf";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <title>linux指令 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -16,24 +26,23 @@
     <link rel="alternative" href="./atom.xml" title="Burin&#39;s blog" type="application/atom+xml">
     
     
-    <link rel="icon" href="../../img/favicon.ico">
-    
+    <link rel="icon" href="../img/favicon.ico">
     
 
-    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-        </head>
+</head>
 
   <body>
     <header>
       <div>
 		
 			<div id="imglogo">
-				<a href="./"><img src="../../img/logo.png" alt="Burin&#39;s blog" title="Burin&#39;s blog"/></a>
+				<a href="0713"><img src="../img/logo.png" alt="Burin&#39;s blog" title="Burin&#39;s blog"/></a>
 			</div>
 
             <div id="textlogo">
-              <h1 class="site-name"><a href="./" title="Burin&#39;s blog">Burin&#39;s blog</a></h1>
+              <h1 class="site-name"><a href="0713" title="Burin&#39;s blog">Burin&#39;s blog</a></h1>
               <h2 class="blog-motto">不林的博客  ( ﾟ∀ﾟ)よろしく❤</h2>
             </div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
@@ -42,11 +51,11 @@
 
 				<ul>
 					 
-						<li><a href="../../index.html">首页</a></li>
+						<li><a href="../index.html">首页</a></li>
 					
-						<li><a href="../../archives">归档</a></li>
+						<li><a href="../archives">归档</a></li>
 					
-						<li><a href="../../about">关于</a></li>
+						<li><a href="../about">关于</a></li>
 					
 					</ul>
                 <ul>
@@ -69,61 +78,72 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/0203/" title="android音视频在线播放方案探讨" itemprop="url">android音视频在线播放方案探讨</a>
+      <a href="/2015/1014" title="浅谈对前端的理解" itemprop="url">浅谈对前端的理解</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2016-02-03T16:31:00.000Z" itemprop="datePublished"> 发表于 02月 03 2016</time>
+    <time datetime="2015-10-14T14:48:00.000Z" itemprop="datePublished"> 发表于 10月 14 2015</time>
     
   </p>
 </header>
 	<div class="article-content">
-		
-		
+
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">Intro</span>
+                        <span class="toc-number">1.</span> <span class="toc-text">最初</span>
                     </a>
                 </li>
-
+                <li class="toc-item toc-level-2">
+                    <a class="toc-link" href="#标题2">
+                        <span class="toc-number">2.</span><span class="toc-text">发现</span>
+                    </a>
+                </li>
+                <li class="toc-item toc-level-2">
+                    <a class="toc-link" href="#标题3">
+                        <span class="toc-number">3.</span> <span class="toc-text">前景</span>
+                    </a>
+                </li>
+                <li class="toc-item toc-level-2">
+                    <a class="toc-link" href="#标题4">
+                        <span class="toc-number">4.</span> <span class="toc-text">结尾</span>
+                    </a>
+                </li>
             </ol>
 		
 		</div>
-
+		
 		<p><a id="more"></a></p>
-        <h2 id="标题1">Intro</h2>
-        <p>由于项目需要，我开始研究在线音视频播放器。</p>
-        <br/>过去我组用的音频播放方案是：<code>MediaPlayer + 自定义View + Service</code>，通过广播切换播放状态
-        <br/>视频播放方案是：<code>MediaPlayer + SurfaceView + VideoControllerView</code>
-        <br/>然而不久，就发现了性能上的问题。网络音频/视频加载缓慢，加载一个5M左右音频，平均用户等待时间为5s。但通过浏览器访问该资源文件时，却可以马上播放。例如：http://audio.vsaker.com/T2/org/T2-90.mp3
-        <br/>我也查了不少资料，下了不少开源项目参考，但大部分是介绍本地播放器的，很少有写在线播放器相关。
-        <br/>同时我也从网上下载了不少同类型产品的app作比较，例如喜马拉雅、多听、qq音乐、网易云音乐，这些都做的很好，本想反编译以后学习一下，但难以理解。
-
-        <p>
-            <br/>android5.0提供了android.service.media，其中包括<code><a href="https://developer.android.com/reference/android/service/media/MediaBrowserService.html">MediaBrowserService</a></code>。
-            <blockquote><p>Media browse services enable applications to browse media content provided by an application and ask the application to start playing it. They may also be used to control content that is already playing by way of a MediaSession.</p></blockquote>
-            <br/>官方指出，配合MediaSession使用，风味更佳。
-            <br/>
-            <br/>
-            <br/><img src="../../img/mediamession.png" alt="">
-            <br/><br/>关于token的知识：当客户端请求页面时，服务器会通过token标签生成一个随机数，并放置到session当中，然后将随机数发向客户端；
-            如果客户第一次提交，那么浏览器会将该随机数发往服务器，服务器端会接收到该随机数并且与session中所保存的随机数进行比较，
-            这时两者的值是相同的，服务器认为是第一次提交,并且将更新服务器端的这个随机数值；如果此时再次重复提交，
-            那么客户端向服务器端的随机数还是之前的那个，而服务器端的随机数则已经发生了变化，两者不同，服务器就认为这事重复提交，
-            进而转向invalid.token所指向的结果页面。
-
-            <br/><br/><img src="../../img/messiondescription.png" alt="">
-
+        <h2 id="标题1">最初</h2>
+        <p>最初开始工作的时候，我浅薄的认为前端就是做web界面的，和美术差不多，负责实现UI的设计。
+            <br/><br/> 接着，我发现前端和美术设计并不重合。随着技术的发展，CSS的玩法也越来越多样，配合js能做出更多有趣的效果。好的创意与实现必然是相辅相成的，这说明前端也可以是通往设计的一条路，不仅可以实现创意，也可以激发创意。同时前端可以掌握设计实现的难易程度以及工期长短，能够将创意落地。
         </p>
-        <br/><br/>
 
-        <p>看完这两张图，我瞬间感觉无比清晰。总的来说，就是MediaController为控制端，MediaSession为受控端。
+        <h2 id="标题2">发现</h2>
+        <p>
+            <br/>再后来，我发觉前端也可以是一种解决问题的思维方式，同一个问题可以由运营、设计、后端解决，也可以由前端解决。
+            <br/><br/>从纵向深入考虑，里面也蕴藏不少与美术不同层面的东西。由于它从属于技术领域，就不得不面对更为复杂的一系列问题，例如浏览器兼容性适配，性能优化，数据可视化，前端工程化，前端安全，SEO，数据统计，如何减少项目架构的复杂度，如何更为便捷的进行项目迭代管理etc。
+            <br/><br/>从横向进行分析，前端除了PC web以外，还可以做移动端，同时可结合ios或android做hybrid开发，还可做各种浏览器的web应用中间件、插件等。
+        </p>
+
+        <h2 id="标题3">再度发现</h2>
+        <p> <br/>前端远看像是技术方向一个狭小的点，但近处细细看过去，更像一张密密麻麻的网，各种节点之间隐隐约约的相互连接着。
+            <br/>less、ExtJS、bootstrap、zepto.js、angular1.0 2.0、nodejs，随着这些新的流行框架以及更成熟的解决方案的出现，技术人员为了不被时代的潮水拍死沙滩，将以更加质朴方式迎面应对，敦促自己不断前进——或是看文档学习，快速将最新的流行技术应用于自己的产品中，或是重新熟读ES6规则，反复思考，如何通过最原始而经典的js方法来解决目前的各种问题，避免被不成熟的技术带入更深的坑中。
+            <br/><br/>有种说法是，不想成为全栈不是好coder。原地踏步而不自知着实令人恐慌，有野心总是好的。
+            <br/>学习的确不应满足于一个点。不仅是某种实现方法，还可以熟悉原理，掌握框架；不仅是软件，还可以了解硬件，不仅是技术，还应该更好的了解运营、管理、美术等其他方向，从而延伸出去。除了赚钱谋生，还有自我价值实现。就像我很喜欢的美剧《硅谷黑历史》里面Hooli公司总裁Gavin总是提到的那句，make the world a better place。尽管他讲这句原话是讽刺，但依然让我相信，技术能够让生活迅速变得更美好。
+        </p>
+
+
+        <h2 id="标题4">结尾</h2>
+        <p> <br/>目前我依然经验尚浅，只能边走边挖坑，灌下一点似有似无的鸡汤。但前方一定有许多还未勘测到的坑等待挖掘。
+            <br/>不过这正好，人最怕的就是没有希望。所幸还年轻，平日也还注意锻炼身体，一旦有了能力和机会，就获得了达到更高的境界的可能。
+
+            <br/><br/><br/><br/>2015/10/14</p>
         </p>
 
 
@@ -135,11 +155,11 @@
 
     <div class="article-categories">
       <span></span>
-      <a class="article-category-link" href="../../categories/Android/">Android</a>
+      <a class="article-category-link" href="./categories/Android/">Android</a>
     </div>
 
     <div class="article-tags">
-        <span></span><a href="../../tags/android/">android</a><a href="../../tags/Media/">Media</a>
+        <span></span> <a href="../../../tags/开篇暖场/"></a>
     </div>
 
 </div>
@@ -147,7 +167,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2016/0203/" data-title="事件分发机制 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2015/1014/" data-title="浅谈对前端的理解 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -157,17 +177,17 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
-     <a href="../0110/" title="事件分发机制">
+     <a href="#" title="">
       <strong>上一篇：</strong><br/>
-      <span>事件分发机制</span>
+      <span></span>
      </a>
 </div>
 
 
 <div class="next">
-    <a href="../0206/" title="Service保活">
+    <a href="../0523/" title="2015.11.12阶段总结">
      <strong>下一篇：</strong><br/>
-     <span>Service保活</span>
+     <span>2015.11.12阶段总结</span>
     </a>
 </div>
 
@@ -226,35 +246,25 @@
         <p class="asidetitle">标签云</p>
         <div class="tagcloudlist clearfix">
             <a href="#" style="font-size: 10.00px;">萌萌哒</a>
-
         </div>
     </div>
     <div class="archiveslist">
         <p class="asidetitle"><a href="/archives">归档</a></p>
         <ul class="archive-list">
             <li class="archive-list-item">
-                <a class="archive-list-link" href="../../archives/2016/07-12/">2016年下半年</a>
-                <span class="archive-list-count"></span>
+                <a class="archive-list-link" href="./archives/2015/01_06">2015/1/1~2015/6/30</a>
+                <span class="archive-list-count">000</span>
             </li>
             <li class="archive-list-item">
-                <a class="archive-list-link" href="../../archives/2016/01-06/">2016年上半年</a>
-                <span class="archive-list-count">5</span>
-            </li>
-            <li class="archive-list-item">
-                <a class="archive-list-link" href="../../archives/2015/07-12/">2015年下半年</a>
-                <span class="archive-list-count">2</span>
+                <a class="archive-list-link" href="./archives/2015/07_12">2015/7/1~2015/12/31</a>
+                <span class="archive-list-count">000</span>
             </li>
         </ul>
     </div>
-
     <div class="linkslist">
         <p class="asidetitle">友情链接</p>
         <ul>
-            <!--<li><a href="http://imid.me/" target="_blank" title="iMID">iMID's Blog</a></li>-->
-            <!--<li><a href="http://www.trinea.cn/" target="_blank" title="trinea">Trinea's Blog</a></li>-->
-            <!--<li><a href="http://stormzhang.github.io/" target="_blank" title="stormzhang">StormZhang's Blog</a></li>-->
-            <!--<li><a href="http://daimajia.com/" target="_blank" title="daimajia">DaiMaJia.Blog</a></li>-->
-            <!--<li><a href="http://macrotea.com/welcome/" target="_blank" title="daimajia">Macrotea.Blog</a></li>-->
+
         </ul>
     </div>
 
@@ -424,7 +434,7 @@ $(document).ready(function(){
 
 
 
-<link rel="stylesheet" href="../../fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<link rel="stylesheet" href="../fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
@@ -449,7 +459,6 @@ $(document).ready(function(){
 
 
 
-
 <div id="totop">
 <a title="返回顶部"><img src="../../../img/scrollup.png"/></a>
 </div>
@@ -462,4 +471,5 @@ $(document).ready(function(){
   </body>
 </html>
 
-<a href="https://github.com/lightsmeki"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<a href="https://github.com/lightsmeki">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
