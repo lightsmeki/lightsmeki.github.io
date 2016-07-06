@@ -100,8 +100,8 @@
 		
 		<p><a id="more"></a></p>
         <p>
-            如何动态设置一个fragment控件宽高？
-            <br/>一个简单方便的做法是，在fragment外部套一层RelativeLayout或者LinearLayout，将fragment控件宽高都写成fill_parent，即可通过LayoutParams修改RelativeLayout宽高，间接限制fragment宽高。
+        <blockquote>如何动态设置一个fragment控件宽高？</blockquote>
+            <br/><br/>一个简单方便的做法是，在fragment外部套一层RelativeLayout或者LinearLayout，将fragment控件宽高都写成fill_parent，即可通过LayoutParams修改RelativeLayout宽高，间接限制fragment宽高。
             <br/>
 
             <figure class="highlight java"><table><tr><td class="gutter">
@@ -113,7 +113,7 @@
                     <div class="line"><span class="keyword">int</span> imagewidth1 = wm.getDefaultDisplay().getWidth();</div>
                     <div class="line"><span class="keyword">if</span>(imagewidth1 != 0){</div>
                     <div class="line">      <span class="keyword">para</span>.width = imagewidth1;</div>
-                    <div class="line">      <span class="keyword">para</span>.height = imagewidth1 * 250 / 640;</div>
+                    <div class="line">      <span class="keyword">para</span>.height = imagewidth1 * 250 / 640;//高度根据比例进行计算，当前比例是（宽640:高250）</div>
                     <div class="line">      fragment_rl.setLayoutParams(para);</div>
                     <div class="line">}</div>
                 </pre></td></tr></table></figure>
@@ -121,7 +121,7 @@
         </p>
 
         <p>
-            fragment_rl就是某个fragment的外层layout。目的是通过调整fragment_rl的宽高，来限制fragment宽高，使其宽度和屏幕一致，高度根据比例（宽640:高250）进行缩放。
+            fragment_rl就是某个fragment的外层layout。目的是通过调整fragment_rl的宽高，来限制fragment大小，使其宽度和屏幕一致，高度根据比例进行计算。
             <br/>
         </p>
 

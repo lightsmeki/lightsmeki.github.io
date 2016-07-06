@@ -15,7 +15,7 @@
         })();
     </script>
 
-    <title>Activity四种启动模式 | Burin&#39;s blog</title>
+    <title>通知和消息的区别 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -78,14 +78,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/1022/" title="Activity四种启动模式" itemprop="url">Activity四种启动模式</a>
+      <a href="/2015/1030/" title="通知和消息的区别" itemprop="url">通知和消息的区别</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-22T10:41:00.000Z" itemprop="datePublished"> 发表于 10月 22 2015</time>
+    <time datetime="2015-10-30T12:51:00.000Z" itemprop="datePublished"> 发表于 10月 30 2015</time>
     
   </p>
 </header>
@@ -94,41 +94,32 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">最初</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题2">
-                        <span class="toc-number">2.</span><span class="toc-text">发现</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题3">
-                        <span class="toc-number">3.</span> <span class="toc-text">前景</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题4">
-                        <span class="toc-number">4.</span> <span class="toc-text">结尾</span>
-                    </a>
-                </li>
             </ol>
-		
+
 		</div>
 		
 		<p><a id="more"></a></p>
-        <h2 id="标题1"></h2>
-        <p>
-            <br/><br/>
-        </p>
+        <code>通知</code>  发送后会在系统通知栏收到展现，同时响铃或振动提醒用户。
+        <br/><br/><code>消息</code>  以透传*的形式传递给客户端，无显示，发送后不会在系统通知栏展现，第三方应用后需要开发者写代码才能看到。
+        <br/><br/>*<code>透传</code> 即是透明传送，即传送网络无论传输业务如何，只负责将需要传送的业务传送到目的节点，同时保证传输的质量即可，而不对传输的业务进行处理。透传消息，就是消息体格式及内容，对于传递的通道来说是不去过问的，通道只负责消息的传递，对消息不做任何处理，当客户端接收到透传消息后，由客户端自己来决定如何处理消息。正是因为透传消息可以自定义消息体，也可以自定义消息的展示方式及后续动作处理，所以弥补了通知栏消息的一些不足之处(通知栏消息是直接展示出来，相关的动作客户端无法捕获到)。
 
-        <h2 id="标题2"></h2>
-        <p>
-            <br/>
-            <br/><br/>
+        <br/><br/>透传消息主要有如下几个方面的特点：
+        <blockquote>1. 后台处理，用户无感知。</blockquote>
+        <blockquote>2. 前台展示，提醒用户。</blockquote>
+        <blockquote>3. 展示的多样化。</blockquote>
 
+        <br/><br/>整个透传消息的流程如下：
+
+        <br/><br/>根据个推提供的API接口或在个推开发者平台上推送透传消息，个推服务端接收到推送的消息后，不做任何处理，直接发送给目标用户。
+
+        <br/><br/>当客户端SDK接收到透传消息后，以广播方式发送给客户端，客户端在配置的第三方BroadReceiver里接收到透传消息后进行处理。
+
+        <br/><br/>透传消息的消息体，可以根据不同的需求传递不同的参数或格式。如传递一个简单的字符串，或传递一个Json字符串，里面根据需求传递需要的字段。
+
+        <br/><br/>用户无感知的透传，如：更新相关信息，在主界面中相关栏位用红点标识进行弱提醒，推送一条命令用来检测用户是否有登录等。通知栏消息虽然方便的提醒用户，但也在一定程度上给用户带来了打扰，用户无感知的消息推送有时效果会更好。
+        <br/><br/>用户有感知的透传：把透传消息处理成通知栏展示出来，提醒用户方便点击查看相关信息（如个人帐单信息），直接打开应用或跳转到指定的应用界面中（根据透传消息的相关参数来判断跳转到哪一个指定的界面，相关参数传递要打开的界面的类名或Intent即可）等。对于开发者，处理成通知栏的相关事件也是可以捕获的，如通知栏的展示、点击等事件都可以进行捕获，以方便进行后续的操作。
+
+        <br/><br/>因透传消息可以自己处理成通知栏内容展示，所以通知栏的样式也可以根据需求来做对应的改变。在Android 4.4及以上的系统，通知栏可以是样式丰富的通知栏，放入图片和视频等；可以展示普通的通知，也可以展示多样化的通知。
 
 
 
@@ -152,13 +143,13 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2015/1022/" data-title="Activity四种启动模式 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2015/1030/" data-title="通知和消息的区别 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
-</footer>
+</footer>   	       
 	</article>
-
+	
 <nav class="article-nav clearfix">
  
  <div class="prev" >
