@@ -15,7 +15,7 @@
         })();
     </script>
 
-    <title>Activity四种启动模式 | Burin&#39;s blog</title>
+    <title>理解Activity生命周期 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -78,97 +78,75 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/1022/" title="Activity四种启动模式" itemprop="url">Activity四种启动模式</a>
+      <a href="/2015/1027/" title="理解Activity生命周期" itemprop="url">理解Activity生命周期</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-22T10:41:00.000Z" itemprop="datePublished"> 发表于 10月 22 2015</time>
+    <time datetime="2015-10-27T14:31:00.000Z" itemprop="datePublished"> 发表于 10月 27 2015</time>
     
   </p>
 </header>
 	<div class="article-content">
-
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题0">
-                        <span class="toc-number">0.</span> <span class="toc-text">Task</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">standard</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题2">
-                        <span class="toc-number">2.</span> <span class="toc-text">singleTop</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题3">
-                        <span class="toc-number">3.</span> <span class="toc-text">singleTask</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题4">
-                        <span class="toc-number">4.</span> <span class="toc-text">singleInstance</span>
-                    </a>
-                </li>
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">文章目录</strong>
+            <li class="toc-item toc-level-2">
+                <a class="toc-link" href="#标题1">
+                    <span class="toc-number">1.</span> <span class="toc-text"></span>
+                </a>
+            </li>
+            <li class="toc-item toc-level-2">
+                <a class="toc-link" href="#标题2">
+                    <span class="toc-number">2.</span> <span class="toc-text"></span>
+                </a>
+            </li>
+            <li class="toc-item toc-level-2">
+                <a class="toc-link" href="#标题3">
+                    <span class="toc-number">3.</span> <span class="toc-text"></span>
+                </a>
+            </li>
+            <li class="toc-item toc-level-2">
+                <a class="toc-link" href="#标题4">
+                    <span class="toc-number">4.</span> <span class="toc-text"></span>
+                </a>
+            </li>
             </ol>
 
-		</div>
-
-		<p><a id="more"></a></p>
-        <h2 id="标题0">Task</h2>
-
-        <p>Activity是Android应用程序的基础组件之一，在应用程序运行时，每一个Activity代表一个用户操作。用户为了完成某个功能而执行的一系列操作就形成了一个<a>Activity序列</a>，
-        这个序列在Android应用程序中就称之为任务(Task)，它是从用户体验的角度出发，把一组相关的Activity组织在一起而抽象出来的概念。
-        </p>
-
-        <h2 id="标题1">standard</h2>
-        <p>默认启动模式，可创建多个实例，也允许多个Activity相互叠加。
-            <br/><br/>
-        </p>
-
-        <h2 id="标题2">singleTop</h2>
+        </div>
+        <p><a id="more"></a></p>
         <p>
-            可以有多个实例，但是不允许多个相同Activity叠加。若不在栈顶，则新建实例；若实例在栈顶，则重用该实例。
-            <br/>
-            <br/>
-
+            <img src="../../img/activity_lifecycle.gif"/>
+            <br/>这张图实在太经典了，不能不先放出来镇场子。<s>简直面试笔试必考题，画出来谈谈理解，场景应用云云。</s>
         </p>
 
-        <h2 id="标题3">singleTask</h2>
-        <p>只能存在一个实例。相当于Task内单例模式。若不存在则创建实例；若栈中已存在该实例，则重用该实例。重用时，该实例会回到栈顶，并将它上面的其他实例移除栈，并进入onNewIntent方法中。
-            比如1和3启动模式是standard，2是启动模式是singleTask，启动顺序是133111211333213312，返回是133111，只保留了最开头几个栈。2之间的栈都被移除了。
-            <br/>
-            <br/>
+        <h2 id="标题1">Activity中方法总结</h2>
+        <ul>
+            <li><a>onCreate</a> Activity最初创建时被调用</li>
+            <li><a>onStart</a> Activity创建或后台回到前台时被调用</li>
+            <li><a>onResume</a> Activity创建、被覆盖、后台回到前台时被调用</li>
+            <li><a>onRestart</a> Activity从后台回到前台时被调用</li>
+            <li><a>onPause</a> Activity被覆盖、锁屏时被调用</li>
+            <li><a>onStop</a> 退出当前Activity或跳转其他activity时被调用</li>
+            <li><a>onDestroy</a> 退出当前Activity时被调用</li>
 
-        </p>
-
-        <h2 id="标题4">singleInstance</h2>
+        </ul>
+        <br/>值得注意的是这几个方法，很有趣。
+        <ul>
+            <li><a>onWindowFocusChanged</a> Activity窗口获得或失去焦点时被调用。当Activity被创建时是在onResume之后被调用，当Activity被覆盖或者退居后台或者当前Activity退出时，它是在onPause之后被调用。
+                例如创建时首次呈现在用户面前；当前Activity被其他Activity覆盖；当前Activity转到其他Activity或按Home键回到主屏，自身退居后台；用户退出当前Activity。</li>
+            <li><a>onSaveInstanceState</a> Activity被系统杀死时被调用。例如:屏幕方向改变时,Activity被销毁再重建;当前Activity处于后台,系统资源紧张将其杀死。
+                另外,当跳转到其他Activity或者按Home键回到主屏时该方法也会被调用，系统是为了保存当前View组件的状态。在onPause之前被调用。</li>
+            <li><a>onRestoreInstanceState</a> Activity被系统杀死后再重建时被调用。例如:屏幕方向改变时，Activity被销毁再重建；当前Activity处于后台，系统资源紧张将其杀死，用户又启动该Activity。
+                这两种情况下onRestoreInstanceState都会被调用，在onStart之后。</li>
+        </ul>
         <p>
-            <br/>只存在一个实例，独立运行于一个task中。相当于全局单例模式。
-            <br/>
-            <br/>比如1，3,4的启动模式是standard，2启动模式为singleInstance，启动顺序是4312434324，退出顺序为434342。
-            <br/><br/>而且，我发现一个很有意思的事。如果如果按照43124的启动顺序，在启动第二个4时，实际启动的activity却是1，也就是2之前的那个。我猜想，可能跟task最开始的默认的启动类有关。
-            一旦在2之后启动最开始的默认启动类（也就是这里的4），结果并不是创建一个新的4，而是重用了在2之前的那个类。
-            <br/><br/>明明4是standard，仅仅因为是默认的启动类，竟然被重用了。这实在太不合理了！！！到底是为什么？？？
-            经过一番思索，我想，或许，是因为我忘记考虑了一个问题：134都在同一个task中，而2在另一个task中。
-            <br/><br/>这说明，不同task之间的启动顺序，可能并不像想象的那样。
-            <br/><br/>然而智商有限，使得这个问题蒙上了一层神秘的面纱，sorry。
-            <br/><br/>欢迎有想法的童鞋指教。
 
         </p>
 
 
-
-
-    </div>
+	</div>
 
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -187,13 +165,13 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2015/1022/" data-title="Activity四种启动模式 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2015/1025/" data-title="android中消息传递机制 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
-</footer>
+</footer>   	       
 	</article>
-
+	
 <nav class="article-nav clearfix">
  
  <div class="prev" >
@@ -485,7 +463,7 @@ $(document).ready(function(){
 
 
 <div id="totop">
-<a title="返回顶部"><img src="../../img/scrollup.png"/></a>
+<a title="返回顶部"><img src="../../../img/scrollup.png"/></a>
 </div>
 
 <script src="/js/totop.js"></script>
