@@ -15,7 +15,7 @@
         })();
     </script>
 
-    <title>Activity四种启动模式 | Burin&#39;s blog</title>
+    <title>悬浮窗Demo | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -78,87 +78,38 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/1022/" title="Activity四种启动模式" itemprop="url">Activity四种启动模式</a>
+      <a href="/2016/0707/" title="悬浮窗Demo" itemprop="url">悬浮窗Demo</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-22T10:41:00.000Z" itemprop="datePublished"> 发表于 10月 22 2015</time>
+    <time datetime="2016-07-07T09:59:00.000Z" itemprop="datePublished"> 发表于 07月 07 2016</time>
     
   </p>
 </header>
 	<div class="article-content">
 
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
 
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">standard</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题2">
-                        <span class="toc-number">2.</span> <span class="toc-text">singleTop</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题3">
-                        <span class="toc-number">3.</span> <span class="toc-text">singleTask</span>
-                    </a>
-                </li>
-                <li class="toc-item toc-level-2">
-                    <a class="toc-link" href="#标题4">
-                        <span class="toc-number">4.</span> <span class="toc-text">singleInstance</span>
-                    </a>
-                </li>
-            </ol>
-
-		</div>
-
-		<p><a id="more"></a></p>
-        <h2 id="标题1">standard</h2>
-        <p>默认启动模式，可创建多个实例，也允许多个Activity相互叠加。
-            <br/><br/>
-        </p>
-
-        <h2 id="标题2">singleTop</h2>
         <p>
-            可以有多个实例，但是不允许多个相同Activity叠加。若不在栈顶，则新建实例；若实例在栈顶，则重用该实例。
+        感觉还蛮有趣的，就想做做看悬浮窗。
+
+        <blockquote></blockquote>
             <br/>
-            <br/><br/>
+
+        <br/><br/>
+
 
         </p>
 
-        <h2 id="标题3">singleTask</h2>
-        <p>只能存在一个实例。相当于Task内单例模式。若不存在则创建实例；若栈中已存在该实例，则重用该实例。重用时，该实例会回到栈顶，并将它上面的其他实例移除栈，并进入onNewIntent方法中。
-            比如1和3启动模式是standard，2是启动模式是singleTask，启动顺序是133111211333213312，返回是133111，只保留了最开头几个栈。2之间的栈都被移除了。
-            <br/>
-            <br/><br/>
-
-        </p>
-
-        <h2 id="标题4">singleInstance</h2>
         <p>
-            <br/>只存在一个实例，独立运行于一个task中。相当于全局单例模式。
-            <br/>
-            <br/>比如1，3,4的启动模式是standard，2启动模式为singleInstance，启动顺序是4312434324，退出顺序为434342。
-            <br/><br/>而且，我发现一个很有意思的事。如果如果按照43124的启动顺序，在启动第二个4时，实际启动的activity却是1，也就是2之前的那个。我猜想，可能跟task最开始的默认的启动类有关。
-            一旦在2之后启动最开始的默认启动类（也就是这里的4），结果并不是创建一个新的4，而是重用了在2之前的那个类。
-            <br/><br/>明明4是standard，仅仅因为是默认的启动类，竟然被重用了。这实在太不合理了！！！到底是为什么？？？
-            经过一番思索，我想，或许，是因为我忘记考虑了一个问题：134都在同一个task中，而2在另一个task中。
-            <br/><br/>这说明，不同task之间的启动顺序，可能并不像想象的那样。
-            <br/><br/>然而智商有限，使得这个问题蒙上了一层神秘的面纱，sorry。
-            <br/><br/>欢迎有想法的童鞋指教。
-
         </p>
 
 
 
 
-    </div>
+	</div>
 
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -177,27 +128,27 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2015/1022/" data-title="Activity四种启动模式 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2016/0707/" data-title="悬浮窗Demo | Burin&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
-</footer>
+</footer>   	       
 	</article>
-
+	
 <nav class="article-nav clearfix">
  
  <div class="prev" >
-     <a href="#" title="">
+     <a href="../0626/" title="浅谈MVC、MVP和MVVM">
       <strong>上一篇：</strong><br/>
-      <span></span>
+      <span>浅谈MVC、MVP和MVVM</span>
      </a>
 </div>
 
 
 <div class="next">
-    <a href="../0523/" title="2015.11.12阶段总结">
+    <a href="#" title="">
      <strong>下一篇：</strong><br/>
-     <span>2015.11.12阶段总结</span>
+     <span></span>
     </a>
 </div>
 
