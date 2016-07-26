@@ -143,6 +143,45 @@
         </ul>
         <p>
 
+            下面写下我的测试结果。
+
+            <br/>onPause：活动状态→非活动状态
+            <br/>onStop：可见状态→不可见状态
+
+            <br/>
+            <br/>按下锁屏键：<blockquote>
+        onSaveInstanceState
+        <br/>onPause
+        <br/>唤醒后：onResume
+            </blockquote>
+
+            按下home键：<blockquote>
+                onSaveInstanceState
+                <br/>onPause
+                <br/>onStop
+            </blockquote>
+
+        按下back键：<blockquote>
+        onPause
+        <br/>onStop
+        <br/>onDestroy</blockquote>
+
+        <br/>
+        增加dialog弹窗：无影响
+
+        <br/><br/>
+        旋转屏幕：先销毁后重建<blockquote>
+            onSaveInstanceState
+            <br/>onPause
+            <br/>onStop
+            <br/>onDestory
+            <br/>onCreate
+            <br/>onStart
+            <br/>onRestoreInstanceState
+            <br/>onResume
+
+            <br/>但可以通过在activity中增加android:configChanges="orientation"，使其无影响。</blockquote>
+
         </p>
 
 
