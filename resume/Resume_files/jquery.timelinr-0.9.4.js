@@ -20,7 +20,7 @@ jQuery.fn.timelinr = function(options){
 		autoPlay: 					'false',			// value: true | false, default to false
 		autoPlayDirection: 			'forward',			// value: forward | backward, default to forward
 		autoPlayPause: 				2000				// value: integer (1000 = 1 seg), default to 2000 (2segs)
-		
+
 	}, options);
 
 	$(function(){
@@ -39,9 +39,9 @@ jQuery.fn.timelinr = function(options){
 		var heightDates = $(settings.datesDiv).height();
 		var widthDate = $(settings.datesDiv+' li').width();
 		var heightDate = $(settings.datesDiv+' li').height();
-		
+
 		// set positions!
-		if(settings.orientation == 'horizontal') {	
+		if(settings.orientation == 'horizontal') {
 			$(settings.issuesDiv).width(widthIssue*howManyIssues);
 			$(settings.datesDiv).width(widthDate*howManyDates).css('marginLeft',widthContainer/2-widthDate/2-319);
 			var defaultPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
@@ -50,7 +50,7 @@ jQuery.fn.timelinr = function(options){
 			$(settings.datesDiv).height(heightDate*howManyDates).css('marginTop',heightContainer/2-heightDate/2-30);
 			var defaultPositionDates = parseInt($(settings.datesDiv).css('marginTop').substring(0,$(settings.datesDiv).css('marginTop').indexOf('px')));
 		}
-		
+
 		$(settings.datesDiv+' a').click(function(event){
 			event.preventDefault();
 			// first vars
@@ -65,7 +65,7 @@ jQuery.fn.timelinr = function(options){
 				$(settings.issuesDiv).animate({'marginTop':-heightIssue*currentIndex},{queue:false, duration:settings.issuesSpeed});
 			}
 			$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed}).removeClass(settings.issuesSelectedClass).eq(currentIndex).addClass(settings.issuesSelectedClass).fadeTo(settings.issuesTransparencySpeed,1);
-			
+
 			// now moving the dates
 			$(settings.datesDiv+' a').removeClass(settings.datesSelectedClass);
 			$(this).addClass(settings.datesSelectedClass);
@@ -91,7 +91,8 @@ jQuery.fn.timelinr = function(options){
 						$(settings.issuesDiv).animate({'marginLeft':currentPositionIssues-widthIssue},{queue:false, duration:settings.issuesSpeed});
 						$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed});
 						$(settings.issuesDiv+' li.'+settings.issuesSelectedClass).removeClass(settings.issuesSelectedClass).next().fadeTo(settings.issuesTransparencySpeed, 1).addClass(settings.issuesSelectedClass);
-						$(settings.datesDiv).animate({'marginLeft':currentIssueDate},{queue:false, duration:settings.datesSpeed});
+						$(settings.datesDiv).animate({'marginLeft':currentIssueDate},
+								{queue:false, duration:settings.datesSpeed});
 						$(settings.datesDiv+' a.'+settings.datesSelectedClass).removeClass(settings.datesSelectedClass).parent().next().children().addClass(settings.datesSelectedClass);
 					}
 				}
@@ -153,35 +154,35 @@ jQuery.fn.timelinr = function(options){
 				}
 			}
 		});
-		
+
 		// keyboard navigation, added since 0.9.1
 		if(settings.arrowKeys=='true') {
 			if(settings.orientation=='horizontal') {
 				$(document).keydown(function(event){
-					if (event.keyCode == 39) { 
-				       $(settings.nextButton).click();
-				    }
-					if (event.keyCode == 37) { 
-				       $(settings.prevButton).click();
-				    }
+					if (event.keyCode == 39) {
+						$(settings.nextButton).click();
+					}
+					if (event.keyCode == 37) {
+						$(settings.prevButton).click();
+					}
 				});
 			} else if(settings.orientation=='vertical') {
 				$(document).keydown(function(event){
-					if (event.keyCode == 40) { 
-				       $(settings.nextButton).click();
-				    }
-					if (event.keyCode == 38) { 
-				       $(settings.prevButton).click();
-				    }
+					if (event.keyCode == 40) {
+						$(settings.nextButton).click();
+					}
+					if (event.keyCode == 38) {
+						$(settings.prevButton).click();
+					}
 				});
 			}
 		}
-		
+
 		// default position startAt, added since 0.9.3
 		$(settings.datesDiv+' li').eq(settings.startAt-1).find('a').trigger('click');
-		
+
 		// autoPlay, added since 0.9.4
-		if(settings.autoPlay == 'true') { 
+		if(settings.autoPlay == 'true') {
 			setInterval("autoPlay()", settings.autoPlayPause);
 		}
 	});

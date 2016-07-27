@@ -360,7 +360,7 @@ a:active {
   color:#ddd;;
 }
 #nav a {
-  padding: 0 25px;
+  padding: 0 1%;
   font-size: 14px;
   line-height: 40px;
   cursor: pointer;
@@ -369,7 +369,7 @@ a:active {
 }
 #nav a:hover{color:#fff;
   border:1px dashed #999;
-  padding:7px 10px;
+  padding:5px 5px;
 }
 .headcontainer{
   margin:0 auto;
@@ -392,7 +392,9 @@ a:active {
   float: left;
 }
 .fr {
-  float: right;
+  margin:0px auto;text-align:center
+  padding:0;
+  width:100%;
 }
 .fr ul{
   margin:0; padding:0;
@@ -417,10 +419,10 @@ border:1px dashed #999;
 
 
 /*时间轴*/
-#timeline{width:1120px;height:400px;overflow:hidden;
+#timeline{width:80%;height:400px;overflow:hidden;
   margin:0 auto;
   position:relative;background:url('../images/licbg.png') left 250px repeat-x;}
-#dates{width:1120px;overflow:hidden;margin-top:-8px;}
+#dates{width:100%;overflow:hidden;margin-top:-8px;}
 #dates li{float:left;width:94px;height:90px;font-size:16px;text-align:center;}
 #dates a{
   color:rgba(255,255,255,0.7);
@@ -429,12 +431,15 @@ border:1px dashed #999;
 #dates .selected{font-size:18px;font-weight:bold;
   color:rgba(255,255,255,1);
   background:url(../images/licbgt.png) no-repeat center top;}
-#issues{width:1120px;height:250px;overflow:hidden;}
-#issues li{width:1120px;height:250px;list-style:none;float:left;text-align: left;
+#issues{width:100%;height:250px;overflow:hidden;}
+#issues li{
+  width:1120px;
+  height:250px;list-style:none;float:left;text-align: left;
   font-size: 1rem;
 
 }
 #issues .inner{
   margin:0 auto;
-  padding-left: 400px;
+  padding:0 auto;
+  /*padding-left: 400px;*/
 }
