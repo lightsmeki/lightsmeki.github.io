@@ -5,7 +5,7 @@
   <meta name="不林的博客" content="不林的博客" />
   <meta name="burin's blog" content="burin's blog" />
   
-    <title>项目中遇到的问题总结 | Burin&#39;s blog</title>
+    <title>JS与android的WebView互相调用 | Burin&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Burin">
@@ -68,14 +68,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/1214/" title="项目中遇到的问题总结" itemprop="url">项目中遇到的问题总结</a>
+      <a href="/2015/1216/" title="JS与android的WebView互相调用" itemprop="url">JS与android的WebView互相调用</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
 		
   <p class="article-time">
-    <time datetime="2015-12-14T11:29:00.000Z" itemprop="datePublished"> 发表于 12月 14 2015</time>
+    <time datetime="2015-12-16T11:03:00.000Z" itemprop="datePublished"> 发表于 12月 16 2015</time>
     
   </p>
 </header>
@@ -87,26 +87,82 @@
 
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">阶段总结</span>
+                        <span class="toc-number">1.</span> <span class="toc-text">Android调用JS</span>
                     </a>
                 </li>
-
+                <li class="toc-item toc-level-2">
+                    <a class="toc-link" href="#标题1">
+                        <span class="toc-number">2.</span> <span class="toc-text">JS调用Android</span>
+                    </a>
+                </li>
             </ol>
 		
 		</div>
 		
 		<p><a id="more"></a></p>
-        <h2 id="标题1">阶段总结</h2>
+        <h2 id="标题1">Android调用JS</h2>
         <p>
-            调试时发现个问题，缓存过了失效时间，但并没有重新刷新界面。
+            首先要使能JS，添加<a>mWebView.getSettings().setJavaScriptEnabled(true); </a>
+            <figure class="highlight java"><table><tr><td class="gutter">
+                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line">mWebView.setWebViewClient(new WebViewClientEmb());</div>
+                    <div class="line"></div>
+                    <div class="line">public class WebViewClientEmb extends WebViewClient {</div>
+                    <div class="line">    @Override</div>
+                    <div class="line">    public boolean shouldOverrideUrlLoading(WebView view, String url) {</div>
+                    <div class="line">        view.loadUrl(url);</div>
+                    <div class="line">    }</div>
+                    <div class="line">    @Override</div>
+                    <div class="line">    public void onPageStarted(WebView view, String url, Bitmap favicon){</div>
+                    <div class="line">        super.onPageStarted(view, url, favicon);</div>
+                    <div class="line">    }</div>
+                    <div class="line">    @Override</div>
+                    <div class="line">    public void onPageFinished(WebView view, String url) {</div>
+                    <div class="line">      super.onPageFinished(view, url);</div>
+                    <div class="line">      mWebView.loadUrl("javascript:setShareInfo2()");</div>
+                    <div class="line">    }</div>
+                    <div class="line">}    </div>
+                </pre></td></tr></table></figure>
+            <br/>
+            在onPageFinished方法中使用mWebView.loadUrl方法来调用JS方法，亲测有效。
         </p>
 
-        <br/>原因是没有重新
-        在Activity中设置一个private变量，用于存储缓存的信息，在onPause中清除缓存。
+
+
+        <br/>
+        <h2 id="标题2">JS调android</h2>
         <p>
-            <br/>
-        </p>
-        <p>
+            <br/>需要注意，在mWebView.addJavascriptInterface中药指定调用的名称，可随意定义，但js中必须和此处相同。
+
+            <figure class="highlight java"><table><tr><td class="gutter">
+                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td>
+                <td class="code"><pre>
+                    <div class="line">mWebView.addJavascriptInterface(new JavaScriptObject(this), "Android");</div>
+                    <div class="line"></div>
+                    <div class="line">private class JavaScriptObject</div>
+                    <div class="line">    Context mContxt;</div>
+                    <div class="line">    public JavaScriptObject(Context mContxt) {</div>
+                    <div class="line">        this.mContxt = mContxt;</div>
+                    <div class="line">    }</div>
+                    <div class="line">    @JavascriptInterface//android:targetSdkVersion>=17需要添加该注解</div>
+                    <div class="line">    public void showToast(String toast){</div>
+                    <div class="line">        Toast.makeText(mContxt, toast, Toast.LENGTH_SHORT).show();</div>
+                    <div class="line">    }</div>
+                    <div class="line">    @JavascriptInterfac</div>
+                    <div class="line">    public void setShareInfo2(String title,String url){</div>
+                    <div class="line">      Toast.makeText(mContxt, "setShareInfo2  title:" + title + "    url:"+url, Toast.LENGTH_SHORT).show();</div>
+                    <div class="line">    }</div>
+                    <div class="line">    @JavascriptInterfa</div>
+                    <div class="line">    public void setShareInfo(String title,String url){</div>
+                    <div class="line">      Toast.makeText(mContxt, "setShareInfo   title:" + title + "    url:"+url, Toast.LENGTH_SHORT).show();</div>
+                    <div class="line">    }</div>
+                    <div class="line">}    </div>
+                </pre></td></tr></table></figure>
+
+
+        </p>js测试网页：<a href="http://lightsmeki.github.io/test/web/index.html">http://lightsmeki.github.io/test/web/index.html</a>
+        <p>eclipse测试工程demo百度云下载：<a href="http://pan.baidu.com/s/1eRSxNUi">http://pan.baidu.com/s/1eRSxNUi</a>    密码：427f
             <br/>
         </p>
         <p>
