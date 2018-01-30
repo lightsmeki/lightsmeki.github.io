@@ -3,8 +3,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="不林的博客" content="不林的博客" />
-    <meta name="burin's blog" content="burin's blog" />
+    <meta name="Meki的博客" content="Meki的博客" />
+    <meta name="Meki's blog" content="Meki's blog" />
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -15,15 +15,15 @@
         })();
     </script>
 
-    <title>浅谈MVC、MVP和MVVM | Burin&#39;s blog</title>
+    <title>MVC、MVP和MVVM模式介绍 | Meki&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-    <meta name="author" content="Burin">
+    <meta name="author" content="Meki">
     
     <meta name="description" content="">
     
     
-    <link rel="alternative" href="./atom.xml" title="Burin&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="./atom.xml" title="Meki&#39;s blog" type="application/atom+xml">
     
     
     <link rel="icon" href="../../img/favicon.ico">
@@ -38,12 +38,12 @@
       <div>
 		
 			<div id="imglogo">
-				<a href="./"><img src="../../img/logo.png" alt="Burin&#39;s blog" title="Burin&#39;s blog"/></a>
+				<a href="./"><img src="../../img/logo.png" alt="Meki&#39;s blog" title="Meki&#39;s blog"/></a>
 			</div>
 
             <div id="textlogo">
-              <h1 class="site-name"><a href="./" title="Burin&#39;s blog">Burin&#39;s blog</a></h1>
-              <h2 class="blog-motto">不林的博客  ( ﾟ∀ﾟ)よろしく❤</h2>
+              <h1 class="site-name"><a href="./" title="Meki&#39;s blog">Meki&#39;s blog</a></h1>
+              <h2 class="blog-motto">Meki的博客  ( ﾟ∀ﾟ)ﾉ❤</h2>
             </div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -78,11 +78,11 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/0626/" title="浅谈MVC、MVP和MVVM" itemprop="url">浅谈MVC、MVP和MVVM</a>
+      <a href="/2016/0626/" title="MVC、MVP和MVVM模式介绍" itemprop="url">MVC、MVP和MVVM模式介绍</a>
   </h1>
   <p class="article-author">By
        
-		<a href="http://lightsmeki.github.io/about" title="Burin" target="_blank" itemprop="author">Burin</a>
+		<a href="http://lightsmeki.github.io/about" title="Meki" target="_blank" itemprop="author">Meki</a>
 		
   <p class="article-time">
     <time datetime="2016-06-26T18:34:00.000Z" itemprop="datePublished"> 发表于 06月 26 2016</time>
@@ -96,22 +96,22 @@
 
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题1">
-                        <span class="toc-number">1.</span> <span class="toc-text">最初</span>
+                        <span class="toc-number">1.</span> <span class="toc-text">MVC</span>
                     </a>
                 </li>
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题2">
-                        <span class="toc-number">2.</span><span class="toc-text">发现</span>
+                        <span class="toc-number">2.</span><span class="toc-text">MVP</span>
                     </a>
                 </li>
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题3">
-                        <span class="toc-number">3.</span> <span class="toc-text">前景</span>
+                        <span class="toc-number">3.</span> <span class="toc-text">MVVM</span>
                     </a>
                 </li>
                 <li class="toc-item toc-level-2">
                     <a class="toc-link" href="#标题4">
-                        <span class="toc-number">4.</span> <span class="toc-text">结尾</span>
+                        <span class="toc-number">4.</span> <span class="toc-text">总结</span>
                     </a>
                 </li>
             </ol>
@@ -119,30 +119,28 @@
 		</div>
 		
 		<p><a id="more"></a></p>
-        <h2 id="标题1">最初</h2>
-        <p>最初开始工作的时候，只看到了一个点，认为前端就是做web界面的，和美术差不多，只是不负责设计，只负责实现。
-            <br/><br/> 接着，我发现前端和美术设计并不重合。随着技术的发展，CSS的玩法也越来越多样，配合js能做出更多有趣的效果。好的创意与实现必然是相辅相成的，这说明前端也可以是通往设计的一条路，不仅可以实现创意，也可以激发创意。同时前端可以掌握设计实现的难易程度以及工期长短，能够将创意落地。
+        <h2 id="标题1">MVC</h2>
+        <p>MVC是Android开发自带系统框架，也是最经典的架构，由Model、View、Controller三大块组成。结构为Controller->Model->View->Controller(闭环)。
+		<br/><br/>由于View是依赖Model的，并且显示层也有部分逻辑处理，导致高耦合，令人诟病。
         </p>
 
-        <h2 id="标题2">发现</h2>
+        <h2 id="标题2">MVP</h2>
         <p>
-            <br/>再后来，我发觉前端也可以是一种解决问题的思维方式，同一个问题可以由运营、设计、后端解决，也可以由前端解决。
-            <br/><br/>从纵向深入考虑，里面也蕴藏不少与美术不同层面的东西。由于它从属于技术领域，就不得不面对更为复杂的一系列问题，例如浏览器兼容性适配，性能优化，数据可视化，前端工程化，前端安全，SEO，数据统计，如何减少项目架构的复杂度，如何更为便捷的进行项目迭代管理etc。
-            <br/><br/>从横向进行分析，前端除了PC web以外，还可以做移动端，同时可结合ios或android做hybrid开发，还可做各种浏览器的web应用中间件、插件等。
+            <br/>MVP由Model、View、Presenter三大块组成。结构为View<->Presenter<->Model
+            <br/><br/>View与Model之间进行状态分离，View不再依赖Model，而是使用Presenter进行总体控制，获取数据Model，展现视图View。
+            <br/><br/>因此View得以复用，耦合度也显著降低。
+		<br/><br/>但问题也是显而易见的，P中管理M和V，如果业务复杂，则P需要维护大量接口，造成代码臃肿。在小型项目中，甚至比MVC架构的代码还多。
         </p>
 
-        <h2 id="标题3">前景</h2>
-        <p> <br/>前端只是一份工作，远看像是技术方向一个狭小的点。但近处细细看过去，更像一张密密麻麻的网，各种节点之间隐隐约约的相互连接着。
-            <br/>less、ExtJS、bootstrap、zepto.js、angular1.0 2.0、nodejs，随着这些新的流行框架以及更成熟的解决方案的出现，技术人员为了不被时代的潮水拍死沙滩，将以更加质朴方式迎面应对，敦促自己不断前进——或是看文档学习，快速将最新的流行技术应用于自己的产品中，或是重新熟读ES6规则，反复思考，如何通过最原始而经典的js方法来解决目前的各种问题，避免被不成熟的技术带入更深的坑中。
-            <br/><br/>有种说法是，不想成为全栈工程师不是好的程序员。原地踏步而不自知着实令人恐慌，有野心总是好的。
-            <br/>一个优秀的技术人员不应满足于一个点，必须要不断的学习，掌握更多的技能，不仅是某种实现方法，还可以掌握一下框架，不仅是软件，还可以了解一下硬件，不仅是技术方向，还应该兼顾运营、管理、美术等其他方向。除了赚钱谋生，还可以有自我价值实现。就像我很喜欢的美剧《硅谷黑历史》里面，大反派holi公司的总裁反复强调的那句话一样，make the world a better place。没有互联网的日子是不可想象的，技术能够让生活迅速变得更美好。
-        </p>
+        <h2 id="标题3">MVVM</h2>
+        <p> <br/>MVVM由Model-View-ViewModel三大块组成。结构为Model<->ViewModel<->View
+            <br/>这个ViewModel中封了包括逻辑和界面的接口。比较有意思的是，采用了数据绑定(Data Binding)、依赖属性(Dependency Property)、命令(Command)、路由事件(Routed Event)等新特性，使架构更加灵活。
+            <br/>不过目前大部分框架都是MVP+databinding的形式，MVVM还是比较少见。
+	</p>
 
 
-        <h2 id="标题4">结尾</h2>
-        <p> <br/>目前我只走了最初的一小步，经验尚浅，只能边走边挖个坑，灌下一点似有似无的鸡汤。但我知道，前方一定有许多还未勘测到的坑等待挖掘。
-            <br/>不过这正好，人最怕的就是没有希望。所幸还年轻，平日也还注意锻炼身体，一旦有了动力和希望，就获得了达到更高的境界的可能。
-
+        <h2 id="标题4">总结</h2>
+        <p> <br/>模式框架都是浮云，重要的是解决问题，比如如何解耦、如何使架构更加灵活、如何提高模块复用、如何简化开发etc。
             <br/><br/><br/><br/>2015/10/14</p>
         </p>
 
@@ -167,7 +165,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lightsmeki.github.io/2015/1014/" data-title="浅谈对前端的理解 | Burin&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://lightsmeki.github.io/2015/1014/" data-title="浅谈对前端的理解 | Meki&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -269,7 +267,7 @@
     <div class="linkslist">
         <p class="asidetitle">友情链接</p>
         <ul>
-
+ 	<li><a href="https://juejin.im/" target="_blank" title="掘金">掘金</a></li>
         </ul>
     </div>
 
@@ -289,8 +287,8 @@
 	
 	
 	<section class="info">
-        <p> Hello, I&#39;m Burin, an Android and Web developer. <br/>
-            This blog contains lots of interesting stuff, I hope you will enjoy it. ( ﾟ∀ﾟ)2333</p>
+        <p> Hello, I&#39;m Meki, an Android developer. <br/>
+        This blog contains several articles, mostly about technical stuff. Hope you enjoy it ( ﾟ∀ﾟ)</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -304,7 +302,7 @@
 	</div>
 		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2015
 
-        <a href="http://lightsmeki.github.io/about" target="_blank" title="Burin">Burin</a>
+        <a href="http://lightsmeki.github.io/about" target="_blank" title="Meki">Meki</a>
 		
 		</p>
 </div>
